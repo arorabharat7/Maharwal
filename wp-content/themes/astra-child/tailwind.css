@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+      @font-face {
+      font-family: 'Bagdoll Display';
+      src: url('../public/font/bagdolldisplay-regular.otf');
+      font-weight: 400;
+       }
+
+ 
+
+
+
+
+}
+
+
+
+body{
+  font-family: 'montserrat';
+  background-color: #F6F0EA;
+}
+
+
+.bagdoll-display{
+  font-family:'bagdoll Display' !important;
+}
+
+.container{
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+
+
+
+.customer-review span.swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+  background-color: #38769D;
+}
+
+
+
+/*--------------------------------- img-model -----------------------------------------*/
+
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+
+
+/* The Modal (background) */
+
+
+#myModal {
+  display: none;
+  position: fixed;
+  top: 138px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0000005c;
+  z-index: 100;
+  overflow:hidden;
+}
+
+/* Modal Content */
+
+
+
+
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  font-size: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
+}
+
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  transform: translate(0px,-50%);
+  color: white;
+  font-weight: bold;
+ 
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0px;
+  border-radius: 3px;
+}
+
+.prev {
+  left: 0px;
+  border-radius: 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
+
+/* .hover-shadow:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+} */
+
+
+
+/*--------------------------------- img-model -----------------------------------------*/
+
+
+.menu-beverage button.bg-secondary .img-hidden
+{
+  display: block;
+}
+
+.menu-beverage button.bg-secondary .img-block
+{
+  display: none;
+}
+
+.about-lift-slider span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+
+  outline: 2px solid #38769D;
+  outline-offset: 4px;
+  background-color: #38769D;
+}
+
+.about-lift-slider span.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 0px 10px !important;
+}
+
+.before-text{
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: #F3D699;
+  -webkit-text-stroke-width: 1px;
+  font-family: 'bagdoll Display';
+}
+
+
+.translate-middle {
+  transform: translate(-50%,-50%);
+}
+
+.testimonial-slider .swiper-slide.swiper-slide-next {
+  opacity: 1 !important;
+
+}
+
+.testimonial-slider .swiper-slide {
+  opacity: 0.5 !important;
+
+}
+
+ 
+ @media screen and (max-width:1024px){
+ 
+ 
+  #myModal {
+    display: none;
+    position: fixed;
+    top: 119px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   background: rgba(3, 3, 3, 0.7);
+    z-index: 100;
+    overflow: hidden;
+    transition:0.5s;
+}
+ 
+ }
+    
+
+
+
+
+ @media screen and (max-width:1080px){
+
+
+
+
+  .close {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  
+  }
+
+ }
+ 
+
+
+
+
+ @media screen and (max-width:767px){
+  .customer-review span.swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+    background-color: #fff;
+  }
+
+  .testimonial-slider .swiper-slide {
+    opacity: 1 !important;
+  
+  }
+
+  .about-lift-slider span.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    margin: 0px 5px !important;
+  }
+
+  .about-lift-slider span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    outline-offset: 2px;
+  }
+
+  #myModal {
+    display: none;
+    position: fixed;
+    top: 74px;
+   
+   
+}
+
+ }
+
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "maharwal-halwai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "npx tailwindcss -i ./tailwind.css -o ./tailwind_output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  
+  "dependencies": {
+    "alpinejs": "^3.13.3",
+    "simplelightbox": "^2.14.2",
+    "swiper": "^11.0.5"
+  }
+}
