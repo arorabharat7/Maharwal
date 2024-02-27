@@ -89,7 +89,7 @@ if (function_exists('acf_add_options_page')) {
 
 function custom_astra_breadcrumbs() {
     // Define the separator
-    $separator = ' >';
+    $separator = ' <img src="' . get_stylesheet_directory_uri() . '/assets/images/maharwal_arrow-left.svg" alt="arrow">';
 
     // Home page link
     echo '<a class="text-white md:text-lg text-base font-medium border-b border-white" href="' . esc_url( get_home_url() ) . '">' . esc_html__( 'Home', 'astra-child' ) . '</a>' . $separator;
@@ -105,13 +105,15 @@ function custom_astra_breadcrumbs() {
         }
 
         // Display the post title
-        the_title();
+        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_title() . '</a>' ;
+        
     } elseif ( is_category() ) {
         // Display the category title
-        single_cat_title();
+        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . single_cat_title( '', false ) . '</a>' ;
+       
     } elseif ( is_page() ) {
         // Display the page title
-        the_title();
+        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_title() . '</a>' ;
     } elseif ( is_search() ) {
         // Display search results page
         echo esc_html__( 'Search results for: ', 'astra-child' ) . '"' . get_search_query() . '"';
@@ -120,6 +122,7 @@ function custom_astra_breadcrumbs() {
         echo esc_html__( 'Error 404: Page not found', 'astra-child' );
     } else {
         // Display the current archive title
-        the_archive_title();
+        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_archive_title() . '</a>' ;
+       
     }
 }
