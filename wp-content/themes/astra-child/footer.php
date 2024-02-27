@@ -80,7 +80,7 @@ $copyright_text = get_field('copyright_text', 'Options');
           <?php echo $footer_settings_mail_heading; ?></h2>
 
           <div id="subscribe"
-            class="bg-white rounded-large flex items-center gap-2 justify-between xl:px-6 p-4 xl:py-4 mt-5">
+            class="bg-white rounded-large flex items-center gap-2 justify-between xl:px-6 p-4 xl:py-2 mt-5">
             <!-- <input type="email" placeholder="Your email"
               class="xl:text-xl text-base text-[#303030] w-full bg-transparent font-medium focus-visible:outline-0">
             <a href="#"
