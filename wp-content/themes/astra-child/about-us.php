@@ -20,7 +20,7 @@ get_header(); ?>
 
 <section class="hero hero-about relative before:content-[''] before:absolute before:h-full before:w-full before:left-0 before:top-0 before:bg-[rgb(0,0,0,0.5)]">
 
-<img src="images/maharwal_about.webp" alt="hero-about" class="w-full min-h-[200px]">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_about.webp" alt="hero-about" class="w-full min-h-[200px]">
 
 
 <h1
