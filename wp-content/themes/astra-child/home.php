@@ -378,7 +378,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
        <?php if ($i % 2 == 1) { ?>
         <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-          onclick="openModal();currentSlide(<?php echo  echo $i; ?>)" class="w-full md:h-full">
+          onclick="openModal();currentSlide(<?php echo   $i; ?>)" class="w-full md:h-full">
         </div>
 
         <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
