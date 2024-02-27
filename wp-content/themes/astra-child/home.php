@@ -374,29 +374,29 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
           $gallery_all_details_small_two = get_sub_field('gallery_all_details_small_two');
 
       ?>
-       <?php if ($i % 2 == 0) { ?>
+       <?php if ($i % 2 == 1) { ?>
         <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full h-full">
+          onclick="openModal();currentSlide($i)" class="w-full md:h-full">
         </div>
 
         <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full">
+          onclick="openModal();currentSlide($i)" class="w-full mb-1">
           <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full mt-1">
+          onclick="openModal();currentSlide($i)" class="w-full">
         </div>
         <?php } else { ?>
           <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-           onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full">
+           onclick="openModal();currentSlide($i)" class="w-full  mb-1">
            <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-            onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full mt-1">
+            onclick="openModal();currentSlide($i)" class="w-full">
         </div>
 
         <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
         <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-         onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full h-full">
+         onclick="openModal();currentSlide($i)" class="w-full md:h-full">
         </div>
         <?php } $i++; endwhile;
       endif; ?>
