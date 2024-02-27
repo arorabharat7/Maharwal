@@ -79,57 +79,27 @@ $hero_banner_bottom_image = get_field('hero_banner_bottom_image');
       <div class="md:col-span-6 col-span-12 xl:mt-32 lg:mt-8 md:mt-5 mt-3 xl:ml-16 lg:ml-10 md:ml-6">
         <div class="swiper customer-review ">
           <div class="swiper-wrapper xl:mb-14 mb-10">
-            <div class="swiper-slide">
-              <div class="flex lg:gap-5 gap-3 items-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_user-review.svg" width="85" height="85" alt="user" class="lg:w-auto w-14">
-                <a href="#" class="xl:text-4xl lg:text-3xl md:text-2xl text-xl md:text-dark-grey text-white font-bold">Vinay
-                  Kumar</a>
-              </div>
+            <?php if (have_rows('hero_banner_clients_details')) :
+              while (have_rows('hero_banner_clients_details')) : the_row();
 
-              <p class="xl:text-4xl lg:text-3xl md:text-xl text-lg bagdoll-display tracking-[1px] md:text-light-grey text-white lg:mt-5 mt-3">
-                “I recently used LMN Catering for my daughter's birthday party, and I couldn't be happier with the
-                outcome.”</p>
-            </div>
+                // Load sub field value.
+                $hero_banner_clients_details_client_image = get_sub_field('hero_banner_clients_details_client_image');
+                $hero_banner_clients_details_client_name = get_sub_field('hero_banner_clients_details_client_name');
+                $hero_banner_clients_details_client_review = get_sub_field('hero_banner_clients_details_client_review');
+            ?>
+                <div class="swiper-slide">
+                  <div class="flex lg:gap-5 gap-3 items-center">
+                    <img src="<?php echo $hero_banner_clients_details_client_image['url']; ?>" width="<?php echo $hero_banner_clients_details_client_image['width']; ?>" height="<?php echo $hero_banner_clients_details_client_image['height']; ?>" alt="<?php echo $hero_banner_clients_details_client_image['alt']; ?>" class="lg:w-auto w-14">
+                    <a href="#" class="xl:text-4xl lg:text-3xl md:text-2xl text-xl md:text-dark-grey text-white font-bold">
+                      <?php echo $hero_banner_clients_details_client_name; ?></a>
+                  </div>
 
-            <div class="swiper-slide">
-              <div class="flex lg:gap-5 gap-3 items-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_user-review.svg" width="85" height="85" alt="user" class="lg:w-auto w-14">
-                <a href="#" class="xl:text-4xl lg:text-3xl md:text-2xl text-xl md:text-dark-grey text-white font-bold">Vinay
-                  Kumar</a>
-              </div>
+                  <p class="xl:text-4xl lg:text-3xl md:text-xl text-lg bagdoll-display tracking-[1px] md:text-light-grey text-white lg:mt-5 mt-3">
+                    <?php echo $hero_banner_clients_details_client_review; ?></p>
+                </div>
+            <?php endwhile;
+            endif; ?>
 
-              <p class="xl:text-4xl lg:text-3xl md:text-xl text-lg bagdoll-display tracking-[1px] md:text-light-grey text-white lg:mt-5 mt-3">
-                “I recently used LMN Catering for my daughter's birthday party, and I couldn't be happier with the
-                outcome.”</p>
-            </div>
-
-
-
-            <div class="swiper-slide">
-              <div class="flex lg:gap-5 gap-3 items-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_user-review.svg" width="85" height="85" alt="user" class="lg:w-auto w-14">
-                <a href="#" class="xl:text-4xl lg:text-3xl md:text-2xl text-xl md:text-dark-grey text-white font-bold">Vinay
-                  Kumar</a>
-              </div>
-
-              <p class="xl:text-4xl lg:text-3xl md:text-xl text-lg bagdoll-display tracking-[1px] md:text-light-grey text-white lg:mt-5 mt-3">
-                “I recently used LMN Catering for my daughter's birthday party, and I couldn't be happier with the
-                outcome.”</p>
-            </div>
-
-
-
-            <div class="swiper-slide">
-              <div class="flex lg:gap-5 gap-3 items-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_user-review.svg" width="85" height="85" alt="user" class="lg:w-auto w-14">
-                <a href="#" class="xl:text-4xl lg:text-3xl md:text-2xl text-xl md:text-dark-grey text-white font-bold">Vinay
-                  Kumar</a>
-              </div>
-
-              <p class="xl:text-4xl lg:text-3xl md:text-xl text-lg bagdoll-display tracking-[1px] md:text-light-grey text-white lg:mt-5 mt-3">
-                “I recently used LMN Catering for my daughter's birthday party, and I couldn't be happier with the
-                outcome.”</p>
-            </div>
 
 
 
@@ -309,7 +279,11 @@ $satisfaction_guaranteed_description = get_field('satisfaction_guaranteed_descri
 
 </section>
 
+<?php
+$our_teams_sub_heading = get_field('our_teams_sub_heading');
+$our_teams_main_heading = get_field('our_teams_main_heading');
 
+?>
 
 <section class="our-team lg:py-100 md:py-60 py-10 bg-no-repeat bg-auto bg-center" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_team-bg.webp);">
   <div class="container m-auto">
@@ -317,43 +291,36 @@ $satisfaction_guaranteed_description = get_field('satisfaction_guaranteed_descri
 
       <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
-        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">meet incredible
-          people</span>
+        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
+          <?php echo $our_teams_sub_heading; ?></span>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
       </div>
-      <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">Our Team
+      <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">
+        <?php echo $our_teams_main_heading; ?>
       </h2>
     </div>
 
     <div class="grid grid-cols-12 gap-5 xl:mt-28 lg:mt-16 md:mt-12 mt-10">
+      <?php if (have_rows('our_teams_details')) :
+        while (have_rows('our_teams_details')) : the_row();
 
-      <div class="md:col-span-3 col-span-6 text-center">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_chef-kabir-saini.webp" width="344" height="468" alt="chef" class="m-auto">
-        <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">Kabir Saini</h3>
-        <h4 class="xl:text-xl lg:text-lg text-base text-dark-grey font-semibold uppercase">head chef</h4>
+          // Load sub field value.
+          $our_teams_details_member_image = get_sub_field('our_teams_details_member_image');
+          $our_teams_details_member_name = get_sub_field('our_teams_details_member_name');
+          $our_teams_details_member_post = get_sub_field('our_teams_details_member_post');
 
-      </div>
+      ?>
+          <div class="md:col-span-3 col-span-6 text-center">
+            <img src=" <?php echo $our_teams_details_member_image['url']; ?>" width=" <?php echo $our_teams_details_member_image['width']; ?>" height=" <?php echo $our_teams_details_member_image['height']; ?>" alt=" <?php echo $our_teams_details_member_image['alt']; ?>" class="m-auto">
+            <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">
+              <?php echo $our_teams_details_member_name; ?></h3>
+            <h4 class="xl:text-xl lg:text-lg text-base text-dark-grey font-semibold uppercase">
+              <?php echo $our_teams_details_member_post; ?></h4>
 
-      <div class="md:col-span-3 col-span-6 text-center mt-16">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_chef-sunil-karyani.webp" width="344" height="468" alt="chef" class="m-auto">
-        <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">Sunil Karyani</h3>
-        <h4 class="xl:text-xl lg:text-lg text-base text-dark-grey font-semibold uppercase">Junior chef</h4>
+          </div>
+      <?php endwhile;
+      endif; ?>
 
-      </div>
-
-      <div class="md:col-span-3 col-span-6 text-center">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_chef-rahul-singh.webp" width="344" height="468" alt="chef" class="m-auto">
-        <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">Rahul Singh</h3>
-        <h4 class="xl:text-xl lg:text-lg text-base text-dark-grey font-semibold uppercase">Assistant chef</h4>
-
-      </div>
-
-      <div class="md:col-span-3 col-span-6 text-center mt-16">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_chef-shilpa-singh.webp" width="344" height="468" alt="chef" class="m-auto">
-        <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">Shilpa Singh</h3>
-        <h4 class="xl:text-xl lg:text-lg text-base text-dark-grey font-semibold uppercase">head chef</h4>
-
-      </div>
 
     </div>
   </div>
@@ -377,101 +344,118 @@ $satisfaction_guaranteed_description = get_field('satisfaction_guaranteed_descri
 </section>
 
 
-
+<?php
+      $gallery_sub_heading = get_field('gallery_sub_heading');
+      $gallery_main_heading = get_field('gallery_main_heading');
+      $gallery_view_all_btn_url = get_field('gallery_view_all_btn_url');
+      ?>
 <section class="photo-gallery lg:pt-100 md:pt-60 pt-10">
-    <div class="container m-auto">
-      <div class="text-center">
+  <div class="container m-auto">
+    <div class="text-center">
 
-        <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
-          <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">Check our recent
-            project</span>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
-        </div>
-        <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">Photo
-          Gallery</h2>
-
-
-        <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
-          <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" onclick="openModal();currentSlide(1)"
-              class="hover-shadow cursor-pointer w-full h-full">
-          </div>
-
-          <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" onclick="openModal();currentSlide(2)"
-              class="hover-shadow cursor-pointer w-full">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" onclick="openModal();currentSlide(3)"
-              class="hover-shadow cursor-pointer w-full mt-1">
-          </div>
-
-         
-
-          <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" onclick="openModal();currentSlide(4)"
-              class="hover-shadow cursor-pointer w-full">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" onclick="openModal();currentSlide(5)"
-              class="hover-shadow cursor-pointer w-full mt-1">
-          </div>
-
-          <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" onclick="openModal();currentSlide(6)"
-              class="hover-shadow cursor-pointer w-full h-full">
-          </div>
-
-        </div>
-
-        <div id="myModal" class="modal" style="display: none;">
-
-          <div class="modal-content lg:w-2/4 md:w-3/5 w-[90%]  m-auto relative  lg:py-10 py-7 md:px-10 px-6">
-            <span class="close cursor" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
-            <div class="mySlides" style="display: block;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-            <div class="mySlides" style="display: none;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-            <div class="mySlides" style="display: none;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-            <div class="mySlides" style="display: none;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-            <div class="mySlides" style="display: none;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-  
-            <div class="mySlides" style="display: none;">
-            
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-            </div>
-  
-  
-  
-            <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left lg:text-4xl md:text-3xl text-2xl"></i></a>
-            <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right lg:text-4xl md:text-3xl text-2xl"></i></a>
-  
-          </div>
-        </div>
-
-
-
-        <a href="gallery.html"
-          class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
-          ALL</a>
+      <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
+        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
+        <?php echo $gallery_sub_heading; ?></span>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
       </div>
+      <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">
+      <?php echo $gallery_main_heading; ?></h2>
+
+
+      <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
+      <?php if (have_rows('gallery_all_images')) :
+      $i = 1;
+        while (have_rows('gallery_all_images')) : the_row();
+
+          // Load sub field value.
+          $gallery_all_details_big_image = get_sub_field('gallery_all_details_big_image');
+          $gallery_all_details_small_one = get_sub_field('gallery_all_details_small_one');
+          $gallery_all_details_small_two = get_sub_field('gallery_all_details_small_two');
+
+      ?>
+       <?php if ($i % 2 == 0) { ?>
+        <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
+          <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
+          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full h-full">
+        </div>
+
+        <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
+          <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
+          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full">
+          <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
+          onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full mt-1">
+        </div>
+        <?php } else { ?>
+          <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
+          <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
+           onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full">
+           <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
+            onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full mt-1">
+        </div>
+
+        <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
+        <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
+         onclick="openModal();currentSlide($i)" class="hover-shadow cursor-pointer w-full h-full">
+        </div>
+        <?php } $i++; endwhile;
+      endif; ?>
+
+
+        
+
+      </div>
+
+      <div id="myModal" class="modal" style="display: none;">
+
+        <div class="modal-content lg:w-2/4 md:w-3/5 w-[90%]  m-auto relative  lg:py-10 py-7 md:px-10 px-6">
+          <span class="close cursor" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
+          <div class="mySlides" style="display: block;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+          <div class="mySlides" style="display: none;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+          <div class="mySlides" style="display: none;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+          <div class="mySlides" style="display: none;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+          <div class="mySlides" style="display: none;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+
+          <div class="mySlides" style="display: none;">
+
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
+          </div>
+
+
+
+          <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left lg:text-4xl md:text-3xl text-2xl"></i></a>
+          <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right lg:text-4xl md:text-3xl text-2xl"></i></a>
+
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html" class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
+        ALL</a>
     </div>
-  </section>
+  </div>
+</section>
 
 
 
