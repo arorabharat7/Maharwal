@@ -11,11 +11,14 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-      @font-face {
-      font-family: 'Bagdoll Display';
-      src: url('./assets/font/bagdolldisplay-regular.otf');
-      font-weight: 400;
-       }
+  @font-face {
+    font-family: 'Bagdoll Display';
+    src: url('./assets/font/BagdollDisplay-Regular.woff2') format('woff2'),
+        url('./assets/font/BagdollDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
  
 

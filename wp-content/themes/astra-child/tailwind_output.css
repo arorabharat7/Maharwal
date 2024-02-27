@@ -452,9 +452,14 @@ video {
 @font-face {
   font-family: 'Bagdoll Display';
 
-  src: url('./assets/font/bagdolldisplay-regular.otf');
+  src: url('./assets/font/BagdollDisplay-Regular.woff2') format('woff2'),
+        url('./assets/font/BagdollDisplay-Regular.woff') format('woff');
 
-  font-weight: 400;
+  font-weight: normal;
+
+  font-style: normal;
+
+  font-display: swap;
 }
 
 *, ::before, ::after {
