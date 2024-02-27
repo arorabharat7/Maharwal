@@ -378,26 +378,26 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
        <?php if ($i % 2 == 1) { ?>
         <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="w-full md:h-full">
+          onclick="openModal();currentSlide(<?php echo  echo $i; ?>)" class="w-full md:h-full">
         </div>
 
         <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="w-full mb-1">
+          onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full mb-1">
           <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-          onclick="openModal();currentSlide($i)" class="w-full">
+          onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full">
         </div>
         <?php } else { ?>
           <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
           <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-           onclick="openModal();currentSlide($i)" class="w-full  mb-1">
+           onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full  mb-1">
            <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-            onclick="openModal();currentSlide($i)" class="w-full">
+            onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full">
         </div>
 
         <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
         <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-         onclick="openModal();currentSlide($i)" class="w-full md:h-full">
+         onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full md:h-full">
         </div>
         <?php } $i++; endwhile;
       endif; ?>
@@ -452,7 +452,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
 
 
-      <a href="gallery.html" class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
+      <a href="<?php echo $gallery_view_all_btn_url; ?>" class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
         ALL</a>
     </div>
   </div>
@@ -461,17 +461,22 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
 
 
-
+<?php
+      $blogs_sub_heading = get_field('blogs_sub_heading');
+      $blogs_main_heading = get_field('blogs_main_heading');
+?>
 <section class="blog lg:py-100 md:py-60 py-10 lg:mb-[100px] md:mb-[60px] mb-10">
   <div class="container m-auto">
     <div class="text-center">
 
       <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
-        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">latest news</span>
+        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
+        <?php echo $blogs_sub_heading; ?></span>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
       </div>
-      <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">Our Blog
+      <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">
+      <?php echo $blogs_main_heading; ?>
       </h2>
     </div>
 
