@@ -106,7 +106,7 @@ $our_vision_and_mission_main_heading = get_field('our_vision_and_mission_main_he
 
 
 
-
+ 
 <?php
 $how_it_works_sub_heading = get_field('how_it_works_sub_heading');
 $how_it_works_main_heading = get_field('how_it_works_main_heading');
