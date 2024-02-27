@@ -84,3 +84,42 @@ if (function_exists('acf_add_options_page')) {
         'redirect'      => false
     ));
 }
+
+
+
+function custom_astra_breadcrumbs() {
+    // Define the separator
+    $separator = ' &raquo; ';
+
+    // Home page link
+    echo '<a href="' . esc_url( get_home_url() ) . '">' . esc_html__( 'Home', 'astra-child' ) . '</a>' . $separator;
+
+    // Check if it's a single post (post, page, or custom post type)
+    if ( is_single() ) {
+        // Get the post categories
+        $categories = get_the_category();
+        if ( $categories ) {
+            // Display the first category
+            $category = $categories[0];
+            echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
+        }
+
+        // Display the post title
+        the_title();
+    } elseif ( is_category() ) {
+        // Display the category title
+        single_cat_title();
+    } elseif ( is_page() ) {
+        // Display the page title
+        the_title();
+    } elseif ( is_search() ) {
+        // Display search results page
+        echo esc_html__( 'Search results for: ', 'astra-child' ) . '"' . get_search_query() . '"';
+    } elseif ( is_404() ) {
+        // Display 404 page
+        echo esc_html__( 'Error 404: Page not found', 'astra-child' );
+    } else {
+        // Display the current archive title
+        the_archive_title();
+    }
+}
