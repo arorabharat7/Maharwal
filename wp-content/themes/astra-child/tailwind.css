@@ -218,9 +218,19 @@ body{
   padding: 0;
   border: 0;
 }
-#subscribe .noptin-form-submit {
+#subscribe input.noptin-form-submit{
   padding: 0;
   font-size: 20px;
+  position: relative;
+  padding-right: 20px;
+  display: block;
+}
+#subscribe input.noptin-form-submit:after {
+  content: url(https://dmprojects.xyz/maharwal/wp-content/uploads/2024/02/maharwal_right-arrow.svg);
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 50px;
 }
  
  @media screen and (max-width:1024px){
