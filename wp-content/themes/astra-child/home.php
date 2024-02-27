@@ -302,6 +302,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
     <div class="grid grid-cols-12 gap-5 xl:mt-28 lg:mt-16 md:mt-12 mt-10">
       <?php if (have_rows('our_teams_details')) :
+      $i = 1;
         while (have_rows('our_teams_details')) : the_row();
 
           // Load sub field value.
@@ -310,7 +311,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
           $our_teams_details_member_post = get_sub_field('our_teams_details_member_post');
 
       ?>
-          <div class="md:col-span-3 col-span-6 text-center">
+          <div class="md:col-span-3 col-span-6 text-center <?php if($i % 2 == 0){ ?>mt-16 <?php } ?>">
             <img src=" <?php echo $our_teams_details_member_image['url']; ?>" width=" <?php echo $our_teams_details_member_image['width']; ?>" height=" <?php echo $our_teams_details_member_image['height']; ?>" alt=" <?php echo $our_teams_details_member_image['alt']; ?>" class="m-auto">
             <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">
               <?php echo $our_teams_details_member_name; ?></h3>
@@ -318,7 +319,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
               <?php echo $our_teams_details_member_post; ?></h4>
 
           </div>
-      <?php endwhile;
+      <?php $i++; endwhile;
       endif; ?>
 
 
