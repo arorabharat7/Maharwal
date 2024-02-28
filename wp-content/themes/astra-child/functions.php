@@ -87,6 +87,8 @@ if (function_exists('acf_add_options_page')) {
 
 
 
+
+
 function custom_astra_breadcrumbs() {
     // Define the separator
     $separator = ' <img src="' . get_stylesheet_directory_uri() . '/assets/images/maharwal_arrow-left.svg" alt="arrow">';
@@ -94,35 +96,94 @@ function custom_astra_breadcrumbs() {
     // Home page link
     echo '<a class="text-white md:text-lg text-base font-medium border-b border-white" href="' . esc_url( get_home_url() ) . '">' . esc_html__( 'Home', 'astra-child' ) . '</a>' . $separator;
 
-    // Check if it's a single post (post, page, or custom post type)
-    if ( is_single() ) {
-        // Get the post categories
-        $categories = get_the_category();
-        if ( $categories ) {
-            // Display the first category
-            $category = $categories[0];
-            echo '<a class="text-white md:text-lg text-base font-medium" href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
-        }
+    // Get the current URL
+    $current_url = $_SERVER["REQUEST_URI"];
 
-        // Display the post title
-        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_title() . '</a>' ;
-        
-    } elseif ( is_category() ) {
-        // Display the category title
-        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . single_cat_title( '', false ) . '</a>' ;
-       
-    } elseif ( is_page() ) {
-        // Display the page title
-        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_title() . '</a>' ;
-    } elseif ( is_search() ) {
-        // Display search results page
-        echo esc_html__( 'Search results for: ', 'astra-child' ) . '"' . get_search_query() . '"';
-    } elseif ( is_404() ) {
-        // Display 404 page
-        echo esc_html__( 'Error 404: Page not found', 'astra-child' );
-    } else {
-        // Display the current archive title
-        echo '<a class="text-white md:text-lg text-base font-medium" href="#">' . get_the_archive_title() . '</a>' ;
-       
+    // Explode URL into parts
+    $url_parts = explode('/', $current_url);
+
+    // Remove empty elements
+    $url_parts = array_filter($url_parts);
+
+    // Initialize breadcrumbs array
+    $breadcrumbs = array();
+
+    // Loop through URL parts
+    foreach ($url_parts as $part) {
+        // Decode URL part
+        $decoded_part = urldecode($part);
+        // Add breadcrumb
+        $breadcrumbs[] = '<a class="text-white md:text-lg text-base font-medium" href="' . esc_url( home_url( implode('/', $breadcrumbs) . '/' . $part ) ) . '">' . esc_html( ucwords(str_replace('-', ' ', $decoded_part)) ) . '</a>';
     }
+
+    // Output breadcrumbs
+    echo implode($separator, $breadcrumbs);
 }
+
+
+
+
+
+
+
+
+// Register Custom Post Type
+function create_services_cpt() {
+
+    $labels = array(
+        'name'                  => _x( 'Services', 'Post Type General Name', 'text_domain' ),
+        'singular_name'         => _x( 'Service', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'             => __( 'Services', 'text_domain' ),
+        'name_admin_bar'        => __( 'Service', 'text_domain' ),
+        'archives'              => __( 'Service Archives', 'text_domain' ),
+        'attributes'            => __( 'Service Attributes', 'text_domain' ),
+        'parent_item_colon'     => __( 'Parent Service:', 'text_domain' ),
+        'all_items'             => __( 'All Services', 'text_domain' ),
+        'add_new_item'          => __( 'Add New Service', 'text_domain' ),
+        'add_new'               => __( 'Add New', 'text_domain' ),
+        'new_item'              => __( 'New Service', 'text_domain' ),
+        'edit_item'             => __( 'Edit Service', 'text_domain' ),
+        'update_item'           => __( 'Update Service', 'text_domain' ),
+        'view_item'             => __( 'View Service', 'text_domain' ),
+        'view_items'            => __( 'View Services', 'text_domain' ),
+        'search_items'          => __( 'Search Service', 'text_domain' ),
+        'not_found'             => __( 'Not found', 'text_domain' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+        'featured_image'        => __( 'Featured Image', 'text_domain' ),
+        'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+        'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+        'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+        'insert_into_item'      => __( 'Insert into service', 'text_domain' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this service', 'text_domain' ),
+        'items_list'            => __( 'Services list', 'text_domain' ),
+        'items_list_navigation' => __( 'Services list navigation', 'text_domain' ),
+        'filter_items_list'     => __( 'Filter services list', 'text_domain' ),
+    );
+    $args = array(
+        'label'                 => __( 'Service', 'text_domain' ),
+        'description'           => __( 'Services offered', 'text_domain' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+        'taxonomies'            => array( 'services-category' ), // Custom taxonomy
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-admin-settings', // Custom icon
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'post',
+        'show_in_rest'          => true,
+    );
+    register_post_type( 'services', $args );
+
+}
+add_action( 'init', 'create_services_cpt', 0 );
+
+
+

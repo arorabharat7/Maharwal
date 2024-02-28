@@ -869,6 +869,10 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
 .ml-0 {
   margin-left: 0px;
 }
@@ -3353,6 +3357,11 @@ body{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.before\:\!rounded-\[30px\]::before {
+  content: var(--tw-content);
+  border-radius: 30px !important;
+}
+
 .before\:rounded-\[15px\]::before {
   content: var(--tw-content);
   border-radius: 15px;
@@ -3642,6 +3651,10 @@ body{
     margin-bottom: 2.5rem;
   }
 
+  .md\:mb-11 {
+    margin-bottom: 2.75rem;
+  }
+
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -3927,6 +3940,10 @@ body{
     margin-bottom: 1.75rem;
   }
 
+  .lg\:mb-14 {
+    margin-bottom: 3.5rem;
+  }
+
   .lg\:mb-5 {
     margin-bottom: 1.25rem;
   }
@@ -4141,6 +4158,15 @@ body{
   }
 }
 
+@media (prefers-contrast: less) {
+  @media (min-width: 1024px) {
+    .contrast-less\:lg\:text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+}
+
 @media (min-width: 1280px) {
   .xl\:col-span-4 {
     grid-column: span 4 / span 4;
@@ -4167,6 +4193,10 @@ body{
 
   .xl\:mb-14 {
     margin-bottom: 3.5rem;
+  }
+
+  .xl\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .xl\:mb-4 {
