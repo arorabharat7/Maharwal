@@ -108,17 +108,28 @@ function custom_astra_breadcrumbs() {
     // Initialize breadcrumbs array
     $breadcrumbs = array();
 
+    // Get the last part of the URL (current page)
+    $last_part = end($url_parts);
+
     // Loop through URL parts
     foreach ($url_parts as $part) {
         // Decode URL part
         $decoded_part = urldecode($part);
-        // Add breadcrumb
-        $breadcrumbs[] = '<a class="text-white md:text-lg text-base font-medium" href="' . esc_url( home_url( implode('/', $breadcrumbs) . '/' . $part ) ) . '">' . esc_html( ucwords(str_replace('-', ' ', $decoded_part)) ) . '</a>';
+        
+        // Check if it's the last part of the URL
+        if ($part === $last_part) {
+            // Output the page title without link
+            $breadcrumbs[] = '<span class="text-white md:text-lg text-base font-medium">' . esc_html( ucwords(str_replace('-', ' ', $decoded_part)) ) . '</span>';
+        } else {
+            // Output breadcrumb with link
+            $breadcrumbs[] = '<a class="text-white md:text-lg text-base font-medium" href="' . esc_url( home_url(  '/' . $part ) ) . '">' . esc_html( ucwords(str_replace('-', ' ', $decoded_part)) ) . '</a>';
+        }
     }
 
     // Output breadcrumbs
     echo implode($separator, $breadcrumbs);
 }
+
 
 
 
