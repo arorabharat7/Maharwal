@@ -165,7 +165,7 @@ $testimonials_main_heading = get_field('testimonials_main_heading');
 <section class="events-Satisfaction assurence lg:py-100 md:py-60 py-10 bg-white overflow-hidden">
    
    <div class="text-center">
-
+ 
      <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
        <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
