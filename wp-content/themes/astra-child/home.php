@@ -364,12 +364,10 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
       <?php echo $gallery_main_heading; ?></h2>
 
 
-      <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
+      <!-- <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
       <?php if (have_rows('gallery_all_images')) :
       $i = 1;
         while (have_rows('gallery_all_images')) : the_row();
-
-          // Load sub field value.
           $gallery_all_details_big_image = get_sub_field('gallery_all_details_big_image');
           $gallery_all_details_small_one = get_sub_field('gallery_all_details_small_one');
           $gallery_all_details_small_two = get_sub_field('gallery_all_details_small_two');
@@ -448,8 +446,31 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
           <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right lg:text-4xl md:text-3xl text-2xl"></i></a>
 
         </div>
-      </div>
+      </div> -->
 
+
+
+      <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
+          <div class="md:col-span-8 col-span-12">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery"
+              class="w-full md:h-full">
+          </div>
+
+          <div class="md:col-span-4 col-span-12">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full mb-1">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+          </div>
+
+          <div class="md:col-span-4 col-span-12">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full  mb-1">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+          </div>
+
+          <div class="md:col-span-8 col-span-12">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
+          </div>
+
+        </div>
 
 
       <a href="<?php echo $gallery_view_all_btn_url; ?>" class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
