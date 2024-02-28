@@ -184,6 +184,7 @@ var swiper = new Swiper(".testimonial-slider", {
     });
 
     $('[data-fancybox="images"]').fancybox({
+      toolbar: "false",
       buttons: ["close"],
       beforeClose: function (instance, slide) {
           console.log(slide)
