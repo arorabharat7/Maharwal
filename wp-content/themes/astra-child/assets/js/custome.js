@@ -177,6 +177,23 @@ var swiper = new Swiper(".testimonial-slider", {
    
   }
 
+  $(document).ready(function(){    
+
+    $().fancybox({
+
+    });
+
+    $('[data-fancybox="images"]').fancybox({
+      buttons: ["close"],
+      beforeClose: function (instance, slide) {
+          console.log(slide)
+
+      }
+  });
+
+
+});
+
 
 
  
