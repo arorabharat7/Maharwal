@@ -191,6 +191,7 @@ var swiper = new Swiper(".testimonial-slider", {
 
       }
   });
+  
 
 
 });
