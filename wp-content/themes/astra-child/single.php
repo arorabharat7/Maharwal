@@ -16,6 +16,7 @@ get_header(); ?>
 
     <div class=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] flex items-center md:gap-2.5 gap-1.5 w-[90%] justify-center">
         <?php custom_astra_breadcrumbs(); ?>
+            
     </div>
 
 </section>
@@ -33,30 +34,7 @@ get_header(); ?>
                     <h2 class="lg:text-[42px] text-3xl text-primary bagdoll-display"><?php the_title(); ?></h2>
 
 
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_blog-inner-one.webp" width="870" height="380" alt="blog-inner" class="w-full lg:mt-12 md:mt-8 mt-4 lg:mb-7 md:mb-5 mb-3">
-
-                    <p class="lg:text-lg md:text-base text-sm text-grey font-medium">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit,
-                        sed do eiusmod tempor incididunt tempor incididunt.tempor incididunt.</p>
-
-
-
-                    <p class="lg:text-lg md:text-base text-sm text-grey font-medium mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-
-
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_blog-inner-two.webp" width="870" height="380" alt="blog-inner" class="w-full my-7">
-
-                    <p class="lg:text-lg md:text-base text-sm text-grey font-medium">Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit,
-                        sed do eiusmod tempor incididunt tempor incididunt.tempor incididunt.</p>
-
-
-
-                    <p class="lg:text-lg md:text-base text-sm text-grey font-medium mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-
-
+                    <?php the_content(); ?>
                     <div class="flex lg:flex-row flex-col justify-between lg:gap-0 gap-5 lg:items-center mt-5">
 
                         <div>
@@ -86,12 +64,58 @@ get_header(); ?>
                         </div>
 
 
-                        <ul class="flex gap-4 items-center">
+                        <ul class="flex gap-4 items-center share-icons">
                             <li><a href="#" class="lg:text-lg md:text-base text-sm font-medium text-light-grey">Share</a></li>
-                            <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_facebook.svg" width="20" height="20" alt="facebook"></a></li>
-                            <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_instagram.svg" width="20" height="20" alt="instagram"></a></li>
-                            <li><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_twitter-x.svg" width="20" height="20" alt="twitter-x"></a></li>
+                            <li><a href="#" class="share-facebook"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_facebook.svg" width="20" height="20" alt="facebook"></a></li>
+                            <li><a href="#" class="share-instagram"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_instagram.svg" width="20" height="20" alt="instagram"></a></li>
+                            <li><a href="#" class="share-twitter"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_twitter-x.svg" width="20" height="20" alt="twitter-x"></a></li>
                         </ul>
+
+                        <!-- HTML markup for share icons -->
+
+
+
+                        <script>
+                            // JavaScript to handle share icon click events
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const shareButtons = document.querySelectorAll('.share-icons a');
+
+                                shareButtons.forEach(function(button) {
+                                    button.addEventListener('click', function(event) {
+                                        event.preventDefault();
+
+                                        // Get the post URL
+                                        const postUrl = window.location.href;
+
+                                        // Determine the social media platform based on the class name
+                                        let socialMedia = '';
+                                        if (button.classList.contains('share-facebook')) {
+                                            socialMedia = 'facebook';
+                                        } else if (button.classList.contains('share-twitter')) {
+                                            socialMedia = 'twitter';
+                                        } else if (button.classList.contains('share-instagram')) {
+                                            socialMedia = 'instagram';
+                                        }
+
+                                        // Open the sharing URL for the selected social media platform
+                                        switch (socialMedia) {
+                                            case 'facebook':
+                                                window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(postUrl), '_blank');
+                                                break;
+                                            case 'twitter':
+                                                window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(postUrl), '_blank');
+                                                break;
+                                            case 'instagram':
+                                                window.open('https://www.instagram.com/create/instagram?url=' + encodeURIComponent(postUrl), '_blank');
+                                                break;
+                                            default:
+                                                console.error('Unsupported social media platform');
+                                        }
+                                    });
+                                });
+                            });
+                        </script>
+
                     </div>
 
 
@@ -100,10 +124,10 @@ get_header(); ?>
 
                 <div class="user-comments">
 
-                <?php
-        // Include comments template
-        comments_template();
-        ?>
+                    <?php
+                    // Include comments template
+                    comments_template();
+                    ?>
                     <!-- <h3 class="text-[32px] text-primary bagdoll-display">15 Comments</h3>
 
                     <div class="flex md:gap-4 gap-2 items-start lg:py-10 md:py-7 py-5 border-b border-primary">
