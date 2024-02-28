@@ -452,22 +452,34 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
       <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
           <div class="md:col-span-8 col-span-12">
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery"
               class="w-full md:h-full">
+          </a>
           </div>
 
           <div class="md:col-span-4 col-span-12">
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full mb-1">
+          </a>
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+          </a>
           </div>
 
           <div class="md:col-span-4 col-span-12">
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full  mb-1">
+          </a>
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+          </a>
           </div>
 
           <div class="md:col-span-8 col-span-12">
+          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
+          </a>
           </div>
 
         </div>
