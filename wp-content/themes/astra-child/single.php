@@ -60,10 +60,29 @@ get_header(); ?>
                     <div class="flex lg:flex-row flex-col justify-between lg:gap-0 gap-5 lg:items-center mt-5">
 
                         <div>
-                            <span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">food</span>
-                            <span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">advertising</span>
-                            <span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">Venue</span>
-                            <span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">venue</span>
+                            <?php
+                            // Get the ID of the current post
+                            $id = get_the_id();
+
+                            // Get the tags associated with the current post
+                            $post_tags = get_the_tags($id);
+
+                            // Check if tags are available
+                            if ($post_tags) {
+                                // Loop through each tag
+                                foreach ($post_tags as $tag) {
+                                    // Generate tag URL
+                                    $tag_url = get_tag_link($tag->term_id);
+                            ?>
+                                    <a href="<?php echo esc_url($tag_url); ?>"><span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">
+                                            <?php echo esc_html($tag->name); ?>
+                                        </span></a>
+                            <?php
+                                }
+                            } else {
+                            }
+                            ?>
+
                         </div>
 
 
@@ -81,8 +100,11 @@ get_header(); ?>
 
                 <div class="user-comments">
 
-
-                    <h3 class="text-[32px] text-primary bagdoll-display">15 Comments</h3>
+                <?php
+        // Include comments template
+        comments_template();
+        ?>
+                    <!-- <h3 class="text-[32px] text-primary bagdoll-display">15 Comments</h3>
 
                     <div class="flex md:gap-4 gap-2 items-start lg:py-10 md:py-7 py-5 border-b border-primary">
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_User-comment.svg" width="72" height="72" alt="User-comment" class="md:w-auto w-10">
@@ -155,9 +177,9 @@ get_header(); ?>
                     </div>
 
                     <a href="#" class="btn text-sm font-semibold hover:text-light-grey hover:bg-secondary transition text-white bg-primary px-11 md:py-5 py-4 rounded-large inline-block uppercase lg:mt-12 md:mt-9 mt-6">Book now <i class="fa-solid fa-arrow-right ml-2"></i></a>
-                </form>
+                </form> -->
 
-
+                </div>
 
             </div>
 
@@ -192,15 +214,15 @@ get_header(); ?>
 
                             <ul class="flex flex-col gap-4 lg:mt-7 mt-5">
                                 <?php
-                                   $all_categories = get_categories();
-                                  foreach( $all_categories  as $category ) { 
+                                $all_categories = get_categories();
+                                foreach ($all_categories  as $category) {
                                 ?>
-                                <li class="flex justify-between items-center">
-                                    <a href="<?php echo esc_html( $category->slug ); ?>" class="text-sm font-semibold text-light-grey uppercase"><?php echo esc_html( $category->name ); ?></a>
-                                    <span class="text-sm font-semibold text-light-grey uppercase">(2)</span>
-                                </li>
+                                    <li class="flex justify-between items-center">
+                                        <a href="<?php echo get_category_link($category->term_id); ?>" class="text-sm font-semibold text-light-grey uppercase"><?php echo esc_html($category->name); ?></a>
+                                        <span class="text-sm font-semibold text-light-grey uppercase">(2)</span>
+                                    </li>
                                 <?php } ?>
-                               
+
 
 
                             </ul>
@@ -250,14 +272,20 @@ get_header(); ?>
                         <div class="lg:mt-7 mt-5">
                             <?php
                             // Check if the post has tags
-                            $tags = get_the_tags();
-                            if ($tags) {
+                            $tags = get_terms(array(
+                                'taxonomy' => 'post_tag', // Specify the taxonomy as 'post_tag' for tags
+                                'hide_empty' => false, // Include tags even if they are not assigned to any posts
+                            ));
+
+                            // Check if tags are available
+                            if (!empty($tags)) {
                                 // Loop through each tag
                                 foreach ($tags as $tag) {
+                                    $tag_url = get_tag_link($tag->term_id);
                             ?>
-                                    <span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">
-                                        <?php echo esc_html($tag->name); ?>
-                                    </span>
+                                    <a href="<?php echo esc_url($tag_url); ?>"><span class="text-xs font-medium text-light-grey uppercase border border-light-grey px-4 py-2 rounded mx-1 my-2 inline-block">
+                                            <?php echo esc_html($tag->name); ?>
+                                        </span></a>
                             <?php
                                 }
                             } else {
@@ -265,6 +293,7 @@ get_header(); ?>
                             }
                             ?>
                         </div>
+
 
 
 
