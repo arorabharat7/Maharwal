@@ -50,23 +50,38 @@ get_header(); ?>
 
 
 
-      <div x-data="{ openTab: 1 }">
+      <div x-data="{ openTab: all-photos }">
         <div class="overflow-auto">
           <div class=" flex md:gap-6 gap-3 my-2 justify-center items-center md:w-full w-[120%]">
-            <button x-on:click="openTab = 1" :class="{ 'bg-gradient-linear text-white': openTab === 1 }"
-              class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">All
-              photos</button>
-            <button x-on:click="openTab = 2" :class="{ 'bg-gradient-linear text-white': openTab === 2 }"
+          <?php if (have_rows('gallery_tabs')) :
+                while (have_rows('gallery_tabs')) : the_row();
+
+                    // Load sub field value.
+                    $category_name = get_sub_field('category_name');
+                    $category_slug = get_sub_field('category_slug');
+            ?>
+            <button x-on:click="openTab = <?php echo $category_slug; ?>" :class="{ 'bg-gradient-linear text-white': openTab === <?php echo $category_slug; ?> }"
+              class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">
+              <?php echo $category_name; ?></button>
+              <?php endwhile;
+            endif; ?>
+            <!-- <button x-on:click="openTab = 2" :class="{ 'bg-gradient-linear text-white': openTab === 2 }"
               class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">catering</button>
             <button x-on:click="openTab = 3" :class="{ 'bg-gradient-linear text-white': openTab === 3 }"
               class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">Food</button>
             <button x-on:click="openTab = 4" :class="{ 'bg-gradient-linear text-white': openTab === 4 }"
-              class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">venues</button>
+              class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">venues</button> -->
           </div>
         </div>
 
+        <?php if (have_rows('gallery_details')) :
+                while (have_rows('gallery_details')) : the_row();
 
-        <div x-show="openTab === 1" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
+                    // Load sub field value.
+                    $gallery_details_image_url = get_sub_field('gallery_details_image_url');
+                    $gallery_category_select = get_sub_field('gallery_category_select');
+            ?>
+        <div x-show="openTab === <?php echo $gallery_category_select; ?>" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
 
           <div class="grid grid-cols-12 md:gap-6 gap-4">
 
@@ -154,197 +169,9 @@ get_header(); ?>
 
 
         </div>
-
-        <div x-show="openTab === 2" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
-
-          <div class="grid grid-cols-12 md:gap-6 gap-4">
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-one.webp" class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-two.webp" onclick="openModal();currentSlide(2)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-three.webp" onclick="openModal();currentSlide(3)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-four.webp" onclick="openModal();currentSlide(4)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-five.webp" onclick="openModal();currentSlide(5)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-six.webp" onclick="openModal();currentSlide(6)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-seven.webp" onclick="openModal();currentSlide(7)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eight.webp" onclick="openModal();currentSlide(8)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-nine.webp" onclick="openModal();currentSlide(9)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-ten.webp" onclick="openModal();currentSlide(10)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eleven.webp" onclick="openModal();currentSlide(11)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-          </div>
-        </div>
-
-        <div x-show="openTab === 3" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
-          <div class="grid grid-cols-12 md:gap-6 gap-4">
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-one.webp" class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-two.webp" onclick="openModal();currentSlide(2)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-three.webp" onclick="openModal();currentSlide(3)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-four.webp" onclick="openModal();currentSlide(4)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-five.webp" onclick="openModal();currentSlide(5)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-six.webp" onclick="openModal();currentSlide(6)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-seven.webp" onclick="openModal();currentSlide(7)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eight.webp" onclick="openModal();currentSlide(8)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-nine.webp" onclick="openModal();currentSlide(9)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-ten.webp" onclick="openModal();currentSlide(10)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eleven.webp" onclick="openModal();currentSlide(11)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-          </div>
-        </div>
-
-        <div x-show="openTab === 4" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
-          <div class="grid grid-cols-12 md:gap-6 gap-4">
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-one.webp" onclick="openModal();currentSlide(1)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-two.webp" onclick="openModal();currentSlide(2)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-three.webp" onclick="openModal();currentSlide(3)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-four.webp" onclick="openModal();currentSlide(4)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-five.webp" onclick="openModal();currentSlide(5)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-six.webp" onclick="openModal();currentSlide(6)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-seven.webp" onclick="openModal();currentSlide(7)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eight.webp" onclick="openModal();currentSlide(8)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-nine.webp" onclick="openModal();currentSlide(9)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-ten.webp" onclick="openModal();currentSlide(10)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eleven.webp" onclick="openModal();currentSlide(11)"
-                class="hover-shadow cursor-pointer">
-            </div>
-
-
-          </div>
-        </div>
+        <?php endwhile;
+            endif; ?>
+      
 
 
 

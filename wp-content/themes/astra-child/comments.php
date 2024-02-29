@@ -78,7 +78,7 @@ if ( is_customize_preview() && is_callable( 'Astra_Builder_UI_Controller::render
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
 		<?php endif; ?>
-<div class="flex md:gap-4 gap-2 items-start lg:py-10 md:py-7 py-5 border-b border-primary comments_main_class">
+<div class="flex md:gap-4 gap-2 items-start  border-b border-primary comments_main_class">
 		<ol class="ast-comment-list ">
 			<?php
 			wp_list_comments(
