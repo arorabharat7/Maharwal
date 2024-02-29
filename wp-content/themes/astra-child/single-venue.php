@@ -47,7 +47,7 @@ get_header(); ?>
       </div>
 
       <div class="grid grid-cols-12 lg:mt-7 lg:mb-16 mt-5 md:mb-10 mb-6 lg:gap-20 md:gap-10 gap-5">
-        <div class="md:col-span-7 col-span-12 ">
+        <div class="md:col-span-7 col-span-12 listing_detail">
           <?php the_content(); ?>
 
         </div>
@@ -74,17 +74,17 @@ get_header(); ?>
           <?php endwhile;
           endif; ?>
 
-<?php 
-$venue_contact_details_address = get_field('venue_contact_details_address');
-$venue_contact_details_url = get_field('venue_contact_details_url');
-$venue_contact_details_number = get_field('venue_contact_details_number');
+          <?php
+          $venue_contact_details_address = get_field('venue_contact_details_address');
+          $venue_contact_details_url = get_field('venue_contact_details_url');
+          $venue_contact_details_number = get_field('venue_contact_details_number');
 
-?>
+          ?>
           <h5 class="lg:text-xl md:text-lg text-base font-bold text-light-grey lg:mb-3 mb-2 mt-7">Contact</h5>
           <p class="lg:text-xl md:text-lg text-base font-medium text-grey lg:mb-2 mb-1">
-          <?php echo $venue_contact_details_address; ?></p>
+            <?php echo $venue_contact_details_address; ?></p>
           <a href="<?php echo $venue_contact_details_url; ?>" class="lg:text-xl md:text-lg text-base font-medium text-grey">
-          <?php echo $venue_contact_details_number; ?></a>
+            <?php echo $venue_contact_details_number; ?></a>
         </div>
       </div>
 
