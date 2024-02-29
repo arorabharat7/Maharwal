@@ -302,7 +302,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
     <div class="grid grid-cols-12 gap-5 xl:mt-28 lg:mt-16 md:mt-12 mt-10">
       <?php if (have_rows('our_teams_details')) :
-      $i = 1;
+        $i = 1;
         while (have_rows('our_teams_details')) : the_row();
 
           // Load sub field value.
@@ -311,7 +311,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
           $our_teams_details_member_post = get_sub_field('our_teams_details_member_post');
 
       ?>
-          <div class="md:col-span-3 col-span-6 text-center <?php if($i % 2 == 0){ ?>mt-16 <?php } ?>">
+          <div class="md:col-span-3 col-span-6 text-center <?php if ($i % 2 == 0) { ?>mt-16 <?php } ?>">
             <img src=" <?php echo $our_teams_details_member_image['url']; ?>" width=" <?php echo $our_teams_details_member_image['width']; ?>" height=" <?php echo $our_teams_details_member_image['height']; ?>" alt=" <?php echo $our_teams_details_member_image['alt']; ?>" class="m-auto">
             <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display mt-5 mb-1">
               <?php echo $our_teams_details_member_name; ?></h3>
@@ -319,7 +319,8 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
               <?php echo $our_teams_details_member_post; ?></h4>
 
           </div>
-      <?php $i++; endwhile;
+      <?php $i++;
+        endwhile;
       endif; ?>
 
 
@@ -346,10 +347,10 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
 
 <?php
-      $gallery_sub_heading = get_field('gallery_sub_heading');
-      $gallery_main_heading = get_field('gallery_main_heading');
-      $gallery_view_all_btn_url = get_field('gallery_view_all_btn_url');
-      ?>
+$gallery_sub_heading = get_field('gallery_sub_heading');
+$gallery_main_heading = get_field('gallery_main_heading');
+$gallery_view_all_btn_url = get_field('gallery_view_all_btn_url');
+?>
 <section class="photo-gallery lg:pt-100 md:pt-60 pt-10">
   <div class="container m-auto">
     <div class="text-center">
@@ -357,132 +358,64 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
       <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
         <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
-        <?php echo $gallery_sub_heading; ?></span>
+          <?php echo $gallery_sub_heading; ?></span>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
       </div>
       <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">
-      <?php echo $gallery_main_heading; ?></h2>
-
-
-      <!-- <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
-      <?php if (have_rows('gallery_all_images')) :
-      $i = 1;
-        while (have_rows('gallery_all_images')) : the_row();
-          $gallery_all_details_big_image = get_sub_field('gallery_all_details_big_image');
-          $gallery_all_details_small_one = get_sub_field('gallery_all_details_small_one');
-          $gallery_all_details_small_two = get_sub_field('gallery_all_details_small_two');
-
-      ?>
-       <?php if ($i % 2 == 1) { ?>
-        <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
-          <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-          onclick="openModal();currentSlide(<?php echo   $i; ?>)" class="w-full md:h-full">
-        </div>
-
-        <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-          <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-          onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full mb-1">
-          <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-          onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full">
-        </div>
-        <?php } else { ?>
-          <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-          <img src="<?php echo $gallery_all_details_small_one['url'] ?>" 
-           onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full  mb-1">
-           <img src="<?php echo $gallery_all_details_small_two['url'] ?>" 
-            onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full">
-        </div>
-
-        <div class="column md:col-span-8 sm:col-span-6 col-span-6 open">
-        <img src="<?php echo $gallery_all_details_big_image['url'] ?>" 
-         onclick="openModal();currentSlide(<?php echo $i; ?>)" class="w-full md:h-full">
-        </div>
-        <?php } $i++; endwhile;
-      endif; ?>
-
-
-        
-
-      </div>
-
-      <div id="myModal" class="modal" style="display: none;">
-
-        <div class="modal-content lg:w-2/4 md:w-3/5 w-[90%]  m-auto relative  lg:py-10 py-7 md:px-10 px-6">
-          <span class="close cursor" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></span>
-          <div class="mySlides" style="display: block;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-          <div class="mySlides" style="display: none;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-          <div class="mySlides" style="display: none;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-          <div class="mySlides" style="display: none;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-          <div class="mySlides" style="display: none;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-
-          <div class="mySlides" style="display: none;">
-
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" class="modal-popup-img w-full xl:h-[400px] md:h-[300px] h-[200px]">
-          </div>
-
-
-
-          <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-angle-left lg:text-4xl md:text-3xl text-2xl"></i></a>
-          <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-angle-right lg:text-4xl md:text-3xl text-2xl"></i></a>
-
-        </div>
-      </div> -->
-
+        <?php echo $gallery_main_heading; ?></h2>
 
 
       <div class="grid grid-cols-12 gap-1 lg:mt-16 md:mt-12 mt-8 md:mb-10 mb-6">
-          <div class="md:col-span-8 col-span-12">
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery"
-              class="w-full md:h-full">
-          </a>
-          </div>
+        <?php if (have_rows('gallery_all_images')) :
+          $i = 1;
+          while (have_rows('gallery_all_images')) : the_row();
 
-          <div class="md:col-span-4 col-span-12">
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full mb-1">
-          </a>
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-          </a>
-          </div>
+            // Load sub field value.
+            $gallery_all_details_big_image = get_sub_field('gallery_all_details_big_image');
+            $gallery_all_details_small_one = get_sub_field('gallery_all_details_small_one');
+            $gallery_all_details_small_two = get_sub_field('gallery_all_details_small_two');
 
-          <div class="md:col-span-4 col-span-12">
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full  mb-1">
-          </a>
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
-          </a>
-          </div>
+        ?>
+            <?php if ($i % 2 == 1) { ?>
+              <div class="md:col-span-8 col-span-12">
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-one.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
+                </a>
+              </div>
 
-          <div class="md:col-span-8 col-span-12">
-          <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
-          </a>
-          </div>
+              <div class="md:col-span-4 col-span-12">
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-two.webp" width="433" height="252" alt="photo-gallery" class="w-full mb-1">
+                </a>
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-three.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                </a>
+              </div>
 
-        </div>
+            <?php } else { ?>
+              <div class="md:col-span-4 col-span-12">
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-four.webp" width="433" height="252" alt="photo-gallery" class="w-full  mb-1">
+                </a>
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-five.webp" width="433" height="252" alt="photo-gallery" class="w-full">
+                </a>
+              </div>
+
+              <div class="md:col-span-8 col-span-12">
+                <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
+                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_photo-gallery-six.webp" width="882" height="510" alt="photo-gallery" class="w-full md:h-full">
+                </a>
+              </div>
+        <?php }
+            $i++;
+          endwhile;
+        endif; ?>
+
+
+
+
+      </div>
 
 
       <a href="<?php echo $gallery_view_all_btn_url; ?>" class="btn text-sm font-semibold hover:text-white hover:bg-primary transition text-light-black bg-secondary px-16 md:py-5 py-4 rounded-large text-center inline-block uppercase">VIEW
@@ -495,8 +428,8 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
 
 
 <?php
-      $blogs_sub_heading = get_field('blogs_sub_heading');
-      $blogs_main_heading = get_field('blogs_main_heading');
+$blogs_sub_heading = get_field('blogs_sub_heading');
+$blogs_main_heading = get_field('blogs_main_heading');
 ?>
 <section class="blog lg:py-100 md:py-60 py-10 lg:mb-[100px] md:mb-[60px] mb-10">
   <div class="container m-auto">
@@ -505,11 +438,11 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
       <div class="flex gap-2 items-center justify-center md:mb-6 mb-4">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
         <span class="lg:text-xl md:text-lg text-base text-primary font-semibold uppercase">
-        <?php echo $blogs_sub_heading; ?></span>
+          <?php echo $blogs_sub_heading; ?></span>
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal-spoons.svg" width="27" height="26" alt="maharwal-spoons">
       </div>
       <h2 class="text-primary xl:text-9xl lg:text-6xl md:text-5xl text-4xl bagdoll-display leading-[107%] ">
-      <?php echo $blogs_main_heading; ?>
+        <?php echo $blogs_main_heading; ?>
       </h2>
     </div>
 
@@ -584,6 +517,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
     </div>
   </div>
 </section>
+
 
 
 

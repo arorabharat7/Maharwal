@@ -27,7 +27,6 @@ if (!defined('ABSPATH')) {
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
 
-
 </head>
 
 <body>
@@ -35,11 +34,12 @@ if (!defined('ABSPATH')) {
 <?php 
  $header_settings_image_logo = get_field('header_settings_image_logo', 'Options');
 ?>
-  <header class="md:py-6 py-3 sticky top-0 bg-primary z-[100] lg:border-none border-b-[1px] border-white">
+  <header class="py-3 sticky top-0 bg-primary z-[100] lg:border-none border-b-[1px] border-white h-[70px]">
     <div class="container-fluid px-4 m-auto">
       <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-      <div id="menu" class="md:w-2/4 w-full  h-screen  absolute left-0 top-0 flex bg-white duration-700 lg:hidden -ml-ml-96">
+      <div id="menu"
+        class="md:w-2/4 w-full  h-screen  absolute left-0 top-0 flex bg-white duration-700 lg:hidden -ml-ml-96">
         <div class="w-full flex flex-col text-white">
 
           <div class="flex items-center justify-between px-5 md:py-4 py-3  border-b border-b-light-primary bg-primary">
@@ -73,7 +73,7 @@ if (!defined('ABSPATH')) {
                $class = $is_active_page ? 'border-b-2 border-primary' : '';
               ?>
               <li>
-                <a href="<?php echo $items[$i]->url; ?>" class="xl:text-lg <?php echo $class; ?> lg:text-base text-primary font-bold capitalize  transition-all flex items-center justify-between">
+                <a href="<?php echo $items[$i]->url; ?>" class="xl:text-lg <?php echo $class; ?> lg:text-base text-primary font-bold capitalize transition-all flex items-center justify-between">
                   <?php echo $items[$i]->title; ?>
                   <i class="fa-solid fa-angle-right"></i></a>
               </li>
@@ -95,11 +95,11 @@ if (!defined('ABSPATH')) {
 
       <div id="offcanvas" class=" flex items-center justify-between">
 
-        <div class="flex items-center 2xl:gap-12 xl:gap-8 lg:gap-6">
-          <a href="<?php echo home_url(); ?>" class="navbar-brand"><img src="<?php echo $header_settings_image_logo['url']; ?>"
+        <div class="flex items-center 2xl:gap-12 xl:gap-8 lg:gap-4 md:gap-6">
+          <a href="<?php echo home_url(); ?>" class="navbar-brand md:-mb-10 -mb-9"><img src="<?php echo $header_settings_image_logo['url']; ?>"
            width="<?php echo $header_settings_image_logo['width']; ?>"
             height="<?php echo $header_settings_image_logo['height']; ?>" 
-            alt="<?php echo $header_settings_image_logo['alt']; ?>" class="lg:w-[90px] md:w-[70px] w-[50px]"></a>
+            alt="<?php echo $header_settings_image_logo['alt']; ?>" class="xl:w-[90px] lg:w-[75px] md:w-[90px] w-[85px]"></a>
 
           <ul class="navbar lg:flex items-center xl:gap-5 lg:gap-3 hidden">
           <?php
@@ -127,7 +127,7 @@ if (!defined('ABSPATH')) {
                  $class = $is_active_page ? 'text-secondary' : 'text-white before:hidden hover:before:block hover:before:transition';
               ?>
               <li class="flex items-center xl:gap-5 lg:gap-3">
-                <a href="<?php echo $items[$i]->url; ?>" class="xl:text-lg lg:text-base <?php echo $class; ?> font-semibold relative hover:text-secondary before:content-[''] before:absolute before:top-[-10px] before:left-[50%] before:translate-x-[-50%] before:bg-secondary before:h-2.5 before:w-2.5 before:rounded-full capitalize transition-all">
+                <a href="<?php echo $items[$i]->url; ?>" class="xl:text-base lg:text-sm <?php echo $class; ?> text-secondary font-semibold relative hover:text-secondary before:content-[''] before:absolute before:top-[-10px] before:left-[50%] before:translate-x-[-50%] before:bg-secondary before:h-2 before:w-2 before:rounded-full capitalize transition-all">
                   <?php echo $items[$i]->title; ?></a>
                   <?php if ($i < $total_items - 1) : ?>
                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_link-star.svg" width="20" height="20" alt="link-star">
@@ -141,18 +141,20 @@ if (!defined('ABSPATH')) {
         </div>
 
 
-        <ul class="navbar nav-right flex items-center  md:gap-5 gap-3 justify-end">
+        <ul class="navbar nav-right flex items-center xl:gap-5 lg:gap-4 md:gap-5 gap-3 justify-end">
 
           <li class="sm:block hidden">
-            <a href="#" class="text-white xl:text-base lg:text-base text-sm uppercase font-medium">create menu list</a>
+            <a href="#" class="text-white xl:text-base lg:text-sm text-sm uppercase font-medium">create menu list</a>
           </li>
 
           <li>
-            <a href="#" class="btn md:text-base text-xs font-medium hover:text-light-grey hover:bg-secondary transition text-white border-[1px] border-white hover:border-secondary md:px-6 md:py-3 px-4 py-2 rounded-large inline-block">Login</a>
+            <a href="#"
+              class="btn md:text-base text-xs font-medium hover:text-light-grey hover:bg-secondary transition text-white border-[1px] border-white hover:border-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">Login</a>
           </li>
 
           <li>
-            <a href="#" class="btn md:text-base text-xs font-medium hover:text-white hover:bg-transparent transition text-light-grey border-[1px] border-secondary hover:border-white bg-secondary md:px-6 md:py-3 px-4 py-2 rounded-large inline-block">Register</a>
+            <a href="#"
+              class="btn md:text-base text-xs font-medium hover:text-white hover:bg-transparent transition text-light-grey border-[1px] border-secondary hover:border-white bg-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">Register</a>
           </li>
 
           <li class="lg:hidden">
