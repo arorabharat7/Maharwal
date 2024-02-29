@@ -29,7 +29,7 @@ get_header(); ?>
   <div class="grid grid-cols-12 gap-x-6 xl:gap-y-16 md:gap-y-10 gap-y-8 lg:pb-100 md:pb-60 pb-10">
     <?php
     // Define pagination parameters
-    $posts_per_page = 2;
+    $posts_per_page = 6;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
     $tag_slug = '';
 $category_slug = '';
