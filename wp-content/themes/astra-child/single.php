@@ -28,7 +28,7 @@ get_header(); ?>
 
         <div class="grid grid-cols-12 xl:gap-12 md:gap-6  md:gap-y-0 gap-y-12">
 
-            <div class="xl:col-span-8 lg:col-span-7 md:col-span-7 col-span-12">
+            <div class="xl:col-span-8 lg:col-span-7 md:col-span-7 col-span-12 listing_detail">
 
                 <div class="lg:mb-16 lg:pb-16 md:pb-10 md:mb-10 pb-7 mb-7 border-b border-primary">
                     <h2 class="lg:text-[42px] text-3xl text-primary bagdoll-display"><?php the_title(); ?></h2>
