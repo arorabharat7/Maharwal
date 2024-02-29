@@ -1547,12 +1547,12 @@ if ( ! function_exists( 'astra_comment_form_default_fields_markup' ) ) {
 		$fields['email']  = '<p class="comment-form-email ' . astra_attr( 'comment-form-grid-class' ) . '">' .
 					'<label for="email" class="screen-reader-text">' . esc_html( astra_default_strings( 'string-comment-label-email', false ) ) . '</label><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
 					'" placeholder="' . esc_attr( astra_default_strings( 'string-comment-label-email', false ) ) . '" size="30"' . $aria_req . ' /></p></div>';
-					return apply_filters( 'astra_comment_form_default_fields_markup', $fields );
-					// $fields['url']    = '<p class="comment-form-url ' . astra_attr( 'comment-form-grid-class' ) . '"><label for="url">' .
+                    return apply_filters( 'astra_comment_form_default_fields_markup', $fields );
+                    // $fields['url']    = '<p class="comment-form-url ' . astra_attr( 'comment-form-grid-class' ) . '"><label for="url">' .
 		// 			'<label for="url" class="screen-reader-text">' . esc_html( astra_default_strings( 'string-comment-label-website', false ) ) . '</label><input id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) .
 		// 			'" placeholder="' . esc_attr( astra_default_strings( 'string-comment-label-website', false ) ) . '" size="30" /></label></p></div>';
 
-		//return apply_filters( 'astra_comment_form_default_fields_markup', $fields );
+		// return apply_filters( 'astra_comment_form_default_fields_markup', $fields );
 	}
 }
 
@@ -2169,3 +2169,4 @@ function astra_setup_article_featured_image() {
 }
 
 add_action( 'astra_header_after', 'astra_setup_article_featured_image' );
+?>

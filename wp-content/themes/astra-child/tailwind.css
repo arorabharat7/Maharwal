@@ -232,6 +232,61 @@ body{
   width: 100px;
   height: 50px;
 }
+
+
+.fancybox-slide--image .fancybox-close-small {
+  background: transparent !important;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  padding: 2px;
+  top: 0;
+  right: -55px !important;
+  display: inline-block !important;
+}
+
+.fancybox-navigation .fancybox-button svg{
+  display: none;
+}
+.fancybox-navigation .fancybox-button div{
+  position: relative;
+}
+.fancybox-navigation .fancybox-button div:before {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  font-weight: 500;
+  left: 50%;
+  font-family: swiper-icons;
+  transform: translate(-50% , -50%);
+}
+.fancybox-navigation .fancybox-button.fancybox-button--arrow_left div::before{
+  content: "prev";
+}
+.fancybox-navigation .fancybox-button.fancybox-button--arrow_right div::before{
+  content: "next";
+}
+.fancybox-navigation .fancybox-button{
+  background: transparent;
+}
+.fancybox-navigation .fancybox-button.fancybox-button--arrow_left{
+  left: 10%;
+}
+.fancybox-navigation .fancybox-button.fancybox-button--arrow_right{
+  right: 10%;
+}
+.fancybox-stage .fancybox-image{
+  object-fit: cover;
+}
+.fancybox-slide .fancybox-content {
+  width: 800px !important;
+  height: auto;
+  transform: translate(-50% , -50%) !important;
+  left: 50% !important;
+  top: 50% !important;
+}
+
+
  
  @media screen and (max-width:1024px){
  
@@ -307,3 +362,170 @@ body{
 
 
 
+
+
+
+
+
+
+ .comment-respond .comment-reply-title{
+	font-family: 'bagdoll Display' !important;
+	font-size: 32px;
+	color:#38769D;
+}
+.comment-respond  .comment-notes{
+		font-size: 18px;
+	color:#545454;
+}
+.comment-respond .comment-form-textarea textarea{
+	border-radius:12px !important;
+	height:245px;
+	padding:15px;
+	border:0 !important;
+}
+.comment-respond .ast-comment-formwrap input{
+	height:65px;
+	border-radius:80px !important;
+	border:0 !important;
+}
+.comment-respond .form-submit{
+	margin-top:40px;
+}
+.comment-respond .form-submit input {
+	background-color: #38769D !important;
+	height: 58px;
+	border: 0 !important;
+	border-radius: 57px !important;
+}
+.comment-respond .comment-form-cookies-consent{
+	display:none;
+}
+
+.user-comments .ast-comment-info .ast-comment-avatar-wrap img{
+	width:72px;
+	height:72px;
+}
+
+.user-comments .ast-comment-cite-wrap a {
+	font-size: 18px;
+	color: #545454;
+	font-weight: 600;
+	margin:0px !important;
+}
+
+
+
+.user-comments header.ast-comment-meta {
+	display: block;
+}
+
+.user-comments .ast-comment-cite-wrap {
+	margin-left: 0px;
+}
+
+.user-comments header.ast-comment-meta .timendate a {
+	color: #41444b;
+	font-size: 12px;
+}
+
+.user-comments .ast-comment-info {
+	margin-bottom: 0px;
+}
+
+ .user-comments section.ast-comment-content.comment {
+	padding-left: 90px;
+}
+
+
+ .user-comments .ast-comment-edit-reply-wrap .comment-reply-link {
+	font-size: 14px !important;
+	padding: 0px !important;
+	color: #303030 !important;
+	text-decoration: underline;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.user-comments .ast-comment-content.comment p {
+	margin-bottom: 16px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #41444b;
+}
+.user-comments .ast-comment-list li article{
+	border-top:1px solid #38769D !important;
+}
+.user-comments .ast-comment-list li:first-child article{
+	border-top:0px !important;
+}
+.user-comments .ast-comment-avatar-wrap img {
+	max-width: 100%;
+}
+.user-comments .ast-comment-list{
+	width:100%;
+}
+.comment-respond .comment-notes {
+	font-size: 18px;
+	color: #41444b;
+	font-weight: 500;
+}
+#search-categories input {
+	border: 0;
+	padding: 0;
+	box-shadow: none;
+}
+#search-categories .search-submit{
+	box-shadow:none;
+	border:0;
+	
+}
+#search-categories .search-submit:hover{
+	background-color:transparent;
+}
+
+
+
+
+
+@media screen and (max-width:991px){
+	.comment-respond .ast-comment-formwrap .ast-width-lg-33{
+		width:100%;
+	}
+	.comment-respond .ast-comment-formwrap input{
+	height:60px;
+}
+	.user-comments .ast-comment-info .ast-comment-avatar-wrap img {
+	width: 55px;
+	height: 55px;
+}
+	.user-comments section.ast-comment-content.comment {
+	padding-left: 62px;
+}
+}
+
+
+
+@media screen and (max-width:767px){
+	.comment-respond .form-submit {
+	margin-top: 25px;
+}
+		.comment-respond .ast-comment-formwrap input{
+	height:55px;
+			margin-bottom:10px;
+}
+.comment-respond .form-submit input {
+	height: 55px;
+}
+	.comment-respond .comment-reply-title {
+	margin-bottom: 20px;
+}
+	.comment-respond  .comment-notes{
+		font-size: 14px;
+}
+	.user-comments .ast-comment-content.comment p {
+	font-size: 16px;
+}
+	.user-comments .ast-comment-edit-reply-wrap .comment-reply-link {
+	font-size: 13px !important;
+}
+}

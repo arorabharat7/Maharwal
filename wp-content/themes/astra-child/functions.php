@@ -201,6 +201,81 @@ add_action( 'init', 'create_services_cpt', 0 );
 
 
 
+function create_venues_cpt() {
+    $labels = array(
+        'name'               => _x( 'Venues', 'post type general name', 'your-text-domain' ),
+        'singular_name'      => _x( 'Venue', 'post type singular name', 'your-text-domain' ),
+        'menu_name'          => _x( 'Venues', 'admin menu', 'your-text-domain' ),
+        'name_admin_bar'     => _x( 'Venue', 'add new on admin bar', 'your-text-domain' ),
+        'add_new'            => _x( 'Add New', 'venue', 'your-text-domain' ),
+        'add_new_item'       => __( 'Add New Venue', 'your-text-domain' ),
+        'new_item'           => __( 'New Venue', 'your-text-domain' ),
+        'edit_item'          => __( 'Edit Venue', 'your-text-domain' ),
+        'view_item'          => __( 'View Venue', 'your-text-domain' ),
+        'all_items'          => __( 'All Venues', 'your-text-domain' ),
+        'search_items'       => __( 'Search Venues', 'your-text-domain' ),
+        'parent_item_colon'  => __( 'Parent Venues:', 'your-text-domain' ),
+        'not_found'          => __( 'No venues found.', 'your-text-domain' ),
+        'not_found_in_trash' => __( 'No venues found in Trash.', 'your-text-domain' )
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'venue' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-location-alt', // Change the icon here
+        'supports'           => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
+    );
+
+    register_post_type( 'venue', $args );
+}
+add_action( 'init', 'create_venues_cpt' );
+
+// Register Venues Category Taxonomy
+function create_venues_category_taxonomy() {
+    $labels = array(
+        'name'                       => _x( 'Venues Categories', 'taxonomy general name', 'your-text-domain' ),
+        'singular_name'              => _x( 'Venues Category', 'taxonomy singular name', 'your-text-domain' ),
+        'search_items'               => __( 'Search Venues Categories', 'your-text-domain' ),
+        'popular_items'              => __( 'Popular Venues Categories', 'your-text-domain' ),
+        'all_items'                  => __( 'All Venues Categories', 'your-text-domain' ),
+        'parent_item'                => __( 'Parent Venues Category', 'your-text-domain' ),
+        'parent_item_colon'          => __( 'Parent Venues Category:', 'your-text-domain' ),
+        'edit_item'                  => __( 'Edit Venues Category', 'your-text-domain' ),
+        'update_item'                => __( 'Update Venues Category', 'your-text-domain' ),
+        'add_new_item'               => __( 'Add New Venues Category', 'your-text-domain' ),
+        'new_item_name'              => __( 'New Venues Category Name', 'your-text-domain' ),
+        'separate_items_with_commas' => __( 'Separate Venues Categories with commas', 'your-text-domain' ),
+        'add_or_remove_items'        => __( 'Add or remove Venues Categories', 'your-text-domain' ),
+        'choose_from_most_used'      => __( 'Choose from the most used Venues Categories', 'your-text-domain' ),
+        'not_found'                  => __( 'No Venues Categories found.', 'your-text-domain' ),
+        'menu_name'                  => __( 'Venues Categories', 'your-text-domain' ),
+    );
+
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'venues-category' ),
+    );
+
+    register_taxonomy( 'venues_category', array( 'venue' ), $args );
+}
+add_action( 'init', 'create_venues_category_taxonomy', 0 );
+
+
+
+
 
 
 
