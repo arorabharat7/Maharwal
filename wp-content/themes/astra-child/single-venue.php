@@ -47,7 +47,7 @@ get_header(); ?>
       </div>
 
       <div class="grid grid-cols-12 lg:mt-7 lg:mb-16 mt-5 md:mb-10 mb-6 lg:gap-20 md:gap-10 gap-5">
-        <div class="md:col-span-7 col-span-12 listing_detail">
+        <div class="md:col-span-7 col-span-12 ">
           <?php the_content(); ?>
 
         </div>
