@@ -27,6 +27,7 @@ if (!defined('ABSPATH')) {
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
 
+
 </head>
 
 <body>
