@@ -54,30 +54,34 @@ get_header(); ?>
 
         <div class="md:col-span-5 col-span-12">
           <?php if (have_rows('venue_settings_overview_sidebar_all_detail')) :
+          $i = 0;
             while (have_rows('venue_settings_overview_sidebar_all_detail')) : the_row();
 
               // Load sub field value.
               $venue_settings_overview_sidebar_all_details_heading = get_sub_field('venue_settings_overview_sidebar_all_details_heading');
           ?>
-              <h5 class="lg:text-xl md:text-lg text-base font-bold text-light-grey lg:mb-3 mb-2">
+              <h5 class="lg:text-xl md:text-lg text-base font-bold text-light-grey lg:mb-3 mb-2 <?php if($i >= 1){ ?> mt-7 <?php } ?>">
                 <?php echo $venue_settings_overview_sidebar_all_details_heading; ?></h5>
-              <?php if (have_rows('venue_settings_overview_sidebar_all_details_all_contetnt')) :
+              <?php if (have_rows('venue_settings_overview_sidebar_all_details_all_contetnt')) : 
+              $j = 1;
                 while (have_rows('venue_settings_overview_sidebar_all_details_all_contetnt')) : the_row();
 
                   // Load sub field value.
                   $venue_settings_overview_sidebar_all_details_all_content_details = get_sub_field('venue_settings_overview_sidebar_all_details_all_content_details');
               ?>
-                  <p class="lg:text-xl md:text-lg text-base font-medium text-grey">
+                  <p class="lg:text-xl md:text-lg text-base font-medium text-grey <?php if($j == 1){ echo 'lg:mb-2 mb-1'; } ?>">
                     <?php echo $venue_settings_overview_sidebar_all_details_all_content_details; ?></p>
-              <?php endwhile;
+              <?php $j++; endwhile;
               endif; ?>
-          <?php endwhile;
+          <?php  $i++; endwhile;
           endif; ?>
 
           <?php
           $venue_contact_details_address = get_field('venue_contact_details_address');
           $venue_contact_details_url = get_field('venue_contact_details_url');
           $venue_contact_details_number = get_field('venue_contact_details_number');
+
+          $venue_location_url = get_field('venue_location_url');
 
           ?>
           <h5 class="lg:text-xl md:text-lg text-base font-bold text-light-grey lg:mb-3 mb-2 mt-7">Contact</h5>
@@ -95,25 +99,25 @@ get_header(); ?>
         <div class="grid grid-cols-12 pt-7 lg:gap-20 md:gap-10 gap-5">
           <div class="md:col-span-6 col-span-12">
             <ul>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Evening Reception Facilities</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Marquee Availables</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Entertainment Licence</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Live Band Facilities</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> DJ Facilities</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Outdoor Fireworks Permitted</a></li>
+            <?php if (have_rows('venue_features_details')) :
+          $i = 0;
+            while (have_rows('venue_features_details')) : the_row();
+
+              // Load sub field value.
+              $venue_features_details_content = get_sub_field('venue_features_details_content');
+              if($i == 6){
+                echo '</ul></div><div class="md:col-span-6 col-span-12"><ul>';
+              }
+          ?>
+              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check">
+               <?php echo $venue_features_details_content; ?></a></li>
+              <?php  $i++; endwhile;
+          endif; ?>
+             
             </ul>
           </div>
 
-          <div class="md:col-span-6 col-span-12">
-            <ul>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Civil Ceremony Licence</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Buffet Meal Facilities</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Allows Private Catering</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Alcohol Licence</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Corkage Option</a></li>
-              <li><a href class="lg:text-xl md:text-lg text-base font-medium text-grey flex items-center md:gap-3 gap-2 md:mb-5 mb-3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_check.svg" width="26" height="26" alt="check"> Marquees and Tents</a></li>
-            </ul>
-          </div>
+         
 
         </div>
       </div>
@@ -122,7 +126,7 @@ get_header(); ?>
         <h4 class="lg:text-4xl text-3xl text-primary bagdoll-display ">Venue
           Locations</h4>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14234.264330532695!2d75.72134613990782!3d26.885523971399913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5f2f4d6b1cb%3A0x5317587bf141effb!2sHotel%20Highway%20King!5e0!3m2!1sen!2sin!4v1708350313486!5m2!1sen!2sin" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full md:rounded-2xl rounded-lg md:mt-10 mt-5 lg:h-[440px] md:h-[300px] h-[200px]"></iframe>
+        <iframe src="<?php echo $venue_location_url; ?>"></iframe>
 
       </div>
 
