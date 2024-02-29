@@ -179,5 +179,6 @@ $copyright_text = get_field('copyright_text', 'Options');
   <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 
+
 	</body>
 </html>
