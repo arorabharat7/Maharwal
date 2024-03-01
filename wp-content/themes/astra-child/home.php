@@ -138,54 +138,59 @@ $events_services_description = get_field('events_services_description');
     </div>
 
     <div class="grid grid-cols-12 md:mt-11 mt-7 gap-6">
+      <?php
+      // WP_Query arguments
+      $args = array(
+        'post_type'      => 'services',
+        'posts_per_page' => 4, // Retrieve all posts
+      );
 
-      <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
-        <a href="#">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-corporate-bg.webp" width="304" height="451" alt="events-corporate" class="w-full">
-          <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-corporate.webp" width="242" height="317" alt="events-corporate" class="w-full">
-            <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2">Corporate</h3>
-            <a href="#" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
-              MORE</a>
-          </div>
-        </a>
-      </div>
+      // The Query
+      $query = new WP_Query($args);
 
-      <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
-        <a href="#">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-wedding-bg.webp" width="304" height="451" alt="events-wedding" class="w-full">
-          <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-wedding.webp" width="242" height="317" alt="events-wedding" class="w-full">
-            <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2">Weddings</h3>
-            <a href="#" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
-              MORE</a>
-          </div>
-        </a>
-      </div>
+      // The Loop
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          $services_listing_page_center_images = get_field('services_listing_page_center_images');
+      ?>
+          <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
+            <a href="<?php the_permalink(); ?>">
+              <?php
+              // Get the featured image URL
+              $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+              if ($featured_image_url) { ?>
+                <a href="<?php the_permalink(); ?>">
+                  <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full ">
+                </a>
+              <?php } ?>
 
-      <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
-        <a href="#">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-party-bg.webp" width="304" height="451" alt="events-party" class="w-full">
-          <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-party.webp" width="242" height="317" alt="events-party" class="w-full">
-            <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2">Parties</h3>
-            <a href="#" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
-              MORE</a>
-          </div>
-        </a>
-      </div>
+              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
 
-      <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
-        <a href="#">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-social-bg.webp" width="304" height="451" alt="events-social" class="w-full">
-          <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_events-social.webp" width="242" height="317" alt="events-social" class="w-full">
-            <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2">Social Events</h3>
-            <a href="#" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
-              MORE</a>
+                <?php
+                // Get the featured image URL
+
+                if ($services_listing_page_center_images) { ?>
+
+                  <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full ">
+
+                <?php } ?>
+                <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2"><?php the_title(); ?></h3>
+                <a href="<?php the_permalink(); ?>" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
+                  MORE</a>
+              </div>
+            </a>
           </div>
-        </a>
-      </div>
+      <?php
+        }
+        /* Restore original Post Data */
+        wp_reset_postdata();
+      } else {
+        // no posts found
+        echo 'No services found.';
+      }
+      ?>
+
 
     </div>
 
@@ -447,72 +452,56 @@ $blogs_main_heading = get_field('blogs_main_heading');
     </div>
 
     <div class="grid grid-cols-12 gap-6 lg:mt-16 md:mt-12 mt-8">
+      <?php
+      $posts_per_page = 3;
 
-      <div class="md:col-span-4 sm:col-span-6 col-span-12 relative">
-        <span class="lg:text-xl md:text-base text-sm text-white bg-primary rounded-bl-xl rounded-tr-xl py-1 px-2 absolute right-0 top-0">21,
-          Jan</span>
-        <a href="blog.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_blog-one.webp" width="420" height="264" alt="blog" class="w-full"></a>
+      $tag_slug = '';
+      $category_slug = '';
+      $current_url = $_SERVER['REQUEST_URI'];
+      $tag_position = strpos($current_url, '/tag/');
+      if ($tag_position !== false) {
+        // Extract the tag slug from the URL
+        $tag_slug = substr($current_url, $tag_position + 5); // 5 is the length of "/tag/"
+        // If there is a forward slash after the tag slug, remove it
+        $tag_slug = rtrim($tag_slug, '/');
+        // Now $tag_slug contains the tag slug
 
-        <div class="border-t border-primary mt-6 pt-3">
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-1">Tips & tricks</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-7">healthy food</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block lg:ml-0 ml-3 relative after:content-[''] after:absolute after:-left-3 after:top-[50%] after:translate-y-[-50%] after:bg-secondary after:h-2 after:w-2 after:rounded-full">by
-            admin</span>
-        </div>
+      }
+      $category_position = strpos($current_url, '/category/');
+      if ($category_position !== false) {
+        // Extract the category slug from the URL
+        $category_slug = substr($current_url, $category_position + 10); // 10 is the length of "/category/"
+        // If there is a forward slash after the category slug, remove it
+        $category_slug = rtrim($category_slug, '/');
+      }
+      // $tag_slug = isset($_GET['tag']) ? $_GET['tag'] : '';
+      // WP_Query arguments
+      $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => $posts_per_page,
 
-        <h3> <a href="blog.html" class="xl:text-[32px] text-2xl bagdoll-display text-primary lg:!leading-10 xl:my-4 my-2 block">Corporate
-            Catering: Impress Clients with...</a></h3>
+        // 'tag'            => $tag_slug,
+      );
 
-        <p class="xl:text-lg md:text-base text-sm font-medium text-grey xl:mb-5 mb-3">Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
 
-        <a href="blog.html" class="btn text-sm font-semibold text-light-black text-center inline-block uppercase">read more <i class="fa-solid fa-arrow-right ml-2"></i></a>
+      if ($tag_slug) {
+        $args['tag'] = $tag_slug;
+      } elseif ($category_slug) {
+        $args['category_name'] = $category_slug;
+      }
+      // The Query
+      $query = new WP_Query($args);
 
-      </div>
+      // The Loop
+      if ($query->have_posts()) {
+        while ($query->have_posts()) {
+          $query->the_post();
+          echo maharawal_blogs_listings();
+          wp_reset_postdata();
+        }
+      }
+      ?>
 
-      <div class="md:col-span-4 sm:col-span-6 col-span-12 relative">
-        <span class="lg:text-xl md:text-base text-sm text-white bg-primary rounded-bl-xl rounded-tr-xl py-1 px-2 absolute right-0 top-0">21,
-          Jan</span>
-        <a href="blog.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_blog-two.webp" width="420" height="264" alt="blog" class="w-full"></a>
-
-        <div class="border-t border-primary mt-6 pt-3">
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-1">Tips & tricks</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-7">healthy food</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block lg:ml-0 ml-3 relative after:content-[''] after:absolute after:-left-3 after:top-[50%] after:translate-y-[-50%] after:bg-secondary after:h-2 after:w-2 after:rounded-full">by
-            admin</span>
-        </div>
-
-        <h3> <a href="blog.html" class="xl:text-[32px] text-2xl bagdoll-display text-primary lg:!leading-10 xl:my-4 my-2 block">Corporate
-            Catering: Impress Clients with...</a></h3>
-
-        <p class="xl:text-lg md:text-base text-sm font-medium text-grey xl:mb-5 mb-3">Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-
-        <a href="blog.html" class="btn text-sm font-semibold text-light-black text-center inline-block uppercase">read more <i class="fa-solid fa-arrow-right ml-2"></i></a>
-
-      </div>
-
-      <div class="md:col-span-4 sm:col-span-6 col-span-12 relative">
-        <span class="lg:text-xl md:text-base text-sm text-white bg-primary rounded-bl-xl rounded-tr-xl py-1 px-2 absolute right-0 top-0">21,
-          Jan</span>
-        <a href="blog.html"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_blog-three.webp" width="420" height="264" alt="blog" class="w-full"></a>
-
-        <div class="border-t border-primary mt-6 pt-3">
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-1">Tips & tricks</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-7">healthy food</span>
-          <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block lg:ml-0 ml-3 relative after:content-[''] after:absolute after:-left-3 after:top-[50%] after:translate-y-[-50%] after:bg-secondary after:h-2 after:w-2 after:rounded-full">by
-            admin</span>
-        </div>
-
-        <h3> <a href="blog.html" class="xl:text-[32px] text-2xl bagdoll-display text-primary lg:!leading-10 xl:my-4 my-2 block">Corporate
-            Catering: Impress Clients with...</a></h3>
-
-        <p class="xl:text-lg md:text-base text-sm font-medium text-grey xl:mb-5 mb-3">Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-
-        <a href="blog.html" class="btn text-sm font-semibold text-light-black text-center inline-block uppercase">read more <i class="fa-solid fa-arrow-right ml-2"></i></a>
-
-      </div>
 
     </div>
   </div>

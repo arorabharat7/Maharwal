@@ -60,7 +60,7 @@ get_header(); ?>
                     $category_name = get_sub_field('category_name');
                     $category_slug = get_sub_field('category_slug');
             ?>
-            <button x-on:click="openTab = <?php echo $category_slug; ?>" :class="{ 'bg-gradient-linear text-white': openTab === <?php echo $category_slug; ?> }"
+            <button x-on:click="openTab = all-photos" :class="{ 'bg-gradient-linear text-white': openTab === <?php echo $category_slug; ?> }"
               class=" lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">
               <?php echo $category_name; ?></button>
               <?php endwhile;
@@ -84,15 +84,20 @@ get_header(); ?>
         <div x-show="openTab === <?php echo $gallery_category_select; ?>" class="transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
 
           <div class="grid grid-cols-12 md:gap-6 gap-4">
+          <?php if (have_rows('gallery_detail_all_images')) :
+                while (have_rows('gallery_detail_all_images')) : the_row();
+                $gallery_detail_all_images_url = get_sub_field('gallery_detail_all_images_url');
 
+                ?>
             <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-              <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-one.webp" alt="photo-gallery">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-one.webp" alt="photo-gallery"
+              <a data-fancybox="images" href="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery">
+                <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery"
                   class="hover-shadow cursor-pointer">
               </a>
             </div>
-
-            <div class="column md:col-span-4 sm:col-span-6 col-span-6">
+            <?php endwhile;
+            endif; ?>
+            <!-- <div class="column md:col-span-4 sm:col-span-6 col-span-6">
               <a data-fancybox="images" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-two.webp" alt="photo-gallery">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-two.webp" alt="photo-gallery"
                   class="hover-shadow cursor-pointer">
@@ -162,7 +167,7 @@ get_header(); ?>
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_gallery-inner-eleven.webp" alt="photo-gallery"
                   class="hover-shadow cursor-pointer">
               </a>
-            </div>
+            </div> -->
 
 
           </div>

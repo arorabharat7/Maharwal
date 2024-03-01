@@ -72,24 +72,24 @@ if ($category_position !== false) {
     if ($query->have_posts()) {
       while ($query->have_posts()) {
         $query->the_post();
-        $all_categories = get_categories();
-        $categories = get_the_category();
-        $child_categories = array_filter($all_categories, function ($category) {
-          return $category->parent != 0;
-        });
+       // $all_categories = get_categories();
+        // $categories = get_the_category();
+        // $child_categories = array_filter($all_categories, function ($category) {
+        //   return $category->parent != 0;
+        // });
 
-        $title = get_the_title();
-        $short_title = strlen($title) > 35 ? substr($title, 0, 35) . '...' : $title;
+        // $title = get_the_title();
+        // $short_title = strlen($title) > 35 ? substr($title, 0, 35) . '...' : $title;
 
-        $description = get_the_excerpt();
-        $short_description = strlen($description) > 90 ? substr($description, 0, 90) . '...' : $description;
+        // $description = get_the_excerpt();
+        // $short_description = strlen($description) > 90 ? substr($description, 0, 90) . '...' : $description;
 
-        $author_name = get_the_author();
+        // $author_name = get_the_author();
     ?>
 
         
 
-          <div class="md:col-span-4 sm:col-span-6 col-span-12 relative">
+          <!-- <div class="md:col-span-4 sm:col-span-6 col-span-12 relative">
             <span class="lg:text-xl md:text-base text-sm text-white bg-primary rounded-bl-xl rounded-tr-xl py-1 px-2 absolute right-0 top-0">
               <?php echo esc_html(get_the_date('j, M')); ?></span>
             <?php
@@ -118,9 +118,9 @@ if ($category_position !== false) {
 
             <a href="<?php the_permalink(); ?>" class="btn text-sm font-semibold text-light-black text-center inline-block uppercase">read more <i class="fa-solid fa-arrow-right ml-2"></i></a>
 
-          </div>
+          </div>  -->
 
-
+<?php echo maharawal_blogs_listings(); ?>
 
        
 
