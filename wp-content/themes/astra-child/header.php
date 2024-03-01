@@ -36,7 +36,7 @@ if (!defined('ABSPATH')) {
 ?>
   <header class="py-3 sticky top-0 bg-primary z-[100] lg:border-none border-b-[1px] border-white h-[70px]">
     <div class="container-fluid px-4 m-auto">
-      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+      <!-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> -->
 
       <div id="menu"
         class="md:w-2/4 w-full  h-screen  absolute left-0 top-0 flex bg-white duration-700 lg:hidden -ml-ml-96">
