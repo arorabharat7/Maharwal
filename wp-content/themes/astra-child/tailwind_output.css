@@ -2392,6 +2392,10 @@ video {
   background-size: auto;
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
 .bg-fixed {
   background-attachment: fixed;
 }
@@ -2613,6 +2617,10 @@ video {
   padding-top: 440px;
 }
 
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2808,6 +2816,10 @@ video {
 
 .tracking-\[1px\] {
   letter-spacing: 1px;
+}
+
+.tracking-\[4px\] {
+  letter-spacing: 4px;
 }
 
 .text-\[\#303030\] {
@@ -4224,6 +4236,10 @@ body{
     margin-top: 180px;
   }
 
+  .md\:mb-11 {
+    margin-bottom: 2.75rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4407,6 +4423,10 @@ body{
 
   .md\:pt-60 {
     padding-top: 3.75rem;
+  }
+
+  .md\:pb-36 {
+    padding-bottom: 9rem;
   }
 
   .md\:text-left {
@@ -4809,6 +4829,10 @@ body{
     padding-top: 116px;
   }
 
+  .lg\:pb-\[200px\] {
+    padding-bottom: 200px;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -5078,6 +5102,10 @@ body{
   .xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-\[42px\] {
+    font-size: 42px;
   }
 }
 
