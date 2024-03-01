@@ -162,7 +162,9 @@ $testimonials_main_heading = get_field('testimonials_main_heading');
 
 ?>
 
-<section class="events-Satisfaction assurence lg:py-100 md:py-60 py-10 lg:mb-[100px] md:mb-[60px] mb-10 bg-white overflow-hidden">
+<section class="events-Satisfaction assurence lg:py-100 md:py-60 py-10 bg-white overflow-hidden">
+
+
    
    <div class="text-center">
  

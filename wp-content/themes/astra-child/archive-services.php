@@ -46,6 +46,7 @@ get_header(); ?>
             if ($query->have_posts()) {
                 while ($query->have_posts()) {
                     $query->the_post();
+                    $services_listing_page_center_images = get_field('services_listing_page_center_images');
             ?>
                     <div class="lg:col-span-6 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:!rounded-[30px] before:bg-[rgb(0,0,0,50%)]">
                         <?php
@@ -60,10 +61,10 @@ get_header(); ?>
                                 <h3 class="md:text-3xl text-2xl text-white bagdoll-display"><?php the_title(); ?></h3>
                                 <?php
                                 // Get the featured image URL
-                                $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
-                                if ($featured_image_url) { ?>
+                                
+                                if ($services_listing_page_center_images) { ?>
 
-                                    <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10">
+                                    <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10">
 
                                 <?php } ?>
                             </a>
