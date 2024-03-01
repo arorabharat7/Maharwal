@@ -196,5 +196,25 @@ var swiper = new Swiper(".testimonial-slider", {
   });
   
 
+  jQuery(document).ready(function () {
 
+
+ 
+  
+
+    var btns = jQuery('.photo-gallery .category_btn .btn').click(function() {
+      console.log("Asdasd")
+      if (this.id == 'all-photos') {
+        jQuery('#parent > div').fadeIn(450);
+      } else {
+        var el = jQuery('.' + this.id).fadeIn(450);
+        jQuery('#parent > div').not(el).hide();
+      }
+      btns.removeClass('active');
+      jQuery(this).addClass('active');
+    }) 
+    var firstBtn = jQuery('.photo-gallery .category_btn .btn:first-child');
+    firstBtn.addClass('active');
+  
+  });
  
