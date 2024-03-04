@@ -210,11 +210,11 @@ var swiper = new Swiper(".testimonial-slider", {
         var el = jQuery('.' + this.id).fadeIn(450);
         jQuery('#parent > div').not(el).hide();
       }
-      btns.removeClass('active');
-      jQuery(this).addClass('active');
+      btns.removeClass('focus');
+      jQuery(this).addClass('focus');
     }) 
     var firstBtn = jQuery('.photo-gallery .category_btn .btn:first-child');
-    firstBtn.addClass('active');
+    firstBtn.addClass('focus');
   
   });
  
