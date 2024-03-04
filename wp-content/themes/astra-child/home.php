@@ -342,7 +342,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
       $request_a_quote_btn_url = get_field('request_a_quote_btn_url');
       $request_a_quote_btn_text = get_field('request_a_quote_btn_text');
       ?>
-      <h2><?php echo $request_a_quote_details; ?></h2>
+      <?php echo $request_a_quote_details; ?>
 
       <a href="<?php echo $request_a_quote_btn_url; ?>" class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-light-black bg-secondary px-7 md:py-5 py-4 rounded-large inline-block uppercase">
         <?php echo $request_a_quote_btn_text; ?> <i class="fa-solid fa-arrow-right ml-2"></i></a>
