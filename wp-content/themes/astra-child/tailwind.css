@@ -529,3 +529,12 @@ body{
 	font-size: 13px !important;
 }
 }
+
+
+
+
+
+
+.uwp_login_page #primary{
+  display: none;
+}

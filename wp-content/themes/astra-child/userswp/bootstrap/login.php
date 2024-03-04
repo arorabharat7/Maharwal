@@ -32,34 +32,36 @@
 
                     <form id="loginform" class="uwp-login-form uwp_form lg:w-[70%] md:w-[80%] w-[90%] m-auto login-form lg:mt-12 mt-8" method="post">
                         <?php do_action('uwp_template_fields', 'login', $args); ?>
-                        <div class="uwp-remember-me">
-                            <label style="display: inline-block;" for="remember_me<?php if (wp_doing_ajax()) {
-                                                                                        echo "_ajax";
-                                                                                    } ?>">
-                                
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="round">
+
+
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="round">
+                                    <div class="uwp-remember-me">
+                                        <label style="display: inline-block;" for="remember_me<?php if (wp_doing_ajax()) {
+                                                                                                    echo "_ajax";
+                                                                                                } ?>">
                                             <input class="md:text-base text-sm font-medium text-dark-grey" name="remember_me" id="remember_me<?php if (wp_doing_ajax()) {
                                                                                                                                                     echo "_ajax";
-                                                                                                                                                } ?>"  value="   " type="checkbox">
-                                          </div> <label class="md:text-base text-sm font-medium text-dark-grey"> <?php _e('Remember Me', 'userswp'); ?></label>
+                                                                                                                                                } ?>" value="   " type="checkbox">
+                                    </div> 
 
-                                        
-                                    </div>
-                                 
-                                        <div class="uwp-footer-link uwp-forgotpsw"><a class="md:text-base text-sm text-primary font-semibold" rel="nofollow" href="<?php echo uwp_get_forgot_page_url(); ?>"><?php echo uwp_get_option("forgot_link_title") ? uwp_get_option("forgot_link_title") : __('Forgot password?', 'userswp'); ?></a></div>
+
                                 </div>
+                                <label class="md:text-base text-sm font-medium text-dark-grey"> <?php _e('Remember Me', 'userswp'); ?></label>
+                                
+                            </div>
+                            <div class="uwp-footer-link uwp-forgotpsw"><a class="md:text-base text-sm text-primary font-semibold" rel="nofollow" href="<?php echo uwp_get_forgot_page_url(); ?>"><?php echo uwp_get_option("forgot_link_title") ? uwp_get_option("forgot_link_title") : __('Forgot password?', 'userswp'); ?></a></div>
                             </label>
                         </div>
-                        <input type="submit" name="uwp_login_submit" value="<?php _e('Login', 'userswp'); ?>">
+                        <input class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-white bg-primary px-20 rounded-md md:py-5 py-4 my-8 inline-block uppercase" type="submit" name="uwp_login_submit" value="<?php _e('Login', 'userswp'); ?>">
                     </form>
                     <div class="uwp-login-links">
-                    <p class="text-grey md:text-base text-sm ">Don’t have an account? 
-                        <a rel="nofollow" class="md:text-base text-sm text-primary font-semibold"
-                         href="<?php echo uwp_get_register_page_url(); ?>">
-                         <?php echo uwp_get_option("register_link_title") ? uwp_get_option("register_link_title") : __('Register', 'userswp'); ?>
-              </a></p>
+                        <p class="text-grey md:text-base text-sm ">Don’t have an account?
+                            <a rel="nofollow" class="md:text-base text-sm text-primary font-semibold" href="<?php echo uwp_get_register_page_url(); ?>">
+                                <?php echo uwp_get_option("register_link_title") ? uwp_get_option("register_link_title") : __('Register', 'userswp'); ?>
+                            </a>
+                        </p>
                         <!-- <div class="uwp-footer-link uwp-register-now"><?php _e('Not a member?', 'userswp'); ?> <a rel="nofollow" href="<?php echo uwp_get_register_page_url(); ?>"><?php echo uwp_get_option("register_link_title") ? uwp_get_option("register_link_title") : __('Create account', 'userswp'); ?></a></div> -->
                         <!-- <div class="uwp-footer-link uwp-forgotpsw"><a rel="nofollow" href="<?php echo uwp_get_forgot_page_url(); ?>"><?php echo uwp_get_option("forgot_link_title") ? uwp_get_option("forgot_link_title") : __('Forgot password?', 'userswp'); ?></a></div> -->
                     </div>

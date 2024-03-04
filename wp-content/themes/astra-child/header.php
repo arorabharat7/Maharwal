@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 <?php 
  $header_settings_image_logo = get_field('header_settings_image_logo', 'Options');
