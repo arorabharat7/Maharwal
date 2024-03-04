@@ -2465,6 +2465,11 @@ video {
   padding: 1rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .px-11 {
   padding-left: 2.75rem;
   padding-right: 2.75rem;
@@ -3672,7 +3677,7 @@ body{
   }
 }
 
-.uwp_login_page #primary{
+.uwp_login_page #primary, .uwp_forgot_page #primary, .uwp_register_page #primary{
   display: none;
 }
 
@@ -4336,6 +4341,11 @@ body{
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .md\:px-6 {
