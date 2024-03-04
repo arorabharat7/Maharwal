@@ -535,6 +535,6 @@ body{
 
 
 
-.uwp_login_page #primary{
+.uwp_login_page #primary, .uwp_forgot_page #primary, .uwp_register_page #primary{
   display: none;
 }
