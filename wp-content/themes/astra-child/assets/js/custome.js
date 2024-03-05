@@ -218,3 +218,86 @@ var swiper = new Swiper(".testimonial-slider", {
   
   });
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+jQuery(document).ready(function() {
+  // Function to update prices based on selected price range
+  function updatePrices(newPriceRange) {
+    // Get the new price range value
+    var priceRange = newPriceRange || jQuery('#price-range').val();
+
+    // Log the updated price range value
+    console.log(priceRange);
+
+    // Iterate through each checkbox
+    jQuery('input[name="items[]"]').each(function() {
+        // Check if the item is checked
+        // if (jQuery(this).is(':checked')) {
+            // Get the original value and price of the item
+            var originalValue = parseFloat(jQuery(this).val());
+            var originalPrice = parseFloat(jQuery(this).data('price'));
+
+            // Calculate the new price based on the selected range
+            var newPrice = originalPrice * parseFloat(priceRange);
+
+            // Update the displayed price of the item
+            var itemId = jQuery(this).attr('id');
+            jQuery('#' + itemId + '-price').text(jQuery(this).val() + ' - jQuery' + newPrice.toFixed(2));
+
+            // Update the value of the checkbox
+            jQuery(this).val(newPrice.toFixed(2));
+
+            jQuery(this).next('label').text('Item ' + jQuery(this).val() + ' - $' + newPrice.toFixed(2));
+        // }
+    });
+}
+
+  
+  updatePrices();
+
+  
+  jQuery('#price-range').change(function() {
+  
+    var newPriceRange = jQuery(this).val();
+    updatePrices(newPriceRange);
+});
+
+  
+  jQuery('input[name="items[]"]').change(function() {
+   
+    if (jQuery(this).is(':checked')) {
+        updatePrices();
+    }
+});
+
+  // Submit form
+  jQuery('#custom-form').submit(function(event) {
+      // Get selected items and their prices
+      var selectedItems = [];
+      jQuery('input[name="items[]"]:checked').each(function() {
+          var itemName = jQuery(this).attr('id');
+          var itemPrice = parseFloat(jQuery(this).val());
+          selectedItems.push({ name: itemName, price: itemPrice });
+      });
+
+      // Set the value of the hidden input field
+      jQuery('#selected-items').val(JSON.stringify(selectedItems));
+  });
+});
+
+
+
+
+
+

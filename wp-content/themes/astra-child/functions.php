@@ -350,3 +350,63 @@ function maharawal_blogs_listings(){
 
   </div> 
 <?php } 
+
+
+
+
+
+
+
+
+add_action('wp_ajax_remove_item', 'remove_item_callback');
+add_action('wp_ajax_nopriv_remove_item', 'remove_item_callback');
+
+// Function to remove item from session
+function remove_item_callback() {
+    // Get the index of the item to be removed from the AJAX request
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    $index = $_POST['index'];
+    
+    // Retrieve selected items from session
+    $dataArray = isset($_SESSION['selectedItems']) ? json_decode(stripslashes($_SESSION['selectedItems']), true) : [];
+    $selectedItems = isset($_SESSION['selectedItems']) ? $dataArray : [];
+    
+
+    // Remove the item at the specified index
+    if (isset($selectedItems[$index])) {
+        unset($selectedItems[$index]);
+    }
+
+    // Update the selected items session variable
+    $_SESSION['selectedItems'] = json_encode(array_values($selectedItems));
+
+    // Calculate the new total price
+    $totalPrice = 0;
+    foreach ($selectedItems as $item) {
+        $totalPrice += $item['price'];
+    }
+
+    // Output the updated selected items list and total amount
+    $response = array(
+        'selectedItems' => generate_selected_items_html($selectedItems),
+        'totalPrice' => $totalPrice,
+    );
+
+    echo json_encode($response);
+
+    // Always use exit() after echoing JSON data to stop further processing
+    exit();
+}
+
+
+function generate_selected_items_html($selectedItems) {
+    $html = '<ul>';
+    foreach ($selectedItems as $index => $item) {
+        $html .= '<li>' . $item['name'] . ' - $' . $item['price'] . ' <button class="remove-item" data-index="' . $index . '">Remove</button></li>';
+    }
+    $html .= '</ul>';
+    return $html;
+}
+
