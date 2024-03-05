@@ -387,7 +387,9 @@ function remove_item_callback() {
     foreach ($selectedItems as $item) {
         $totalPrice += $item['price'];
     }
+
     $_SESSION['totalPrice'] = $totalPrice;
+
     // Output the updated selected items list and total amount
     $response = array(
         'selectedItems' => generate_selected_items_html($selectedItems),
