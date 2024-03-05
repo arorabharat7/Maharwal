@@ -146,17 +146,28 @@ if (!defined('ABSPATH')) {
           <li class="sm:block hidden">
             <a href="#" class="text-white xl:text-base lg:text-sm text-sm uppercase font-medium">create menu list</a>
           </li>
+<?php if ( is_user_logged_in() ) { 
+  $logout_url = wp_logout_url( home_url() );
+  ?>
 
+  <li>
+            <a href="<?php echo esc_url( $logout_url ); ?>"
+              class="btn md:text-base text-xs font-medium hover:text-light-grey hover:bg-secondary transition text-white border-[1px] border-white hover:border-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">
+              Logout</a>
+          </li>
+<?php }else{?>
           <li>
-            <a href="#"
-              class="btn md:text-base text-xs font-medium hover:text-light-grey hover:bg-secondary transition text-white border-[1px] border-white hover:border-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">Login</a>
+            <a href="<?php echo home_url(); ?>/login/"
+              class="btn md:text-base text-xs font-medium hover:text-light-grey hover:bg-secondary transition text-white border-[1px] border-white hover:border-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">
+              Login</a>
           </li>
 
           <li>
-            <a href="#"
-              class="btn md:text-base text-xs font-medium hover:text-white hover:bg-transparent transition text-light-grey border-[1px] border-secondary hover:border-white bg-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">Register</a>
+            <a href="<?php echo home_url(); ?>/register/"
+              class="btn md:text-base text-xs font-medium hover:text-white hover:bg-transparent transition text-light-grey border-[1px] border-secondary hover:border-white bg-secondary xl:px-6 lg:px-4 md:px-6  px-4 py-2 rounded-large inline-block">
+              Register</a>
           </li>
-
+<?php } ?>
           <li class="lg:hidden">
             <span onclick="openMenu()" class="text-2xl font-semibold lg:hidden cursor-pointer text-white">&#9776;</span>
 
