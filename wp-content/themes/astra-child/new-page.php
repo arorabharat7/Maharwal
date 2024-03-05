@@ -75,7 +75,7 @@ jQuery(document).ready(function() {
             success: function(response) {
                 // If removal is successful, update the selected items list and total amount
                 location.reload();
-               
+                
             },
             error: function(xhr, status, error) {
                 console.error(error);
@@ -84,5 +84,3 @@ jQuery(document).ready(function() {
     });
 });
 </script>
-
-<?php get_footer(); ?>

@@ -8,7 +8,7 @@ get_header(); ?>
 
 
 <div id="form-container">
-    <form id="custom-form" method="post" action="http://localhost/maharwal-1/new-page/">
+    <form id="custom-form" method="post" action="<?php echo home_url(); ?>/new-page/">
         <label for="price-range">Select Price Range:</label>
         <select id="price-range" name="price-range">
             <option value="1" selected>100-200</option>
