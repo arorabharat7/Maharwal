@@ -238,7 +238,7 @@ jQuery(document).ready(function() {
     var priceRange = newPriceRange || jQuery('#price-range').val();
 
     // Log the updated price range value
-    console.log(priceRange);
+    //console.log(priceRange);
 
     // Iterate through each checkbox
     jQuery('input[name="items[]"]').each(function() {
@@ -257,8 +257,8 @@ jQuery(document).ready(function() {
 
             // Update the value of the checkbox
             jQuery(this).val(newPrice.toFixed(2));
-
-            jQuery(this).next('label').text('Item ' + jQuery(this).val() + ' - $' + newPrice.toFixed(2));
+            jQuery('.' + itemId).text('₹' + newPrice.toFixed(2));
+           // jQuery(this).next('label').text(' ' + jQuery(this).val() + ' - $' + newPrice.toFixed(2));
         // }
     });
 }
@@ -283,12 +283,15 @@ jQuery(document).ready(function() {
 
   // Submit form
   jQuery('#custom-form').submit(function(event) {
+    //event.preventDefault();
       // Get selected items and their prices
       var selectedItems = [];
       jQuery('input[name="items[]"]:checked').each(function() {
-          var itemName = jQuery(this).attr('id');
+        var itemName = jQuery(this).next('label').text().trim();
           var itemPrice = parseFloat(jQuery(this).val());
-          selectedItems.push({ name: itemName, price: itemPrice });
+
+          var category = jQuery(this).data('category');
+          selectedItems.push({category: category, name: itemName, price: itemPrice });
       });
 
       // Set the value of the hidden input field
