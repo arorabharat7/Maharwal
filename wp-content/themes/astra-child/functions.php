@@ -398,7 +398,7 @@ if(isset($_POST['id'])) {
 
     // Output the updated selected items list and total amount
     $response = array(
-        'sucess' => 'sucess',
+        'success' => 'success',
         'selectedItems' => $selectedItems,
         'totalPrice' => $totalPrice,
     );
