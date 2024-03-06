@@ -289,9 +289,9 @@ jQuery(document).ready(function() {
       jQuery('input[name="items[]"]:checked').each(function() {
         var itemName = jQuery(this).next('label').text().trim();
           var itemPrice = parseFloat(jQuery(this).val());
-
+          var itemId = jQuery(this).attr('id');
           var category = jQuery(this).data('category');
-          selectedItems.push({category: category, name: itemName, price: itemPrice });
+          selectedItems.push({id: itemId, category: category, name: itemName, price: itemPrice });
       });
 
       // Set the value of the hidden input field

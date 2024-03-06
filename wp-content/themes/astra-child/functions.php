@@ -367,16 +367,21 @@ function remove_item_callback() {
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    $index = $_POST['index'];
-    
-    // Retrieve selected items from session
-    $dataArray = isset($_SESSION['selectedItems']) ? json_decode(stripslashes($_SESSION['selectedItems']), true) : [];
-    $selectedItems = isset($_SESSION['selectedItems']) ? $dataArray : [];
-    
+   // Check if 'id' is set in $_POST
+if(isset($_POST['id'])) {
+    // Retrieve the id from $_POST
+    $idToRemove = $_POST['id'];
 
-    // Remove the item at the specified index
-    if (isset($selectedItems[$index])) {
-        unset($selectedItems[$index]);
+    // Retrieve selected items from session
+    $selectedItems = isset($_SESSION['selectedItems']) ? json_decode($_SESSION['selectedItems'], true) : [];
+
+    // Loop through the selected items to find the item with the specified id
+    foreach ($selectedItems as $key => $item) {
+        if ($item['id'] === $idToRemove) {
+            // Remove the item with the specified id
+            unset($selectedItems[$key]);
+            break; // No need to continue looping once the item is found and removed
+        }
     }
 
     // Update the selected items session variable
@@ -388,25 +393,27 @@ function remove_item_callback() {
         $totalPrice += $item['price'];
     }
 
+    // Update the total price in session
     $_SESSION['totalPrice'] = $totalPrice;
 
     // Output the updated selected items list and total amount
     $response = array(
-        'selectedItems' => generate_selected_items_html($selectedItems),
+        'selectedItems' => $selectedItems,
         'totalPrice' => $totalPrice,
     );
 
     echo json_encode($response);
+}
 
-    // Always use exit() after echoing JSON data to stop further processing
-    exit();
+// Always use exit() after echoing JSON data to stop further processing
+exit();
 }
 
 
 function generate_selected_items_html($selectedItems) {
     $html = '<ul>';
     foreach ($selectedItems as $index => $item) {
-        $html .= '<li>' . $item['name'] . ' - $' . $item['price'] . ' <button class="remove-item" data-index="' . $index . '">Remove</button></li>';
+        $html .= '<li>' . $item['name'] . ' - $' . $item['price'] . ' <button class="remove-item" data-index="' . $item['id'] . '">Remove</button></li>';
     }
     $html .= '</ul>';
     return $html;

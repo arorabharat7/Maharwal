@@ -38,7 +38,7 @@ $dataArray = json_decode(stripslashes($selectedItems), true);
 if ($dataArray === null) {
     $dataArray = []; // Set empty array if JSON decoding fails
 }
-//print_r($selectedItems)
+print_r($selectedItems)
 ?>
 
 
@@ -100,7 +100,7 @@ if ($dataArray === null) {
                                         <div class="flex items-center justify-between md:mb-5 mb-2.5">
                                             <div class="flex items-center gap-2.5">
                                                 <button type="submit" class="remove-item md:text-xl text-sm font-semibold leading-none py-1 px-1.5 rounded text-white bg-[#FF5454] input-button"
-                                                data-index="<?php echo $index; ?>"><i class="fa-solid fa-xmark"></i></button>
+                                                data-index="<?php echo $item['id']; ?>"><i class="fa-solid fa-xmark"></i></button>
                                                 <label for="Drink" class="md:text-base text-xs font-semibold text-dark-grey uppercase"><?php echo $item['name']; ?>
                                                 </label>
                                             </div>
@@ -142,7 +142,7 @@ if ($dataArray === null) {
         // Click event listener for remove button
         jQuery(document).on('click', '.remove-item', function() {
             // Get the index of the item to be removed from the button's data attribute
-            var index = jQuery(this).data('index');
+            var id = jQuery(this).data('index');
 
             // Send an AJAX request to the server to handle item removal
             jQuery.ajax({
@@ -150,7 +150,7 @@ if ($dataArray === null) {
                 type: 'POST',
                 data: {
                     action: 'remove_item',
-                    index: index,
+                    id: id,
                 },
                 success: function(response) {
                     // If removal is successful, update the selected items list and total amount
