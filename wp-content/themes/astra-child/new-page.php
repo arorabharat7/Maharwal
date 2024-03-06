@@ -152,9 +152,13 @@ print_r($selectedItems)
                     action: 'remove_item',
                     id: id,
                 },
+                dataType: 'json', 
                 success: function(response) {
+                    console.log(response.success)
+                    if (response && response.success === "success") {
                     // If removal is successful, update the selected items list and total amount
                     location.reload();
+                    }
 
                 },
                 error: function(xhr, status, error) {

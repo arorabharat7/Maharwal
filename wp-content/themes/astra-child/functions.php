@@ -367,15 +367,13 @@ function remove_item_callback() {
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-   // Check if 'id' is set in $_POST
-if(isset($_POST['id'])) {
-    // Retrieve the id from $_POST
     $idToRemove = $_POST['id'];
-
+    
     // Retrieve selected items from session
-    $selectedItems = isset($_SESSION['selectedItems']) ? json_decode($_SESSION['selectedItems'], true) : [];
+    $dataArray = isset($_SESSION['selectedItems']) ? json_decode(stripslashes($_SESSION['selectedItems']), true) : [];
+    $selectedItems = isset($_SESSION['selectedItems']) ? $dataArray : [];
+    
 
-    // Loop through the selected items to find the item with the specified id
     foreach ($selectedItems as $key => $item) {
         if ($item['id'] === $idToRemove) {
             // Remove the item with the specified id
@@ -383,7 +381,6 @@ if(isset($_POST['id'])) {
             break; // No need to continue looping once the item is found and removed
         }
     }
-
     // Update the selected items session variable
     $_SESSION['selectedItems'] = json_encode(array_values($selectedItems));
 
@@ -393,20 +390,19 @@ if(isset($_POST['id'])) {
         $totalPrice += $item['price'];
     }
 
-    // Update the total price in session
     $_SESSION['totalPrice'] = $totalPrice;
 
     // Output the updated selected items list and total amount
     $response = array(
+        'success' => 'success',
         'selectedItems' => $selectedItems,
         'totalPrice' => $totalPrice,
     );
 
     echo json_encode($response);
-}
 
-// Always use exit() after echoing JSON data to stop further processing
-exit();
+    // Always use exit() after echoing JSON data to stop further processing
+    exit();
 }
 
 
