@@ -153,8 +153,10 @@ print_r($selectedItems)
                     id: id,
                 },
                 success: function(response) {
+                    if (response.success === "success") {
                     // If removal is successful, update the selected items list and total amount
                     location.reload();
+                    }
 
                 },
                 error: function(xhr, status, error) {
