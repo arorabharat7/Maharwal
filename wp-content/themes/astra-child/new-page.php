@@ -38,7 +38,7 @@ $dataArray = json_decode(stripslashes($selectedItems), true);
 if ($dataArray === null) {
     $dataArray = []; // Set empty array if JSON decoding fails
 }
-print_r($selectedItems)
+//print_r($selectedItems)
 ?>
 
 
