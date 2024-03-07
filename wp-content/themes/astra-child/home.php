@@ -161,18 +161,18 @@ $events_services_description = get_field('events_services_description');
               $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
               if ($featured_image_url) { ?>
                 <a href="<?php the_permalink(); ?>">
-                  <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full ">
+                  <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full rounded-[15px]">
                 </a>
               <?php } ?>
 
-              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:height-[315px] height-[250px] rounded-tl-full rounded-tr-full text-center w-3/4 object-cover">
+              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4 ">
 
                 <?php
                 // Get the featured image URL
 
                 if ($services_listing_page_center_images) { ?>
 
-                  <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full ">
+                  <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:height-[315px] height-[250px] rounded-tl-full rounded-tr-full  object-cover">
 
                 <?php } ?>
                 <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2"><?php the_title(); ?></h3>
