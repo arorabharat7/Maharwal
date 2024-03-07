@@ -48,13 +48,13 @@ get_header(); ?>
                     $query->the_post();
                     $services_listing_page_center_images = get_field('services_listing_page_center_images');
             ?>
-                    <div class="lg:col-span-6 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:!rounded-[30px] before:bg-[rgb(0,0,0,50%)]">
+                    <div class="lg:col-span-6 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:!rounded-[30px] before:bg-[rgb(0,0,0,50%)] xl:height-[945px] lg:height-[725px] md:height-[535px] sm:height-[900px] height-[500px]">">
                         <?php
                         // Get the featured image URL
                         $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         if ($featured_image_url) { ?>
                             <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10">
+                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10 xl:height-[945px] lg:height-[725px] md:height-[535px] sm:height-[900px] height-[500px]">
                             </a>
                         <?php } ?>
                         <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4"><a href="<?php the_permalink(); ?>">
@@ -64,7 +64,7 @@ get_header(); ?>
                                 
                                 if ($services_listing_page_center_images) { ?>
 
-                                    <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10">
+                                    <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full mt-6 xl:mb-20 lg:mb-14 mb-10 rounded-tl-full rounded-tr-full xl:height-[620px] lg:height-[475px] md:height-[350px] sm:height-[597px] height-[330px]">
 
                                 <?php } ?>
                             </a>
