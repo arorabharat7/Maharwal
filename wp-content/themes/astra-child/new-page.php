@@ -97,10 +97,11 @@ if ($dataArray === null) {
                                     <h3 class="md:text-3xl text-2xl bagdoll-display text-primary lg:mb-8 md:mb-6 mb-4">
                                         <?php echo $category; ?></h3>
                                     <?php foreach ($items as $index => $item) { ?>
-                                        <div class="flex items-center justify-between md:mb-5 mb-2.5">
+                                        <div class="flex items-center justify-between md:mb-5 mb-2.5 whole_list_each">
                                             <div class="flex items-center gap-2.5">
-                                                <button type="submit" class="remove-item md:text-xl text-sm font-semibold leading-none py-1 px-1.5 rounded text-white bg-[#FF5454] input-button"
-                                                data-index="<?php echo $item['id']; ?>"><i class="fa-solid fa-xmark"></i></button>
+                                                <button type="submit" class="remove-item md:text-xl text-sm font-semibold leading-none py-1 px-1.5 
+                                                rounded text-white bg-[#FF5454] input-button" data-index="<?php echo $item['id']; ?>" data-price="<?php echo $item['price']; ?>">
+                                                    <i class="fa-solid fa-xmark"></i></button>
                                                 <label for="Drink" class="md:text-base text-xs font-semibold text-dark-grey uppercase"><?php echo $item['name']; ?>
                                                 </label>
                                             </div>
@@ -109,28 +110,27 @@ if ($dataArray === null) {
                                 <?php }
                                 } ?>
 
-                               
+
                                 <?php
                                 // }
                                 ?>
-                                <h2 class="md:text-3xl text-2xl bagdoll-display text-primary lg:mb-8 md:mb-6 mb-4">
+                                <h2 data-price="<?php echo $totalPrice; ?>" id="total_pricing" class="md:text-3xl text-2xl bagdoll-display text-primary lg:mb-8 md:mb-6 mb-4">
                                     Total Amount: <span id="total-amount" class="md:text-3xl text-2xl bagdoll-display text-primary lg:mb-8 md:mb-6 mb-4">
                                         <?php echo $totalPrice; ?></span></h2>
-                                
+
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="text-center bg-white relative">
-          <a href="#" class="btn md:relative md:left-auto md:top-0 md:translate-x-0 fixed bottom-16 left-[50%] shadow-3xl md:w-auto sm:w-[40%] w-[65%] m-auto translate-x-[-50%] z-20 md:text-sm text-xs font-semibold hover:text-primary hover:bg-white transition text-white bg-primary border border-primary lg:px-10 md:px-5 px-3 lg:py-5 md:py-3 py-2 rounded-large inline-block uppercase whitespace-nowrap">DOWNLOAD WITH PRICE</a>
-          <a href="#" class="btn md:relative md:left-auto md:top-0 md:translate-x-0 fixed bottom-6 left-[50%] shadow-3xl md:w-auto sm:w-[40%] w-[65%] m-auto translate-x-[-50%] z-20 md:text-sm text-xs font-semibold hover:text-primary hover:bg-white transition text-white bg-primary border border-primary lg:px-10 md:px-5 px-3 lg:py-5 md:py-3 py-2 rounded-large inline-block uppercase whitespace-nowrap md:ml-2">DOWNLOAD WITHOUT PRICE</a>
-          <div
-            class="relative md:block hidden before:content-[''] before:absolute before:h-full before:w-full before:left-0 before:top-0 before:bg-gradient-to-b before:from-white before:to-[rgb(255, 255, 255, 0.2)]">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_venues-bottom.webp" alt="venues-bottom" class="w-full">
-          </div>
-  
-        </div>
+                    <a href="#" class="btn md:relative md:left-auto md:top-0 md:translate-x-0 fixed bottom-16 left-[50%] shadow-3xl md:w-auto sm:w-[40%] w-[65%] m-auto translate-x-[-50%] z-20 md:text-sm text-xs font-semibold hover:text-primary hover:bg-white transition text-white bg-primary border border-primary lg:px-10 md:px-5 px-3 lg:py-5 md:py-3 py-2 rounded-large inline-block uppercase whitespace-nowrap">DOWNLOAD WITH PRICE</a>
+                    <a href="#" class="btn md:relative md:left-auto md:top-0 md:translate-x-0 fixed bottom-6 left-[50%] shadow-3xl md:w-auto sm:w-[40%] w-[65%] m-auto translate-x-[-50%] z-20 md:text-sm text-xs font-semibold hover:text-primary hover:bg-white transition text-white bg-primary border border-primary lg:px-10 md:px-5 px-3 lg:py-5 md:py-3 py-2 rounded-large inline-block uppercase whitespace-nowrap md:ml-2">DOWNLOAD WITHOUT PRICE</a>
+                    <div class="relative md:block hidden before:content-[''] before:absolute before:h-full before:w-full before:left-0 before:top-0 before:bg-gradient-to-b before:from-white before:to-[rgb(255, 255, 255, 0.2)]">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_venues-bottom.webp" alt="venues-bottom" class="w-full">
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -139,10 +139,35 @@ if ($dataArray === null) {
 
 <script>
     jQuery(document).ready(function() {
+
+        jQuery('.remove-item').click(function(){
+            var removeitemprice = parseFloat(jQuery(this).data('price')); // Get the price of the item to be removed
+            var totalamount = parseFloat(jQuery('#total_pricing').data('price')); // Get the current total price
+            var newtotalamount = totalamount - removeitemprice; // Calculate the new total price
+
+            jQuery('#total_pricing').data('price', newtotalamount); // Update the data-price attribute
+            jQuery('#total_pricing #total-amount').text(newtotalamount); // Update the displayed total amount
+
+            // Remove the item from the UI
+            jQuery(this).closest('.whole_list_each').remove(); // Assuming each item has a container with class 'flex'
+        });
         // Click event listener for remove button
         jQuery(document).on('click', '.remove-item', function() {
             // Get the index of the item to be removed from the button's data attribute
             var id = jQuery(this).data('index');
+
+
+            // var removeitemprice = jQuery(this).data('price');
+            // var totalamount = jQuery('#total_pricing').data('price');
+            // var newtotalamount = totalamount - removeitemprice ;
+
+            // jQuery("#total_pricing").attr("data-price", newtotalamount);
+
+            // // Update the displayed total price
+            // jQuery("#total_pricing").text('Total Amount:'+newtotalamount);
+            // console.log(newtotalamount);
+
+
 
             // Send an AJAX request to the server to handle item removal
             jQuery.ajax({
@@ -152,13 +177,13 @@ if ($dataArray === null) {
                     action: 'remove_item',
                     id: id,
                 },
-                dataType: 'json', 
+                dataType: 'json',
                 success: function(response) {
-                    console.log(response.success)
-                    if (response && response.success === "success") {
-                    // If removal is successful, update the selected items list and total amount
-                    location.reload();
-                    }
+                    // console.log(response.success)
+                    // if (response && response.success === "success") {
+                    // // If removal is successful, update the selected items list and total amount
+                    // location.reload();
+                    // }
 
                 },
                 error: function(xhr, status, error) {
