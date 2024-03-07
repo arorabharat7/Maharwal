@@ -1118,6 +1118,10 @@ video {
   height: 100vh;
 }
 
+.h-\[550px\] {
+  height: 550px;
+}
+
 .min-h-\[200px\] {
   min-height: 200px;
 }
@@ -3459,14 +3463,13 @@ body{
   position: relative;
   padding-right: 20px;
   display: block;
+  background-image: url(https://dmprojects.xyz/maharwal/wp-content/uploads/2024/02/maharwal_right-arrow.svg);
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 
-#subscribe input.noptin-form-submit:after {
-  content: url(https://dmprojects.xyz/maharwal/wp-content/uploads/2024/02/maharwal_right-arrow.svg);
-  position: absolute;
-  right: 0;
-  width: 100px;
-  height: 50px;
+.noptin-form-id-190{
+  width: 100%;
 }
 
 .fancybox-slide--image .fancybox-close-small {
@@ -3529,6 +3532,11 @@ body{
   transform: translate(-50% , -50%) !important;
   left: 50% !important;
   top: 50% !important;
+}
+
+.category_btn .focus{
+  background-image: linear-gradient(90deg, rgba(55,104,144,1) 0%, rgba(55,104,144,1) 100%, rgba(58,123,163,1) 100%);
+  color: #fff;
 }
 
 @media screen and (max-width:1024px){
@@ -3707,6 +3715,13 @@ body{
   background-color:transparent;
 }
 
+.about-lift iframe{
+  height: 440px;
+  border-radius: 16px;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
 @media screen and (max-width:991px){
   .comment-respond .ast-comment-formwrap .ast-width-lg-33{
     width:100%;
@@ -3723,6 +3738,11 @@ body{
 
   .user-comments section.ast-comment-content.comment {
     padding-left: 62px;
+  }
+
+  .about-lift iframe{
+    height: 320px;
+    margin-top: 2rem;
   }
 }
 
@@ -3754,6 +3774,29 @@ body{
 
   .user-comments .ast-comment-edit-reply-wrap .comment-reply-link {
     font-size: 13px !important;
+  }
+
+  .noptin-form-footer .noptin-form-fields{
+    display: flex;
+    align-items: center;
+  }
+
+  #subscribe{
+    height: 60px;
+  }
+
+  #subscribe input.noptin-form-submit {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+
+  .about-lift iframe{
+    height: 200px;
+    margin-top: 1.2rem;
+  }
+
+  .noptin-form-footer .noptin-optin-field-wrapper:not(.noptin-optin-field-wrapper-hidden) {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -4137,8 +4180,16 @@ body{
     grid-column: span 6 / span 6;
   }
 
+  .sm\:mt-11 {
+    margin-top: 2.75rem;
+  }
+
   .sm\:block {
     display: block;
+  }
+
+  .sm\:h-\[900px\] {
+    height: 900px;
   }
 
   .sm\:w-\[40\%\] {
@@ -4355,6 +4406,10 @@ body{
 
   .md\:h-full {
     height: 100%;
+  }
+
+  .md\:h-\[530px\] {
+    height: 530px;
   }
 
   .md\:\!w-auto {
@@ -4832,6 +4887,10 @@ body{
 
   .lg\:h-\[900px\] {
     height: 900px;
+  }
+
+  .lg\:h-\[455px\] {
+    height: 455px;
   }
 
   .lg\:w-2\/4 {

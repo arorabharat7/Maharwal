@@ -154,7 +154,7 @@ $events_services_description = get_field('events_services_description');
           $query->the_post();
           $services_listing_page_center_images = get_field('services_listing_page_center_images');
       ?>
-          <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)]">
+          <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[550px]">
             <a href="<?php the_permalink(); ?>">
               <?php
               // Get the featured image URL
@@ -344,7 +344,7 @@ $our_teams_main_heading = get_field('our_teams_main_heading');
       ?>
       <?php echo $request_a_quote_details; ?>
 
-      <a href="<?php echo $request_a_quote_btn_url; ?>" class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-light-black bg-secondary px-7 md:py-5 py-4 rounded-large inline-block uppercase">
+      <a href="<?php echo $request_a_quote_btn_url; ?>" class="sm:mt-11 mt-8 btn text-sm font-semibold hover:text-primary hover:bg-white transition text-light-black bg-secondary px-7 md:py-5 py-4 rounded-large inline-block uppercase">
         <?php echo $request_a_quote_btn_text; ?> <i class="fa-solid fa-arrow-right ml-2"></i></a>
     </div>
   </div>
