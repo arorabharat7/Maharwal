@@ -154,7 +154,7 @@ $events_services_description = get_field('events_services_description');
           $query->the_post();
           $services_listing_page_center_images = get_field('services_listing_page_center_images');
       ?>
-          <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[550px]">
+          <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[460px] object-cover">
             <a href="<?php the_permalink(); ?>">
               <?php
               // Get the featured image URL
@@ -165,7 +165,7 @@ $events_services_description = get_field('events_services_description');
                 </a>
               <?php } ?>
 
-              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4">
+              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] lg:height-[315px] height-[250px] rounded-tl-full rounded-tr-full text-center w-3/4 object-cover">
 
                 <?php
                 // Get the featured image URL
