@@ -48,7 +48,7 @@ get_header(); ?>
                     $query->the_post();
                     $services_listing_page_center_images = get_field('services_listing_page_center_images');
             ?>
-                    <div class="lg:col-span-6 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:!rounded-[30px] before:bg-[rgb(0,0,0,50%)] xl:h-[945px] lg:h-[725px] md:h-[535px] sm:h-[900px] h-[500px]">">
+                    <div class="lg:col-span-6 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:!rounded-[30px] before:bg-[rgb(0,0,0,50%)] xl:h-[945px] lg:h-[725px] md:h-[535px] sm:h-[900px] h-[500px]">
                         <?php
                         // Get the featured image URL
                         $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
