@@ -575,3 +575,6 @@ width: 100%;
 .uwp_login_page #primary, .uwp_forgot_page #primary, .uwp_register_page #primary{
   display: none;
 }
+.noptin-form-footer .noptin-form-submit:focus, .noptin-form-footer .noptin-form-submit:hover {
+  box-shadow: none;
+}

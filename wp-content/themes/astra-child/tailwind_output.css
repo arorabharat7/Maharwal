@@ -1110,6 +1110,10 @@ video {
   height: 14px;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-\[460px\] {
   height: 460px;
 }
@@ -3816,6 +3820,10 @@ body{
   display: none;
 }
 
+.noptin-form-footer .noptin-form-submit:focus, .noptin-form-footer .noptin-form-submit:hover {
+  box-shadow: none;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -4895,6 +4903,10 @@ body{
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:h-\[315px\] {
+    height: 315px;
   }
 
   .lg\:h-\[455px\] {
