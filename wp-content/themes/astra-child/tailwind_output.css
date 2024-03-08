@@ -3380,7 +3380,7 @@ video {
 
 body{
   font-family: 'montserrat';
-  background-color: #F6F0EA;
+  background-color: #F6F0EA !important;
 }
 
 .bagdoll-display{
