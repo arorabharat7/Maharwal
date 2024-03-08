@@ -138,7 +138,7 @@ $how_it_works_main_heading = get_field('how_it_works_main_heading');
         ?>
             <div class="lg:col-span-4 sm:col-span-6 col-span-12 relative flex gap-4">
 
-                <div class="lg:text-[70px] text-5xl leading-none text-before">
+                <div class="lg:text-[70px] text-5xl leading-none before-text">
                 01
                 </div>
 <div>
