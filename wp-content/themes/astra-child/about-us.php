@@ -137,7 +137,7 @@ $how_it_works_main_heading = get_field('how_it_works_main_heading');
         ?>
             <div class="lg:col-span-4 sm:col-span-6 col-span-12 relative lg:pl-20 pl-14">
 
-                <div class="before:content-['0<?php echo $i ; ?>'] lg:before:text-[70px] text-5xl before:absolute before:leading-none before-text before:left-0 before:top-0">
+                <div class="before:content-['01'] lg:before:text-[70px] text-5xl before:absolute before:leading-none before-text before:left-0 before:top-0">
                 </div>
 
                 <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display md:mb-4 mb-2 border-b border-primary md:pb-2.5 pb-1 w-[85%]">
