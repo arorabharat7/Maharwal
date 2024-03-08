@@ -4076,6 +4076,11 @@ body{
   content: var(--tw-content);
 }
 
+.before\:content-\[\'01\'\]::before {
+  --tw-content: '01';
+  content: var(--tw-content);
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
