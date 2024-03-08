@@ -150,11 +150,42 @@ $events_services_description = get_field('events_services_description');
 
       // The Loop
       if ($query->have_posts()) {
+        $i = 1;
         while ($query->have_posts()) {
           $query->the_post();
           $services_listing_page_center_images = get_field('services_listing_page_center_images');
       ?>
+      <?php if($i% 2 == 0){ ?>
           <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[460px] object-cover">
+            <a href="<?php the_permalink(); ?>">
+              <?php
+              // Get the featured image URL
+              $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+            
+              if ($featured_image_url) { ?>
+                <a href="<?php the_permalink(); ?>">
+                  <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full rounded-[15px] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[460px]">
+                </a>
+              <?php } ?>
+
+              <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4 ">
+
+                <?php
+                // Get the featured image URL
+
+                if ($services_listing_page_center_images) { ?>
+
+                  <img src="<?php echo $services_listing_page_center_images['url']; ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:h-[315px] h-[250px] rounded-bl-full rounded-br-full  object-cover">
+
+                <?php } ?>
+                <h3 class="md:text-3xl text-2xl text-white bagdoll-display xl:my-5 mt-3 mb-2"><?php the_title(); ?></h3>
+                <a href="<?php the_permalink(); ?>" class="text-xs text-white font-medium relative after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary lg:after:h-7 after:h-5 lg:after:w-7 after:w-5 after:rounded-full after:-z-10">LEARN
+                  MORE</a>
+              </div>
+            </a>
+          </div>
+          <?php }else{ ?>
+            <div class="lg:col-span-3 md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0 before:rounded-[15px] before:bg-[rgb(0,0,0,50%)] lg:h-[455px] md:h-[530px] sm:h-[900px] h-[460px] object-cover">
             <a href="<?php the_permalink(); ?>">
               <?php
               // Get the featured image URL
@@ -182,7 +213,7 @@ $events_services_description = get_field('events_services_description');
               </div>
             </a>
           </div>
-      <?php
+      <?php }
         }
         /* Restore original Post Data */
         wp_reset_postdata();
