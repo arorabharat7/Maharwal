@@ -136,16 +136,19 @@ $how_it_works_main_heading = get_field('how_it_works_main_heading');
                     $how_it_works_all_details_description = get_sub_field('how_it_works_all_details_description');
                     $how_it_works_all_details_number = get_sub_field('how_it_works_all_details_number');
         ?>
-            <div class="lg:col-span-4 sm:col-span-6 col-span-12 relative lg:pl-20 pl-14">
+            <div class="lg:col-span-4 sm:col-span-6 col-span-12 relative flex gap-4">
 
-                <div class="before:content-['<?php echo $how_it_works_all_details_number; ?>'] lg:before:text-[70px] text-5xl before:absolute before:leading-none before-text before:left-0 before:top-0">
+                <div class="before:content-['<?php echo $how_it_works_all_details_number; ?>'] lg:text-[70px] text-5xl absolute leading-none text-before  left-0 top-0">
+                01
                 </div>
-
-                <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display md:mb-4 mb-2 border-b border-primary md:pb-2.5 pb-1 w-[85%]">
+<div>
+<h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display md:mb-4 mb-2 border-b border-primary md:pb-2.5 pb-1 w-[85%]">
                 <?php echo $how_it_works_all_details_heading; ?>
                 </h3>
                 <p class="xl:text-lg md:text-base text-sm text-grey font-medium">
                 <?php echo $how_it_works_all_details_description; ?></p>
+</div>
+            
 
             </div>
             <?php $i++; endwhile;
