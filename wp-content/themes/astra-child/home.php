@@ -295,7 +295,7 @@ $satisfaction_guaranteed_description = get_field('satisfaction_guaranteed_descri
     ?>
         <div class="md:col-span-6 col-span-12 relative before:content-[''] before:absolute  before:h-[100%] before:w-full before:left-0 before:bottom-0   before:bg-[rgb(0,0,0,40%)] ">
           <a href="<?php echo $menus_and_venus_all_details_page_url; ?>">
-            <img src=" <?php echo $menus_and_venus_all_details_main_image['url']; ?>" width=" <?php echo $menus_and_venus_all_details_main_image['width']; ?>" height=" <?php echo $menus_and_venus_all_details_main_image['height']; ?>" alt=" <?php echo $menus_and_venus_all_details_main_image['alt']; ?>">
+            <img src=" <?php echo $menus_and_venus_all_details_main_image['url']; ?>" width=" <?php echo $menus_and_venus_all_details_main_image['width']; ?>" height=" <?php echo $menus_and_venus_all_details_main_image['height']; ?>" class="w-full" alt=" <?php echo $menus_and_venus_all_details_main_image['alt']; ?>">
 
             <div class="absolute top-[50%] left-[50%]  translate-x-[-50%] translate-y-[-50%]">
               <div class="flex gap-2 items-center justify-center xl:mb-7 lg:mb-5 mb-4">
