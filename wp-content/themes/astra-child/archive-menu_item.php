@@ -70,7 +70,7 @@ get_header(); ?>
               
             <h2><a href="<?php the_permalink(); ?>"
                 class="lg:text-[42px] md:text-3xl text-2xl text-primary bagdoll-display lg:mt-8 mt-5 lg:mb-20 mb-16 block">
-                <?php echo the_title(); ?>/a></h2>
+                <?php echo the_title(); ?></a></h2>
 
             <div
               class="lg:w-28 lg:h-28 w-20 h-20 bg-[#F6F0EA] rounded-full flex justify-center items-center absolute left-[50%] translate-x-[-50%] lg:bottom-[-55px] bottom-[-40px]">
