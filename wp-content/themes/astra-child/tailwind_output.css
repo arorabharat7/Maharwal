@@ -2204,6 +2204,10 @@ video {
   border-bottom-left-radius: 20px;
 }
 
+.rounded-bl-full {
+  border-bottom-left-radius: 9999px;
+}
+
 .rounded-bl-xl {
   border-bottom-left-radius: 0.75rem;
 }
@@ -2214,6 +2218,10 @@ video {
 
 .rounded-br-\[20px\] {
   border-bottom-right-radius: 20px;
+}
+
+.rounded-br-full {
+  border-bottom-right-radius: 9999px;
 }
 
 .rounded-ee {
