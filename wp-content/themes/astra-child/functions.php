@@ -415,3 +415,73 @@ function generate_selected_items_html($selectedItems) {
     return $html;
 }
 
+
+
+
+//menu cpt
+
+// Register custom post type for menu items
+function register_menu_item_post_type() {
+    $labels = array(
+        'name'               => __('Menu Items'),
+        'singular_name'      => __('Menu Item'),
+        'add_new'            => __('Add New'),
+        'add_new_item'       => __('Add New Menu Item'),
+        'edit_item'          => __('Edit Menu Item'),
+        'new_item'           => __('New Menu Item'),
+        'view_item'          => __('View Menu Item'),
+        'search_items'       => __('Search Menu Items'),
+        'not_found'          => __('No menu items found'),
+        'not_found_in_trash' => __('No menu items found in Trash'),
+        'parent_item_colon'  => ''
+    );
+
+    $args = array(
+        'labels'              => $labels,
+        'public'              => true,
+        'publicly_queryable'  => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'query_var'           => true,
+        'rewrite'             => array('slug' => 'menu-item'),
+        'capability_type'     => 'post',
+        'has_archive'         => true,
+        'hierarchical'        => false,
+        'menu_position'       => null,
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt'),
+        'taxonomies'          => array('menu') // Add the 'menu' taxonomy to this custom post type
+    );
+
+    register_post_type('menu_item', $args);
+}
+add_action('init', 'register_menu_item_post_type');
+
+// Register custom taxonomy for menu
+function register_menu_taxonomy() {
+    $labels = array(
+        'name'              => _x('Menu', 'taxonomy general name'),
+        'singular_name'     => _x('Menu', 'taxonomy singular name'),
+        'search_items'      => __('Search Menu'),
+        'all_items'         => __('All Menus'),
+        'parent_item'       => __('Parent Menu'),
+        'parent_item_colon' => __('Parent Menu:'),
+        'edit_item'         => __('Edit Menu'),
+        'update_item'       => __('Update Menu'),
+        'add_new_item'      => __('Add New Menu'),
+        'new_item_name'     => __('New Menu Name'),
+        'menu_name'         => __('Menu')
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'menu')
+    );
+
+    register_taxonomy('menu', array('menu_item'), $args);
+}
+add_action('init', 'register_menu_taxonomy');
+    
