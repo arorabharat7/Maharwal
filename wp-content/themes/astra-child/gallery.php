@@ -58,9 +58,7 @@ get_header(); ?>
               $category_name = get_sub_field('category_name');
               $category_slug = get_sub_field('category_slug');
           ?>
-              <button id="<?php echo $category_slug; ?>" id="<?php echo $category_slug; ?>" 
-    
-              class="btn  lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">
+              <button id="<?php echo $category_slug; ?>" class="btn  lg:py-5 md:py-4 py-2 lg:px-11 md:px-7 px-[14px] md:text-sm text-xs font-semibold text-light-grey rounded-large uppercase focus:outline-none focus:shadow-outline-blue transition-all duration-300 inline-block whitespace-nowrap">
                 <?php echo $category_name; ?></button>
           <?php endwhile;
           endif; ?>

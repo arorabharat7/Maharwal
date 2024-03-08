@@ -198,11 +198,7 @@ var swiper = new Swiper(".testimonial-slider", {
 
   jQuery(document).ready(function () {
 
-
- 
-  
-
-    var btns = jQuery('.photo-gallery .category_btn .btn').click(function() {
+   var btns = jQuery('.photo-gallery .category_btn .btn').click(function() {
       console.log("Asdasd")
       if (this.id == 'all-photos') {
         jQuery('#parent > div').fadeIn(450);
@@ -221,7 +217,17 @@ var swiper = new Swiper(".testimonial-slider", {
 
 
 
-
+  jQuery(document).ready(function () {
+    var btns = jQuery('.menu-beverage .category_btn .btn').not('#all-photos').click(function() {
+        console.log("Asdasd");
+        var el = jQuery('.' + this.id).fadeIn(450);
+        jQuery('#parent > div').not(el).hide();
+        btns.removeClass('focus');
+        jQuery(this).addClass('focus');
+    });
+    var firstBtn = jQuery('.menu-beverage .category_btn .btn:not(#all-photos):first-child');
+    firstBtn.addClass('focus').trigger('click');
+});
 
 
 

@@ -691,6 +691,10 @@ video {
   bottom: 1.75rem;
 }
 
+.bottom-\[-40px\] {
+  bottom: -40px;
+}
+
 .bottom-\[-90px\] {
   bottom: -90px;
 }
@@ -879,6 +883,10 @@ video {
   margin-bottom: 3rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -941,6 +949,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }
 
 .mt-10 {
@@ -1094,6 +1106,10 @@ video {
   height: 3.5rem;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
 .h-5 {
   height: 1.25rem;
 }
@@ -1124,6 +1140,10 @@ video {
 
 .h-\[500px\] {
   height: 500px;
+}
+
+.h-\[60px\] {
+  height: 60px;
 }
 
 .h-\[70px\] {
@@ -1166,12 +1186,20 @@ video {
   width: 1.5rem;
 }
 
+.w-7 {
+  width: 1.75rem;
+}
+
 .w-8 {
   width: 2rem;
 }
 
 .w-\[120\%\] {
   width: 120%;
+}
+
+.w-\[130\%\] {
+  width: 130%;
 }
 
 .w-\[14px\] {
@@ -1188,6 +1216,10 @@ video {
 
 .w-\[50px\] {
   width: 50px;
+}
+
+.w-\[60px\] {
+  width: 60px;
 }
 
 .w-\[65\%\] {
@@ -1224,6 +1256,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .flex-shrink {
@@ -1808,9 +1844,18 @@ video {
   gap: 1.5rem;
 }
 
+.gap-\[1px\] {
+  gap: 1px;
+}
+
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+
+.gap-x-5 {
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
 }
 
 .gap-x-6 {
@@ -1820,6 +1865,10 @@ video {
 
 .gap-y-12 {
   row-gap: 3rem;
+}
+
+.gap-y-16 {
+  row-gap: 4rem;
 }
 
 .gap-y-6 {
@@ -2162,6 +2211,10 @@ video {
   border-radius: 56px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-md {
   border-radius: 0.375rem;
 }
@@ -2384,6 +2437,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.bg-\[\#F6F0EA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 240 234 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#FF5454\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 84 84 / var(--tw-bg-opacity));
@@ -2411,6 +2469,10 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-linear {
+  background-image: linear-gradient(90deg, rgba(55,104,144,1) 0%, rgba(55,104,144,1) 100%, rgba(58,123,163,1) 100%);
 }
 
 .decoration-slice {
@@ -2537,6 +2599,10 @@ video {
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .p-4 {
@@ -4591,6 +4657,10 @@ body{
     padding: 0.25rem;
   }
 
+  .md\:p-4 {
+    padding: 1rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -4783,6 +4853,10 @@ body{
     bottom: -370px;
   }
 
+  .lg\:bottom-\[-55px\] {
+    bottom: -55px;
+  }
+
   .lg\:order-1 {
     order: 1;
   }
@@ -4839,6 +4913,10 @@ body{
 
   .lg\:mb-2 {
     margin-bottom: 0.5rem;
+  }
+
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .lg\:mb-3 {
@@ -4933,6 +5011,10 @@ body{
     display: none;
   }
 
+  .lg\:h-28 {
+    height: 7rem;
+  }
+
   .lg\:h-\[315px\] {
     height: 315px;
   }
@@ -4953,8 +5035,16 @@ body{
     height: 900px;
   }
 
+  .lg\:h-\[90px\] {
+    height: 90px;
+  }
+
   .lg\:w-2\/4 {
     width: 50%;
+  }
+
+  .lg\:w-28 {
+    width: 7rem;
   }
 
   .lg\:w-\[25\%\] {
@@ -4975,6 +5065,10 @@ body{
 
   .lg\:w-\[80\%\] {
     width: 80%;
+  }
+
+  .lg\:w-\[90px\] {
+    width: 90px;
   }
 
   .lg\:w-auto {
@@ -5017,6 +5111,15 @@ body{
     gap: 1.25rem;
   }
 
+  .lg\:gap-x-7 {
+    -moz-column-gap: 1.75rem;
+         column-gap: 1.75rem;
+  }
+
+  .lg\:gap-y-28 {
+    row-gap: 7rem;
+  }
+
   .lg\:gap-y-\[70px\] {
     row-gap: 70px;
   }
@@ -5051,6 +5154,10 @@ body{
 
   .lg\:bg-auto {
     background-size: auto;
+  }
+
+  .lg\:p-5 {
+    padding: 1.25rem;
   }
 
   .lg\:px-10 {
@@ -5103,6 +5210,11 @@ body{
     padding-bottom: 3rem;
   }
 
+  .lg\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
   .lg\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -5111,6 +5223,11 @@ body{
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:py-7 {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
   }
 
   .lg\:pb-100 {
