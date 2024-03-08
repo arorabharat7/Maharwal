@@ -5323,6 +5323,10 @@ body{
     line-height: 1.75rem;
   }
 
+  .lg\:text-\[70px\] {
+    font-size: 70px;
+  }
+
   .lg\:\!leading-10 {
     line-height: 2.5rem !important;
   }
