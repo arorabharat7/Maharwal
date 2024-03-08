@@ -214,7 +214,9 @@ $events_services_description = get_field('events_services_description');
             </a>
           </div>
       <?php }
+
       $i++;  }
+
         /* Restore original Post Data */
         wp_reset_postdata();
       } else {
