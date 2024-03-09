@@ -578,3 +578,8 @@ width: 100%;
 .noptin-form-footer .noptin-form-submit:focus, .noptin-form-footer .noptin-form-submit:hover {
   box-shadow: none;
 }
+#ast-scroll-top {
+  background-color: #38769d !important;
+  padding: 11px 4px 8px 4px;
+  border-radius: 100%;
+}
