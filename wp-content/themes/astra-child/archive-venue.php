@@ -132,12 +132,12 @@ get_header(); ?>
                         <?php } ?>
 
                     </div>
-                    <div class="lg:col-span-6 col-span-12 lg:order-2 order-1 xl:px-20 md:px-10 px-5 lg:py-0 md:py-10 py-5  lg:rounded-tl-[20px] lg:rounded-bl-[20px] lg:rounded-br-[0px] rounded-bl-[20px] rounded-br-[20px]">
+                    <div class="lg:col-span-6 col-span-12 lg:order-2 order-1 xl:px-20 md:px-10 px-5 xl:pr-2 md:pr-2 pr-2 lg:py-0 md:py-10 py-5  lg:rounded-tl-[20px] lg:rounded-bl-[20px] lg:rounded-br-[0px] rounded-bl-[20px] rounded-br-[20px]">
                         <h3 class="lg:text-4xl md:text-3xl text-2xl text-primary bagdoll-display"> <?php echo $title; ?></h3>
                         <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium border-b border-grey pb-2 xl:mb-7 mb-4">
                             <?php echo $address; ?></p>
 
-
+                            <div class="">
                         <?php if (have_rows('venue_features_details')) :
                             $i = 0;
                             while (have_rows('venue_features_details') && $i < 2) : the_row();
@@ -158,6 +158,7 @@ get_header(); ?>
                             endwhile;
                         endif;
                             ?>
+                            </div>
                             <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium">
                                 <?php echo $short_description; ?></p>
 

@@ -34,7 +34,7 @@ get_header(); ?>
             foreach ($gallery_images as $image) {
           ?>
               <div class="swiper-slide">
-                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full m-auto">
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="w-full object-cover rounded-xl m-auto xl:h-[500px] lg:h-[370px] md:h-[320px] sm:h-[260px] h-[150px]">
 
               </div>
           <?php }
