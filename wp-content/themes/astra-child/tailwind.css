@@ -673,4 +673,9 @@ width: 100%;
 
 .uwp_reset_page h1{
   display:none;
+  } 
+ 
+  .uwp_reset_page #primary {
+    margin: 0 !important;
+    margin-top: -25px !important;
   }
