@@ -3972,6 +3972,11 @@ body{
   border-radius: 6px;
 }
 
+.uwp-registration .alert.alert-success a{
+  color: #376890;
+  text-decoration: underline;
+}
+
 @media screen and (max-width:991px){
   .comment-respond .ast-comment-formwrap .ast-width-lg-33{
     width:100%;
