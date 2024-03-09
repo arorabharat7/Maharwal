@@ -2979,6 +2979,11 @@ video {
   letter-spacing: 4px;
 }
 
+.\!text-light-grey {
+  --tw-text-opacity: 1 !important;
+  color: rgb(65 68 75 / var(--tw-text-opacity)) !important;
+}
+
 .text-\[\#303030\] {
   --tw-text-opacity: 1;
   color: rgb(48 48 48 / var(--tw-text-opacity));

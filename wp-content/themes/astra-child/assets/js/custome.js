@@ -222,11 +222,11 @@ var swiper = new Swiper(".testimonial-slider", {
         console.log("Asdasd");
         var el = jQuery('.' + this.id).fadeIn(450);
         jQuery('#parent > div').not(el).hide();
-        btns.removeClass('focus');
-        jQuery(this).addClass('focus');
+        btns.removeClass('bg-secondary !text-light-grey img-block');
+        jQuery(this).addClass('bg-secondary !text-light-grey img-block');
     });
     var firstBtn = jQuery('.menu-beverage .category_btn .btn:not(#all-photos):first-child');
-    firstBtn.addClass('focus').trigger('click');
+    firstBtn.addClass('bg-secondary !text-light-grey img-block').trigger('click');
 });
 
 
