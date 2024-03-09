@@ -3915,6 +3915,7 @@ body{
 .contact_us_btn input{
   background-color: #376890;
   border-radius: 57px;
+  padding-right: 50px;
 }
 
 .contact_us_btn i{
@@ -3923,6 +3924,10 @@ body{
   right: 0;
   top: 50%;
   transform: translate(-0%, -80%);
+}
+
+.maharwal-login .alert.alert-danger {
+  display: none;
 }
 
 @media screen and (max-width:991px){
