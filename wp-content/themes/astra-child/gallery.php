@@ -67,7 +67,7 @@ get_header(); ?>
       <div id="parent">
         <div class="  transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
 
-
+        <div class="grid grid-cols-12 md:gap-6 gap-4">
           <?php if (have_rows('gallery_details')) :
             while (have_rows('gallery_details')) : the_row();
 
@@ -76,7 +76,7 @@ get_header(); ?>
               $gallery_category_select = get_sub_field('gallery_category_select');
           ?>
             
-                <div class="grid grid-cols-12 md:gap-6 gap-4">
+                
                   <?php if (have_rows('gallery_detail_all_images')) :
                     while (have_rows('gallery_detail_all_images')) : the_row();
                       $gallery_detail_all_images_url = get_sub_field('gallery_detail_all_images_url');
@@ -96,11 +96,11 @@ get_header(); ?>
 
 
                 
-              </div>
+            
           <?php endwhile;
           endif; ?>
         </div>
-
+        </div>
 
       </div>
     </div>
