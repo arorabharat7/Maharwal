@@ -22,7 +22,7 @@ $form_title = !empty($args['form_title']) ? esc_attr__($args['form_title'], 'use
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_login.webp" alt="login" class="w-full h-full object-cover">
             </div>
             <div class=" lg:col-span-7 md:col-span-8 col-span-12 ">
-                <div class="text-center xl:py-16 lg:py-12 py-10 ">
+                <div class="text-center xl:py-16 lg:py-12 py-10 pb-24 ">
                     <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_logo.svg" alt="logo" class="m-auto"></a>
 
                     <h2 class="lg:text-[42px] md:text-3xl text-2xl font-bold text-dark-grey lg:mt-10 mt-6 lg:mb-4 mb-2">Welcome
