@@ -327,7 +327,7 @@ function maharawal_blogs_listings(){
     $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
     if ($featured_image_url) { ?>
       <a href="<?php the_permalink(); ?>">
-        <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full rounded-tl-xl rounded-tr-xl">
+        <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full rounded-xl rounded-xl">
       </a>
     <?php } ?>
 
