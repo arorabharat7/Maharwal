@@ -82,7 +82,7 @@ if (!defined('ABSPATH')) {
 
 
             <li class="md:hidden block">
-              <a href="blog.html" class="xl:text-lg lg:text-base text-primary font-bold capitalize transition-all flex items-center justify-between">create menu list<i class="fa-solid fa-angle-right"></i>
+              <a href="<?php echo home_url(); ?>/create-menu-list/" class="xl:text-lg lg:text-base text-primary font-bold capitalize transition-all flex items-center justify-between">create menu list<i class="fa-solid fa-angle-right"></i>
               </a>
 
             </li>
@@ -144,7 +144,7 @@ if (!defined('ABSPATH')) {
         <ul class="navbar nav-right flex items-center xl:gap-5 lg:gap-4 md:gap-5 gap-3 justify-end">
 
           <li class="sm:block hidden">
-            <a href="#" class="text-white xl:text-base lg:text-sm text-sm uppercase font-medium">create menu list</a>
+            <a href="<?php echo home_url(); ?>/create-menu-list/" class="text-white xl:text-base lg:text-sm text-sm uppercase font-medium">create menu list</a>
           </li>
 <?php if ( is_user_logged_in() ) { 
   $logout_url = wp_logout_url( home_url() );
