@@ -5431,6 +5431,10 @@ body{
     height: 945px;
   }
 
+  .xl\:h-\[840px\] {
+    height: 840px;
+  }
+
   .xl\:\!w-14 {
     width: 3.5rem !important;
   }
@@ -5555,6 +5559,11 @@ body{
   .xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 }
 
