@@ -280,10 +280,10 @@ $about_us_connect_us_section_btn_url = get_field('about_us_connect_us_section_bt
 $about_us_connect_us_section_btn_text = get_field('about_us_connect_us_section_btn_text');
 
 ?>
-<section class="connect-us bg-no-repeat bg-cover lg:pt-100 md:pt-60 pt-10 lg:pb-[200px] md:pb-36 pb-16" style="background-image: url(<?php echo $about_us_connect_us_section_bg_image['url']; ?>);">
+<section class="connect-us bg-no-repeat bg-cover lg:pt-100 md:pt-60 pt-10 lg:pb-[200px] md:pb-36 pb-16 relative before:content-[''] before:absolute before:h-full before:w-full before:left-0 before:top-0 before:bg-[rgb(0,0,0,0.5)]" style="background-image: url(<?php echo $about_us_connect_us_section_bg_image['url']; ?>);">
 
 
-  <div class="text-center">
+  <div class="text-center relative">
     <h2 class="xl:text-[42px] lg:text-4xl md:text-3xl text-2xl text-white font-semibold md:mb-11 mb-5 bagdoll-display tracking-[4px]">
       <?php echo $about_us_connect_us_section_heading; ?></h2>
 
