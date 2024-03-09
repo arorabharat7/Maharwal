@@ -848,6 +848,11 @@ video {
   margin-right: 0.25rem;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -861,11 +866,6 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .-mb-9 {
@@ -2382,12 +2382,12 @@ video {
   border-width: 1px;
 }
 
-.border-\[1px\] {
-  border-width: 1px;
-}
-
 .border-0 {
   border-width: 0px;
+}
+
+.border-\[1px\] {
+  border-width: 1px;
 }
 
 .border-x {
@@ -2655,16 +2655,16 @@ video {
      object-fit: scale-down;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .\!px-0 {
@@ -3941,6 +3941,23 @@ body{
 
 .maharwal-login .alert.alert-danger {
   display: none;
+}
+
+#loginform label{
+  position: relative;
+  text-align: left;
+  color: #41444b;
+}
+
+#loginform .form-group{
+  text-align: left;
+}
+
+#loginform .form-group input{
+  background-color: #fff;
+  height: 48px;
+  border-radius: 6px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width:991px){
