@@ -131,8 +131,8 @@ if ($category_position !== false) {
       echo paginate_links(array(
         'total'        => $query->max_num_pages,
         'current'      => max(1, $paged),
-        'prev_text'    => __('« Previous'),
-        'next_text'    => __('Next »'),
+        // 'prev_text'    => __('« Previous'),
+        // 'next_text'    => __('Next »'),
       ));
       echo '</div>';
 
