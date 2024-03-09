@@ -1126,6 +1126,10 @@ video {
   height: 14px;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-\[330px\] {
   height: 330px;
 }
@@ -1150,8 +1154,8 @@ video {
   height: 100vh;
 }
 
-.h-\[250px\] {
-  height: 250px;
+.h-\[150px\] {
+  height: 150px;
 }
 
 .min-h-\[200px\] {
@@ -2223,6 +2227,10 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
@@ -2983,6 +2991,11 @@ video {
   letter-spacing: 4px;
 }
 
+.\!text-light-grey {
+  --tw-text-opacity: 1 !important;
+  color: rgb(65 68 75 / var(--tw-text-opacity)) !important;
+}
+
 .text-\[\#303030\] {
   --tw-text-opacity: 1;
   color: rgb(48 48 48 / var(--tw-text-opacity));
@@ -3035,11 +3048,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\!text-light-grey {
-  --tw-text-opacity: 1 !important;
-  color: rgb(65 68 75 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
@@ -4318,6 +4326,10 @@ body{
     display: block;
   }
 
+  .sm\:h-\[400px\] {
+    height: 400px;
+  }
+
   .sm\:h-\[597px\] {
     height: 597px;
   }
@@ -4326,8 +4338,8 @@ body{
     height: 900px;
   }
 
-  .sm\:h-\[400px\] {
-    height: 400px;
+  .sm\:h-\[260px\] {
+    height: 260px;
   }
 
   .sm\:w-\[40\%\] {
@@ -4554,6 +4566,10 @@ body{
     height: 535px;
   }
 
+  .md\:h-\[550px\] {
+    height: 550px;
+  }
+
   .md\:h-\[780px\] {
     height: 780px;
   }
@@ -4562,8 +4578,8 @@ body{
     height: 100%;
   }
 
-  .md\:h-\[550px\] {
-    height: 550px;
+  .md\:h-\[320px\] {
+    height: 320px;
   }
 
   .md\:\!w-auto {
@@ -5059,6 +5075,10 @@ body{
     height: 315px;
   }
 
+  .lg\:h-\[335px\] {
+    height: 335px;
+  }
+
   .lg\:h-\[455px\] {
     height: 455px;
   }
@@ -5079,8 +5099,8 @@ body{
     height: 90px;
   }
 
-  .lg\:h-\[335px\] {
-    height: 335px;
+  .lg\:h-\[370px\] {
+    height: 370px;
   }
 
   .lg\:w-2\/4 {
@@ -5186,6 +5206,10 @@ body{
 
   .lg\:rounded-tl-\[20px\] {
     border-top-left-radius: 20px;
+  }
+
+  .lg\:rounded-tr-\[0px\] {
+    border-top-right-radius: 0px;
   }
 
   .lg\:rounded-tr-\[20px\] {
@@ -5462,6 +5486,10 @@ body{
     height: 3.5rem !important;
   }
 
+  .xl\:h-\[435px\] {
+    height: 435px;
+  }
+
   .xl\:h-\[620px\] {
     height: 620px;
   }
@@ -5470,8 +5498,8 @@ body{
     height: 840px;
   }
 
-  .xl\:h-\[435px\] {
-    height: 435px;
+  .xl\:h-\[500px\] {
+    height: 500px;
   }
 
   .xl\:\!w-14 {
