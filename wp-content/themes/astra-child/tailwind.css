@@ -569,6 +569,12 @@ width: 100%;
   color: #376890;
   text-decoration: underline;
 }
+.menu-item-list .flex.items-center select{
+  width: 50%;
+  }
+  .menu-item-list .flex.items-center{
+    justify-content: center;
+  }
 @media screen and (max-width:991px){
 	.comment-respond .ast-comment-formwrap .ast-width-lg-33{
 		width:100%;
