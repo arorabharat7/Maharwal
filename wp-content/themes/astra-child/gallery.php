@@ -64,10 +64,11 @@ get_header(); ?>
           endif; ?>
         </div>
       </div>
-      <div id="parent">
+     
         <div class="  transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
 
-        <div class="grid grid-cols-12 md:gap-6 gap-4">
+        <div id="parent" class="grid grid-cols-12 md:gap-6 gap-4">
+       
           <?php if (have_rows('gallery_details')) :
             while (have_rows('gallery_details')) : the_row();
 
@@ -100,7 +101,7 @@ get_header(); ?>
           <?php endwhile;
           endif; ?>
         </div>
-        </div>
+        
 
       </div>
     </div>
