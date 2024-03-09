@@ -43,7 +43,7 @@ get_header(); ?>
             </div>
 
             <div id="form-container">
-                <form id="custom-form" method="post" action="<?php echo home_url(); ?>/menu-list-items/">
+                <form id="custom-form" method="post" action="<?php echo home_url(); ?>/new-page/">
                     <div class="menu-item-list lg:px-14 md:px-8 px-4 lg:pt-14 md:pt-10 pt-7">
                         <div class="flex items-center md:gap-5 gap-4 ">
 
@@ -84,7 +84,7 @@ get_header(); ?>
 
                                     ?>
                                             <?php if ($menus_category_fields !== $current_category) { ?>
-                                                <h3 class="md:text-3xl text-2xl bagdoll-display text-primary lg:mb-8 md:mb-6 mb-4">
+                                                <h3 class="md:text-3xl text-2xl bagdoll-display text-primary lg:my-8 md:my-6 my-4">
                                                     <?php echo $menus_category_fields; ?></h3>
                                             <?php $current_category = $menus_category_fields;
                                             } ?>
@@ -98,7 +98,7 @@ get_header(); ?>
                                                     <label for="item<?php echo $i; ?>" class="md:text-base text-xs font-semibold text-dark-grey uppercase">
                                                     <?php echo $menus_name; ?> </label>
                                                 </div>
-                                                <h4 class="item<?php echo $i; ?> md:text-base text-xs font-semibold text-dark-grey uppercase">
+                                                <h4 class="item<?php echo $i; ?> ml-auto md:text-base text-xs font-semibold text-dark-grey uppercase">
                                                     ₹</h4><br>
                                             </div>
                                     <?php $i++; endwhile;
