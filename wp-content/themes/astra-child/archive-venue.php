@@ -75,12 +75,12 @@ get_header(); ?>
 
                 <div class="grid grid-cols-12 lg:mt-16 md:mt-12 mt-10 bg-white rounded-[20px] items-center">
                     <?php if ($j % 2 == 0) { ?>
-                        <div class="lg:col-span-6 col-span-12 lg:order-1 order-2 xl:px-20 md:px-10 px-5 lg:py-0 md:py-10 py-5  lg:rounded-tl-[20px] lg:rounded-bl-[20px] lg:rounded-br-[0px] rounded-bl-[20px] rounded-br-[20px]">
+                        <div class="lg:col-span-6 col-span-12 lg:order-1 order-2 xl:px-20 xl:pr-2 xl:gr-2 xl:md-2 pr-2 md:px-10 px-5 lg:py-0 md:py-10 py-5  lg:rounded-tl-[20px] lg:rounded-bl-[20px] lg:rounded-br-[0px] rounded-bl-[20px] rounded-br-[20px]">
                             <h3 class="lg:text-4xl md:text-3xl text-2xl text-primary bagdoll-display"> <?php echo $title; ?></h3>
                             <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium border-b border-grey pb-2 xl:mb-7 mb-4">
                                 <?php echo $address; ?></p>
 
-                            <div class="flex xl:pr-2 l:gr-2 xl:md-2 pr-2">
+                            <div class="flex ">
                                 <?php if (have_rows('venue_features_details')) :
                                     $i = 0;
                                     while (have_rows('venue_features_details') && $i < 2) : the_row();
