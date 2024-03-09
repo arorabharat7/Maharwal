@@ -139,7 +139,7 @@ $how_it_works_main_heading = get_field('how_it_works_main_heading');
             <div class="lg:col-span-4 sm:col-span-6 col-span-12 relative flex gap-4">
 
                 <div class="lg:text-[70px] text-5xl leading-none before-text">
-                01
+                <?php echo $how_it_works_all_details_number; ?>
                 </div>
 <div>
 <h3 class="xl:text-4xl lg:text-[28px] text-2xl text-primary bagdoll-display md:mb-4 mb-2 border-b border-primary md:pb-2.5 pb-1 w-[85%]">
