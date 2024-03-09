@@ -115,7 +115,7 @@ get_header(); ?>
                         $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         if ($featured_image_url) { ?>
                             <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:rounded-tr-[20px] lg:rounded-br-[20px] lg:rounded-tl-[0px] rounded-tl-[20px] rounded-tr-[20px] ">
+                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:rounded-tr-[20px] lg:rounded-br-[20px] lg:rounded-tl-[0px] rounded-tl-[20px] rounded-tr-[20px] object-cover xl:h-[435px] lg:h-[335px] md:h-[550px] sm:h-[400px] h-[250px]">
                             </a>
                         <?php } ?>
 
@@ -127,7 +127,7 @@ get_header(); ?>
                         $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
                         if ($featured_image_url) { ?>
                             <a href="<?php the_permalink(); ?>">
-                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:rounded-tr-[20px] lg:rounded-br-[20px] lg:rounded-tl-[0px] rounded-tl-[20px] rounded-tr-[20px] ">
+                                <img src="<?php echo esc_url($featured_image_url); ?>" width="242" height="317" alt="<?php the_title_attribute(); ?>" class="w-full lg:rounded-tl-[20px] lg:rounded-bl-[20px] lg:rounded-tr-[0px] rounded-tl-[20px] rounded-tr-[20px] object-cover xl:h-[435px] lg:h-[335px] md:h-[550px] sm:h-[400px] h-[250px]">
                             </a>
                         <?php } ?>
 
