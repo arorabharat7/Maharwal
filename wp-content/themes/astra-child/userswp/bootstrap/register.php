@@ -13,14 +13,13 @@ $form_title = apply_filters('uwp_template_form_title', $form_title, 'register');
     <div class="uwp-content-wrap grid grid-cols-12 <?php echo esc_attr($css_class); ?>">
 
         <div class="lg:col-span-5 md:col-span-4 md:block hidden">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_sign-up.webp" alt="login" class="w-full h-full object-cover">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_sign-up.webp" alt="login" class="w-full lg:h-[900px] md:h-[780px] object-cover">
         </div>
 
         <div class="uwp-registration lg:col-span-7 md:col-span-8 col-span-12">
-            <div class="text-center xl:py-16 lg:py-12 py-10">
+            <div class="text-center xl:pt-16 lg:pt-12 pt-10 md:pb-0 pb-20">
                 <!-- <div class="uwp-rf-icon"><i class="fas fa-pencil-alt fa-fw"></i></div> -->
-                <?php //do_action('uwp_template_form_title_before', 'register'); 
-                ?>
+                <?php do_action('uwp_template_form_title_before', 'register'); ?>
                 <!-- <h2><?php
                             //echo apply_filters( 'uwp_template_form_title', $form_title, 'register' );
                             ?>
@@ -34,19 +33,13 @@ $form_title = apply_filters('uwp_template_form_title', $form_title, 'register');
                 <?php do_action('uwp_template_display_notices', 'register'); ?>
 
                 <form id="loginform" class="uwp-registration-form uwp_form lg:w-[70%] md:w-[80%] w-[90%] m-auto login-form lg:mt-12 mt-8" method="post" enctype="multipart/form-data">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="round">
-                                <?php do_action('uwp_template_fields', 'register', $args); ?>
-                                <input class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-white bg-primary px-20 rounded-md md:py-5 py-4 my-8 inline-block uppercase" name="uwp_register_submit" value="<?php _e('Create Account', 'userswp'); ?>" type="submit">
-                            </div>
-                        </div>
-                    </div>
+                    <?php do_action('uwp_template_fields', 'register', $args); ?>
+                    <input class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-white bg-primary px-20 rounded-md md:py-5 py-4 my-8 inline-block uppercase" name="uwp_register_submit" value="<?php _e('Create Account', 'userswp'); ?>" type="submit">
                 </form>
                 <div class="uwp-footer-link uwp-login-now text-grey md:text-base text-sm">
                     <?php _e('Already a member?', 'userswp'); ?>
-                    <a class="md:text-base text-sm text-primary font-semibold" rel="nofollow" href="<?php echo uwp_get_login_page_url(); ?>">
-                        <?php echo uwp_get_option("login_link_title") ? uwp_get_option("login_link_title") : __('Login here', 'userswp'); ?></a>
+                     <a class="md:text-base text-sm text-primary font-semibold" rel="nofollow" href="<?php echo uwp_get_login_page_url(); ?>">
+                     <?php echo uwp_get_option("login_link_title") ? uwp_get_option("login_link_title") : __('Login here', 'userswp'); ?></a>
                 </div>
                 <?php do_action('uwp_social_fields', 'register', $args); ?>
             </div>

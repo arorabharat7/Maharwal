@@ -2840,6 +2840,10 @@ video {
   padding-top: 440px;
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -5019,6 +5023,10 @@ body{
     padding-top: 3.75rem;
   }
 
+  .md\:pb-0 {
+    padding-bottom: 0px;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -5562,6 +5570,10 @@ body{
     padding-top: 116px;
   }
 
+  .lg\:pt-12 {
+    padding-top: 3rem;
+  }
+
   .lg\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -5808,6 +5820,10 @@ body{
 
   .xl\:pr-2 {
     padding-right: 0.5rem;
+  }
+
+  .xl\:pt-16 {
+    padding-top: 4rem;
   }
 
   .xl\:text-3xl {
