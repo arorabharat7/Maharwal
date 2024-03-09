@@ -33,7 +33,7 @@ $form_title = !empty($args['form_title']) ? esc_attr__($args['form_title'], 'use
                     <?php if (isset($_GET['key']) && isset($_GET['login'])) { ?>
                         <form id="loginform" class="uwp-reset-form uwp_form lg:w-[70%] md:w-[80%] w-[90%] m-auto login-form lg:mt-12 mt-8" method="post">
                             <?php do_action('uwp_template_fields', 'reset'); ?>
-                            <input name="uwp_reset_submit" value="<?php echo __('Submit', 'userswp'); ?>" type="submit"><br>
+                            <input class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-white bg-primary px-20 rounded-md md:py-5 py-4 my-8 inline-block uppercase" name="uwp_reset_submit" value="<?php echo __('Submit', 'userswp'); ?>" type="submit"><br>
                         </form>
                     <?php } else {
                         echo sprintf(__('You can not access this page directly. Follow the password reset link you received in your email. To request new password reset link <a href="%s">visit here</a>.', 'userswp'), uwp_get_page_link('forgot'));
