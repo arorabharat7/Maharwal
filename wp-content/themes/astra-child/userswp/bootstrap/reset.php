@@ -13,7 +13,7 @@ $form_title = !empty($args['form_title']) ? esc_attr__($args['form_title'], 'use
         <div class="uwp-login grid grid-cols-12">
 
             <!-- <div class="uwp-lf-icon"><i class="fas fa-key fa-fw"></i></div> -->
-            <?php do_action('uwp_template_form_title_before', 'reset'); ?>
+            <?php //do_action('uwp_template_form_title_before', 'reset'); ?>
             <!-- <h2><?php
                         // echo apply_filters('uwp_template_form_title', $form_title, 'reset');
                         ?>
@@ -23,12 +23,12 @@ $form_title = !empty($args['form_title']) ? esc_attr__($args['form_title'], 'use
             </div>
             <div class=" lg:col-span-7 md:col-span-8 col-span-12 ">
                 <div class="text-center xl:py-16 lg:py-12 py-10 ">
-                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_logo.svg" alt="logo" class="m-auto"></a>
+                    <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_logo.svg" alt="logo" class="m-auto"></a>
 
-<h2 class="lg:text-[42px] md:text-3xl text-2xl font-bold text-dark-grey lg:mt-10 mt-6 lg:mb-4 mb-2">Welcome
-    <span class="text-primary">Back!</span>
-</h2>
-<p class="text-grey md:text-base text-sm ">Let’s Get Started</p>
+                    <h2 class="lg:text-[42px] md:text-3xl text-2xl font-bold text-dark-grey lg:mt-10 mt-6 lg:mb-4 mb-2">Welcome
+                        <span class="text-primary">Back!</span>
+                    </h2>
+                    <p class="text-grey md:text-base text-sm ">Let’s Get Started</p>
                     <?php do_action('uwp_template_display_notices', 'reset'); ?>
                     <?php if (isset($_GET['key']) && isset($_GET['login'])) { ?>
                         <form id="loginform" class="uwp-reset-form uwp_form lg:w-[70%] md:w-[80%] w-[90%] m-auto login-form lg:mt-12 mt-8" method="post">
