@@ -23,16 +23,17 @@ do_action('uwp_template_before', 'reset'); ?>
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_sign-up.webp" alt="login" class="w-full lg:h-[900px] md:h-[780px] object-cover">
 		</div>
 		<div class=" lg:col-span-7 md:col-span-8 col-span-12 ">
+		<div class="text-center xl:py-16 lg:py-12 py-10 ">
 			<div class="card mx-auto container-fluid p-0 <?php echo esc_attr($css_class); ?>">
 				<div class="card-body">
 					<?php
-					do_action('uwp_template_form_title_before', 'reset');
+					// do_action('uwp_template_form_title_before', 'reset');
 
-					if ($form_title != '0') {
-						echo '<h3 class="card-title text-center mb-4">';
-						echo esc_attr($form_title);
-						echo '</h3>';
-					}
+					// if ($form_title != '0') {
+					// 	echo '<h3 class="card-title text-center mb-4">';
+					// 	echo esc_attr($form_title);
+					// 	echo '</h3>';
+					// }
 					?>
 
 					<?php do_action('uwp_template_display_notices', 'reset'); ?>
@@ -83,6 +84,7 @@ do_action('uwp_template_before', 'reset'); ?>
 
 		</div>
 		</div>
+	</div>
 
 
 </section>
