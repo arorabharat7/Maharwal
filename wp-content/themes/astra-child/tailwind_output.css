@@ -4070,6 +4070,10 @@ body{
     height: 45px;
     margin-bottom: 15px;
   }
+
+  .menu-item-list .flex.items-center select{
+    width: 44%;
+  }
 }
 
 .uwp_login_page #primary, .uwp_forgot_page #primary, .uwp_register_page #primary{

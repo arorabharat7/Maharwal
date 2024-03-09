@@ -649,6 +649,9 @@ width: 100%;
   height: 45px;
   margin-bottom: 15px;
 }
+.menu-item-list .flex.items-center select{
+  width: 44%;
+  }
 }
 
 
