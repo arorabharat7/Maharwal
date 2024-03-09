@@ -3981,7 +3981,7 @@ body{
   width: 50%;
 }
 
-.menu-item-list .flex.items-center{
+.menu-item-list > .flex.items-center{
   justify-content: center;
 }
 
