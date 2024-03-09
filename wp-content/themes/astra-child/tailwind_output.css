@@ -3812,6 +3812,10 @@ body{
   width: 100%;
 }
 
+.work_event-box{
+  border-bottom: 1px solid #376890;
+}
+
 @media screen and (max-width:991px){
   .comment-respond .ast-comment-formwrap .ast-width-lg-33{
     width:100%;
