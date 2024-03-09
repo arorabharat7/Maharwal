@@ -64,46 +64,52 @@ get_header(); ?>
           endif; ?>
         </div>
       </div>
-<div id="parent">
-      <?php if (have_rows('gallery_details')) :
-        while (have_rows('gallery_details')) : the_row();
-
-          // Load sub field value.
-          $gallery_details_image_url = get_sub_field('gallery_details_image_url');
-          $gallery_category_select = get_sub_field('gallery_category_select');
-      ?>
-          <div  class=" <?php echo $gallery_category_select; ?> transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
-
-            <div class="grid grid-cols-12 md:gap-6 gap-4">
-              <?php if (have_rows('gallery_detail_all_images')) :
-                while (have_rows('gallery_detail_all_images')) : the_row();
-                  $gallery_detail_all_images_url = get_sub_field('gallery_detail_all_images_url');
-
-              ?>
-                  <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
-                    <a data-fancybox="images" href="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery">
-                      <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery" class="hover-shadow cursor-pointer">
-                    </a>
-                  </div>
-                
-              <?php endwhile;
-              endif; ?>
-           
+      <div id="parent">
+        <div class="  transition-all duration-700 lg:mt-16 md:mt-10 mt-6">
 
 
-            </div>
+          <?php if (have_rows('gallery_details')) :
+            while (have_rows('gallery_details')) : the_row();
 
+              // Load sub field value.
+              $gallery_details_image_url = get_sub_field('gallery_details_image_url');
+              $gallery_category_select = get_sub_field('gallery_category_select');
+          ?>
+              <div class="<?php echo $gallery_category_select; ?>">
+                <div class="grid grid-cols-12 md:gap-6 gap-4">
+                  <?php if (have_rows('gallery_detail_all_images')) :
+                    while (have_rows('gallery_detail_all_images')) : the_row();
+                      $gallery_detail_all_images_url = get_sub_field('gallery_detail_all_images_url');
 
-          </div>
-      <?php endwhile;
-      endif; ?>
-</div>
+                  ?>
+                      <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
+                        <a data-fancybox="images" href="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery">
+                          <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery" class="hover-shadow cursor-pointer">
+                        </a>
+                      </div>
+
+                  <?php endwhile;
+                  endif; ?>
 
 
 
+
+
+                </div>
+              </div>
+          <?php endwhile;
+          endif; ?>
+        </div>
+
+
+      </div>
     </div>
 
+
+
   </div>
+
+
 </section>
 
 
