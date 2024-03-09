@@ -3958,6 +3958,11 @@ body{
   height: 48px;
   border-radius: 6px;
   margin-bottom: 30px;
+  margin-top: 6px;
+}
+
+#loginform .form-group .input-group .input-group-append{
+  display: none;
 }
 
 @media screen and (max-width:991px){
