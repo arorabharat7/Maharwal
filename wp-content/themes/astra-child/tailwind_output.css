@@ -2819,6 +2819,10 @@ video {
   padding-top: 1.25rem;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4892,6 +4896,10 @@ body{
     padding-left: 2rem;
   }
 
+  .md\:pr-2 {
+    padding-right: 0.5rem;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -5667,6 +5675,10 @@ body{
 
   .xl\:pt-16 {
     padding-top: 4rem;
+  }
+
+  .xl\:pr-2 {
+    padding-right: 0.5rem;
   }
 
   .xl\:text-3xl {
