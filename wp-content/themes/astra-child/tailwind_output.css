@@ -1179,12 +1179,12 @@ video {
   height: 70px;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .min-h-\[200px\] {
@@ -2796,10 +2796,6 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
 .pb-7 {
   padding-bottom: 1.75rem;
 }
@@ -4056,6 +4052,11 @@ body{
   .noptin-form-footer .noptin-optin-field-wrapper:not(.noptin-optin-field-wrapper-hidden) {
     margin-bottom: 0 !important;
   }
+
+  #loginform .form-group input{
+    height: 45px;
+    margin-bottom: 15px;
+  }
 }
 
 .uwp_login_page #primary, .uwp_forgot_page #primary, .uwp_register_page #primary{
@@ -4948,10 +4949,6 @@ body{
     padding-bottom: 3.75rem;
   }
 
-  .md\:pb-0 {
-    padding-bottom: 0px;
-  }
-
   .md\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -5526,10 +5523,6 @@ body{
     padding-top: 6.25rem;
   }
 
-  .lg\:pt-12 {
-    padding-top: 3rem;
-  }
-
   .lg\:pt-14 {
     padding-top: 3.5rem;
   }
@@ -5772,14 +5765,14 @@ body{
     padding-right: 1.5rem;
   }
 
-  .xl\:py-2 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
   .xl\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .xl\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .xl\:pb-44 {
@@ -5788,10 +5781,6 @@ body{
 
   .xl\:pr-2 {
     padding-right: 0.5rem;
-  }
-
-  .xl\:pt-16 {
-    padding-top: 4rem;
   }
 
   .xl\:text-3xl {

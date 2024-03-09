@@ -635,6 +635,10 @@ width: 100%;
 .noptin-form-footer .noptin-optin-field-wrapper:not(.noptin-optin-field-wrapper-hidden) {
   margin-bottom: 0 !important;
 }
+#loginform .form-group input{
+  height: 45px;
+  margin-bottom: 15px;
+}
 }
 
 
