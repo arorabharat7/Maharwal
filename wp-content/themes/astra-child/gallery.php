@@ -33,11 +33,10 @@ get_header(); ?>
   <h1 class="xl:text-9xl lg:text-6xl md:text-5xl text-4xl text-white bagdoll-display leading-[107%] absolute left-[50%] top-[50%] translate-middle">
     Gallery</h1>
 
-  <div class="absolute bottom-6 left-[50%] translate-x-[-50%] flex items-center md:gap-2.5 gap-1.5">
-    <a href="index.html" class="text-white md:text-lg text-base font-medium border-b border-white">Home</a>
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_arrow-left.svg" alt="arrow">
-    <a href="#" class="text-white md:text-lg text-base font-medium">Gallery</a>
-  </div>
+    <div class="absolute bottom-6 left-[50%] translate-x-[-50%] flex items-center md:gap-2.5 gap-1.5">
+        <?php custom_astra_breadcrumbs(); ?>
+
+    </div>
 
 </section>
 
