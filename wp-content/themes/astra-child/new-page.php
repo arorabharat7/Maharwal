@@ -1,12 +1,25 @@
 <?php
 // Start session if not already started
-if (session_status() == PHP_SESSION_NONE) {
+
     session_start();
-}
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Process form data
+    
+        // Store form data in session variables
+        $_SESSION['selectedItems'] = $_POST;
+    
+        // Redirect user to another page to prevent form resubmission
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit(); // Stop further execution
+    }
+
 /**Template Name: New age Template */
 
 get_header();
 
+$formData = isset($_SESSION['selectedItems']) ? $_SESSION['selectedItems'] : [];
+unset($_SESSION['selectedItems']);
 // Initialize session variables
 if (!isset($_SESSION['selectedItems'])) {
     $_SESSION['selectedItems'] = '';
