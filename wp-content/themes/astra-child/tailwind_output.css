@@ -1142,6 +1142,10 @@ video {
   height: 200px;
 }
 
+.h-\[250px\] {
+  height: 250px;
+}
+
 .h-\[330px\] {
   height: 330px;
 }
@@ -1164,10 +1168,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[250px\] {
-  height: 250px;
 }
 
 .min-h-\[200px\] {
@@ -3016,6 +3016,11 @@ video {
   letter-spacing: 4px;
 }
 
+.\!text-light-grey {
+  --tw-text-opacity: 1 !important;
+  color: rgb(65 68 75 / var(--tw-text-opacity)) !important;
+}
+
 .text-\[\#303030\] {
   --tw-text-opacity: 1;
   color: rgb(48 48 48 / var(--tw-text-opacity));
@@ -3068,11 +3073,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.\!text-light-grey {
-  --tw-text-opacity: 1 !important;
-  color: rgb(65 68 75 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
@@ -4351,16 +4351,16 @@ body{
     display: block;
   }
 
+  .sm\:h-\[400px\] {
+    height: 400px;
+  }
+
   .sm\:h-\[597px\] {
     height: 597px;
   }
 
   .sm\:h-\[900px\] {
     height: 900px;
-  }
-
-  .sm\:h-\[400px\] {
-    height: 400px;
   }
 
   .sm\:w-\[40\%\] {
@@ -4612,16 +4612,16 @@ body{
     height: 535px;
   }
 
+  .md\:h-\[550px\] {
+    height: 550px;
+  }
+
   .md\:h-\[780px\] {
     height: 780px;
   }
 
   .md\:h-full {
     height: 100%;
-  }
-
-  .md\:h-\[550px\] {
-    height: 550px;
   }
 
   .md\:\!w-auto {
@@ -5137,6 +5137,10 @@ body{
     height: 315px;
   }
 
+  .lg\:h-\[335px\] {
+    height: 335px;
+  }
+
   .lg\:h-\[440px\] {
     height: 440px;
   }
@@ -5159,10 +5163,6 @@ body{
 
   .lg\:h-\[90px\] {
     height: 90px;
-  }
-
-  .lg\:h-\[335px\] {
-    height: 335px;
   }
 
   .lg\:w-2\/4 {
@@ -5268,6 +5268,10 @@ body{
 
   .lg\:rounded-tl-\[20px\] {
     border-top-left-radius: 20px;
+  }
+
+  .lg\:rounded-tr-\[0px\] {
+    border-top-right-radius: 0px;
   }
 
   .lg\:rounded-tr-\[20px\] {
@@ -5558,16 +5562,16 @@ body{
     height: 3.5rem !important;
   }
 
+  .xl\:h-\[435px\] {
+    height: 435px;
+  }
+
   .xl\:h-\[620px\] {
     height: 620px;
   }
 
   .xl\:h-\[840px\] {
     height: 840px;
-  }
-
-  .xl\:h-\[435px\] {
-    height: 435px;
   }
 
   .xl\:\!w-14 {
