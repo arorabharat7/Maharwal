@@ -80,32 +80,33 @@ get_header(); ?>
                             <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium border-b border-grey pb-2 xl:mb-7 mb-4">
                                 <?php echo $address; ?></p>
 
+                            <div class="flex xl:pr-2 l:gr-2 xl:md-2 pr-2">
+                                <?php if (have_rows('venue_features_details')) :
+                                    $i = 0;
+                                    while (have_rows('venue_features_details') && $i < 2) : the_row();
 
-                            <?php if (have_rows('venue_features_details')) :
-                                $i = 0;
-                                while (have_rows('venue_features_details') && $i < 2) : the_row();
-
-                                    // Load sub field value.
-                                    $venue_features_details_content = get_sub_field('venue_features_details_content');
-                                    if ($i == 0) {
-                            ?>
-                                        <h4 class="xl:text-xl lg:text-lg text-base text-light-grey font-bold py-1">
-                                        <?php
-                                        echo $venue_features_details_content;
-                                    } else { ?>
-                                            <h4 class="xl:text-xl lg:text-lg text-base text-light-grey font-bold py-1"> <span class="border-l border-light-grey pl-4 ml-4"><?php echo $venue_features_details_content; ?></span></h4>
-                                        <?php  } ?>
-                                        </h4>
-                                <?php
-                                    $i++;
-                                endwhile;
-                            endif;
+                                        // Load sub field value.
+                                        $venue_features_details_content = get_sub_field('venue_features_details_content');
+                                        if ($i == 0) {
                                 ?>
-                                <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium">
-                                    <?php echo $short_description; ?></p>
+                                            <h4 class="xl:text-xl lg:text-lg text-base text-light-grey font-bold py-1">
+                                            <?php
+                                            echo $venue_features_details_content;
+                                        } else { ?>
+                                                <h4 class="xl:text-xl lg:text-lg text-base text-light-grey font-bold py-1"> <span class="border-l border-light-grey pl-4 ml-4"><?php echo $venue_features_details_content; ?></span></h4>
+                                            <?php  } ?>
+                                            </h4>
+                                    <?php
+                                        $i++;
+                                    endwhile;
+                                endif;
+                                    ?>
+                            </div>
+                            <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium">
+                                <?php echo $short_description; ?></p>
 
-                                <a href="<?php the_permalink(); ?>" class="text-sm text-light-grey font-medium relative z-10 after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary md:after:h-11 md:after:w-11 after:h-7 after:w-7 after:rounded-full after:z-[-1] block mt-3 ml-3">
-                                    EXPLORE THIS VENUE <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                            <a href="<?php the_permalink(); ?>" class="text-sm text-light-grey font-medium relative z-10 after:content-[''] after:absolute after:-left-2.5 after:top-[50%] after:translate-y-[-50%] after:bg-secondary md:after:h-11 md:after:w-11 after:h-7 after:w-7 after:rounded-full after:z-[-1] block mt-3 ml-3">
+                                EXPLORE THIS VENUE <i class="fa-solid fa-arrow-right ml-2"></i></a>
                         </div>
 
                         <div class="lg:col-span-6 col-span-12 lg:order-2 order-1">
@@ -136,7 +137,7 @@ get_header(); ?>
                             <p class="xl:text-xl lg:text-lg text-base text-grey mt-3 font-medium border-b border-grey pb-2 xl:mb-7 mb-4">
                                 <?php echo $address; ?></p>
 
-                                <div class="flex">
+                            <div class="flex">
                                 <?php if (have_rows('venue_features_details')) :
                                     $i = 0;
                                     while (have_rows('venue_features_details') && $i < 2) : the_row();
