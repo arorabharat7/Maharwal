@@ -3965,6 +3965,13 @@ body{
   display: none;
 }
 
+#loginform .btn{
+  background-color: #376890;
+  height: 48px;
+  width: 200px;
+  border-radius: 6px;
+}
+
 @media screen and (max-width:991px){
   .comment-respond .ast-comment-formwrap .ast-width-lg-33{
     width:100%;
