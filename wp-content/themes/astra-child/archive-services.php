@@ -60,6 +60,7 @@ get_header(); ?>
                         <div class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center w-3/4"><a href="<?php the_permalink(); ?>">
                                 <h3 class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl text-white bagdoll-display"><?php the_title(); ?></h3>
                                 <?php
+                                
                                 // Get the featured image URL
                                 
                                 if ($services_listing_page_center_images) { ?>

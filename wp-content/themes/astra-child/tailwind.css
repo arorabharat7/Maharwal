@@ -497,7 +497,17 @@ width: 100%;
 .work_event-box h3{
   border-bottom: 1px solid #376890;
 }
-
+.category_btn button:focus,
+.category_btn button:hover {
+  background-color: #376890;
+}
+.category_btn button.bg-secondary:focus,
+.category_btn button.bg-secondary:hover {
+  background-color: #f4d2a8;
+}
+.category_btn button.bg-secondary{
+  border-radius: 0;
+}
 
 
 
