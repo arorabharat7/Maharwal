@@ -59,7 +59,7 @@ $cook_image = get_field('cook_image');
                     <h2 class="lg:text-[42px] md:text-4xl text-3xl text-primary bagdoll-display mb-4">
                         <?php echo $contact_us_section_form_heading; ?></h2>
 
-                    <div class="contact-input-box md:py-10 py-5">
+                    <!-- <div class="contact-input-box md:py-10 py-5">
                         <input type="text" placeholder="Your Name*" class="md:text-base text-sm font-medium text-light-grey rounded-large lg:py-5 lg:px-7 py-4 px-4 w-full bg-[#F5F5F5] placeholder:text-light-grey  focus-visible:outline-none">
 
                         <input type="email" placeholder="Email" class="md:text-base text-sm font-medium text-light-grey rounded-large lg:py-5 lg:px-7 py-4 px-4 w-full bg-[#F5F5F5] placeholder:text-light-grey  focus-visible:outline-none md:my-7 my-4">
@@ -68,7 +68,8 @@ $cook_image = get_field('cook_image');
                     </div>
 
                     <a href="#" class="btn text-sm font-semibold hover:text-primary hover:bg-white transition text-white bg-primary px-7 md:py-5 py-4 rounded-large inline-block uppercase">
-                        request a quote<i class="fa-solid fa-arrow-right ml-2"></i></a>
+                        request a quote<i class="fa-solid fa-arrow-right ml-2"></i></a> -->
+                        <?php echo do_shortcode('[contact-form-7 id="392049b" title="Contact us Page"]'); ?>
 
                 </div>
             </div>
