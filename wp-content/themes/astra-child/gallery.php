@@ -75,14 +75,14 @@ get_header(); ?>
               $gallery_details_image_url = get_sub_field('gallery_details_image_url');
               $gallery_category_select = get_sub_field('gallery_category_select');
           ?>
-              <div class="<?php echo $gallery_category_select; ?>">
+            
                 <div class="grid grid-cols-12 md:gap-6 gap-4">
                   <?php if (have_rows('gallery_detail_all_images')) :
                     while (have_rows('gallery_detail_all_images')) : the_row();
                       $gallery_detail_all_images_url = get_sub_field('gallery_detail_all_images_url');
 
                   ?>
-                      <div class="column md:col-span-4 sm:col-span-6 col-span-6 open">
+                      <div class="<?php echo $gallery_category_select; ?> column md:col-span-4 sm:col-span-6 col-span-6 open">
                         <a data-fancybox="images" href="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery">
                           <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery" class="hover-shadow cursor-pointer">
                         </a>
@@ -95,7 +95,7 @@ get_header(); ?>
 
 
 
-                </div>
+                
               </div>
           <?php endwhile;
           endif; ?>
