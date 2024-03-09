@@ -9,7 +9,7 @@
                                                         echo "style='padding:" . absint($uwp_login_widget_args['form_padding']) . "px'";
                                                     } ?>>
             <div class="lg:col-span-5 md:col-span-4 md:block hidden">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_login.webp" alt="login" class="w-full lg:h-[900px] md:h-[780px] object-cover">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_login.webp" alt="login" class="w-full h-full object-cover">
             </div>
 
             <!-- <div class="uwp-lf-icon"><i class="fas fa-user fa-fw"></i></div> -->
@@ -23,7 +23,7 @@
 
             <div class=" lg:col-span-7 md:col-span-8 col-span-12 ">
             <?php do_action('uwp_template_display_notices', 'login'); ?>
-                <div class="text-center xl:pt-16 lg:pt-12 pt-10 md:pb-0 pb-20">
+                <div class="text-center xl:py-16 lg:py-12 py-10 ">
                     <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_logo.svg" alt="logo" class="m-auto"></a>
 
                     <h2 class="lg:text-[42px] md:text-3xl text-2xl font-bold text-dark-grey lg:mt-10 mt-6 lg:mb-4 mb-2">Welcome
