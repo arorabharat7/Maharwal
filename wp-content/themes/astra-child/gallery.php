@@ -75,7 +75,7 @@ get_header(); ?>
               $gallery_details_image_url = get_sub_field('gallery_details_image_url');
               $gallery_category_select = get_sub_field('gallery_category_select');
           ?>
-            
+                  
                 
                   <?php if (have_rows('gallery_detail_all_images')) :
                     while (have_rows('gallery_detail_all_images')) : the_row();
@@ -84,7 +84,7 @@ get_header(); ?>
                   ?>
                       <div class="<?php echo $gallery_category_select; ?> column md:col-span-4 sm:col-span-6 col-span-6 open">
                         <a data-fancybox="images" href="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery">
-                          <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery" class="hover-shadow cursor-pointer">
+                          <img src="<?php echo $gallery_detail_all_images_url['url']; ?>" alt="photo-gallery" class="hover-shadow cursor-pointer lg:w-[420px] lg:h-[470px] md:w-[230px] md:h[207px] sm:w-[230px] sm:h-[230px] w-[160px] h-[180px] object-cover rounded-xl">
                         </a>
                       </div>
 
