@@ -2199,6 +2199,10 @@ video {
   border-radius: 20px;
 }
 
+.rounded-\[30px\] {
+  border-radius: 30px;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -5427,10 +5431,6 @@ body{
     height: 620px;
   }
 
-  .xl\:h-\[945px\] {
-    height: 945px;
-  }
-
   .xl\:h-\[840px\] {
     height: 840px;
   }
@@ -5516,6 +5516,11 @@ body{
     line-height: 2.5rem;
   }
 
+  .xl\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -5559,11 +5564,6 @@ body{
   .xl\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
   }
 }
 
