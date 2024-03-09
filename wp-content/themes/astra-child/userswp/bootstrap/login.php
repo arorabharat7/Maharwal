@@ -19,7 +19,7 @@
                         // $form_title = !empty($args['form_title']) || (isset($args['form_title']) && $args['form_title'] == '0') ? esc_attr__($args['form_title'], 'userswp') : __('Login', 'userswp');
                         // echo apply_filters('uwp_template_form_title',  $form_title, 'login');
                         ?></h2> -->
-           
+            
 
             <div class=" lg:col-span-7 md:col-span-8 col-span-12 ">
             <?php do_action('uwp_template_display_notices', 'login'); ?>

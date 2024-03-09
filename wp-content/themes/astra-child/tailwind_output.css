@@ -4547,6 +4547,11 @@ body{
     margin-bottom: 1rem;
   }
 
+  .md\:my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
   .md\:my-7 {
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
@@ -5115,6 +5120,11 @@ body{
   .lg\:my-7 {
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
+  }
+
+  .lg\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .lg\:mb-14 {

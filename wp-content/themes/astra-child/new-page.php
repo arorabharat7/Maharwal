@@ -1,25 +1,22 @@
 <?php
 // Start session if not already started
-
+if (session_status() == PHP_SESSION_NONE) {
     session_start();
+}
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Process form data
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Process form data
     
-        // Store form data in session variables
-        $_SESSION['selectedItems'] = $_POST;
-    
-        // Redirect user to another page to prevent form resubmission
-        header("Location: ".$_SERVER['PHP_SELF']);
-        exit(); // Stop further execution
-    }
+//     // Redirect user to another page to prevent form resubmission
+//     header("Location: " . home_url() . "/new-page/");
+//     exit(); // Stop further execution
+// }
+
 
 /**Template Name: New age Template */
 
 get_header();
 
-$formData = isset($_SESSION['selectedItems']) ? $_SESSION['selectedItems'] : [];
-unset($_SESSION['selectedItems']);
 // Initialize session variables
 if (!isset($_SESSION['selectedItems'])) {
     $_SESSION['selectedItems'] = '';
@@ -192,11 +189,13 @@ if ($dataArray === null) {
                 },
                 dataType: 'json',
                 success: function(response) {
-                    // console.log(response.success)
+                     console.log(response)
                     // if (response && response.success === "success") {
                     // // If removal is successful, update the selected items list and total amount
                     // location.reload();
                     // }
+
+                    
 
                 },
                 error: function(xhr, status, error) {
