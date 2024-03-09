@@ -4523,6 +4523,10 @@ body{
     height: 100%;
   }
 
+  .md\:h-\[380px\] {
+    height: 380px;
+  }
+
   .md\:\!w-auto {
     width: auto !important;
   }
@@ -5427,6 +5431,10 @@ body{
     width: 3.5rem !important;
   }
 
+  .xl\:w-\[30\%\] {
+    width: 30%;
+  }
+
   .xl\:w-\[55\%\] {
     width: 55%;
   }
@@ -5441,10 +5449,6 @@ body{
 
   .xl\:w-full {
     width: 100%;
-  }
-
-  .xl\:w-\[30\%\] {
-    width: 30%;
   }
 
   .xl\:gap-12 {
