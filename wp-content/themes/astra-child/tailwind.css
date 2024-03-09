@@ -522,11 +522,13 @@ width: 100%;
 }
 .contact_us_btn{
   width: 220px;
-  border-radius: 57px;
+  height: 58px;
   position: relative;
 }
 .contact_us_btn input{
   background-color: #376890;
+  border-radius: 57px;
+
 }
 .contact_us_btn i{
   position: absolute;
