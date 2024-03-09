@@ -111,7 +111,7 @@ $hero_banner_bottom_image = get_field('hero_banner_bottom_image');
 
 
     </div>
-    <img src="<?php echo $hero_banner_bottom_image['url']; ?>" width="<?php echo $hero_banner_bottom_image['width']; ?>" height="<?php echo $hero_banner_bottom_image['height']; ?>" alt="<?php echo $hero_banner_bottom_image['alt']; ?>" class="absolute left-0 xl:w-30% lg:w-[25%] md:w-[15%] w-[30%] lg:bottom-[-200px] md:bottom-[-10px] bottom-[-95px]">
+    <img src="<?php echo $hero_banner_bottom_image['url']; ?>" width="<?php echo $hero_banner_bottom_image['width']; ?>" height="<?php echo $hero_banner_bottom_image['height']; ?>" alt="<?php echo $hero_banner_bottom_image['alt']; ?>" class="absolute left-0 xl:w-[30%] lg:w-[25%] md:w-[15%] w-[30%] lg:bottom-[-200px] md:bottom-[-10px] bottom-[-95px]">
 
   </div>
 </section>

@@ -5443,6 +5443,10 @@ body{
     width: 100%;
   }
 
+  .xl\:w-\[30\%\] {
+    width: 30%;
+  }
+
   .xl\:gap-12 {
     gap: 3rem;
   }
