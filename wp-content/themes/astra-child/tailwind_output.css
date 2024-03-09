@@ -1183,6 +1183,10 @@ video {
   height: 100vh;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .min-h-\[200px\] {
   min-height: 200px;
 }
@@ -5771,6 +5775,11 @@ body{
   .xl\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .xl\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .xl\:pb-44 {
