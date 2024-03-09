@@ -289,8 +289,11 @@ jQuery(document).ready(function() {
 
   // Submit form
   jQuery('#custom-form').submit(function(event) {
-    //event.preventDefault();
+    event.preventDefault();
       // Get selected items and their prices
+      if (jQuery(this).data('submitted')) {
+        return; // If submitted, do nothing
+    }
       var selectedItems = [];
       jQuery('input[name="items[]"]:checked').each(function() {
         var itemName = jQuery(this).next('label').text().trim();
@@ -302,6 +305,8 @@ jQuery(document).ready(function() {
 
       // Set the value of the hidden input field
       jQuery('#selected-items').val(JSON.stringify(selectedItems));
+
+      jQuery(this).data('submitted', true);
   });
 });
 
