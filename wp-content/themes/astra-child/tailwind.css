@@ -554,7 +554,27 @@ width: 100%;
   height: 48px;
   border-radius: 6px;
   margin-bottom: 30px;
+  margin-top: 6px;
 }
+#loginform .form-group .input-group .input-group-append{
+  display: none;
+}
+#loginform .btn{
+  background-color: #376890;
+  height: 48px;
+  width: 200px;
+  border-radius: 6px;
+}
+.uwp-registration .alert.alert-success a{
+  color: #376890;
+  text-decoration: underline;
+}
+.menu-item-list .flex.items-center select{
+  width: 50%;
+  }
+  .menu-item-list > .flex.items-center{
+    justify-content: center;
+  }
 @media screen and (max-width:991px){
 	.comment-respond .ast-comment-formwrap .ast-width-lg-33{
 		width:100%;
@@ -625,6 +645,13 @@ width: 100%;
 .noptin-form-footer .noptin-optin-field-wrapper:not(.noptin-optin-field-wrapper-hidden) {
   margin-bottom: 0 !important;
 }
+#loginform .form-group input{
+  height: 45px;
+  margin-bottom: 15px;
+}
+.menu-item-list .flex.items-center select{
+  width: 44%;
+  }
 }
 
 
