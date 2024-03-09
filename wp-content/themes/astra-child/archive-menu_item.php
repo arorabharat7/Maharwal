@@ -91,7 +91,10 @@ get_header(); ?>
             ?>
 
         
-
+       <div
+          class="relative before:content-[''] before:absolute before:h-full before:w-full before:left-0 before:top-0 before:bg-gradient-to-b before:from-white before:to-[rgb(255, 255, 255, 0.2)]">
+          <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/maharwal_venues-bottom.webp" alt="venues-bottom" class="w-full">
+        </div>
         </div>
 
       </div>
