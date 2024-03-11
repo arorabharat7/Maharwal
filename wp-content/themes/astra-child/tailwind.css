@@ -271,6 +271,9 @@ body {
     overflow: hidden;
     transition: 0.5s;
   }
+  .search_name h1{
+    font-size: 1.875rem;
+  }
 }
 
 @media screen and (max-width: 1080px) {
@@ -624,4 +627,22 @@ body {
 }
 .menu-item-list input[type="checkbox"],.menu-item-list input[type="checkbox"]:hover,.menu-item-list input[type="checkbox"]:focus{
   accent-color: #4CAF50;
+}
+.search_name .background-color{
+  background-color: transparent;
+}
+.search_name h1{
+  color: #fff;
+  font-size: 42px;
+  font-family: "bagdoll Display" !important;
+}
+.search_name ul li{
+  color: #fff;
+}
+.search_result{
+  background-color: #fff;
+  padding: 4rem 0;
+}
+.search_result #primary{
+  margin: 0;
 }
