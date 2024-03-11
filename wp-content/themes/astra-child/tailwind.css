@@ -598,6 +598,7 @@ body {
 
 }
 
+
 .uwp_login_page #primary,
 .uwp_forgot_page #primary,
 .uwp_register_page #primary {
@@ -620,4 +621,7 @@ body {
 .uwp_reset_page #primary {
   margin: 0 !important;
   margin-top: -25px !important;
+}
+.menu-item-list input[type="checkbox"],.menu-item-list input[type="checkbox"]:hover,.menu-item-list input[type="checkbox"]:focus{
+  accent-color: #4CAF50;
 }
