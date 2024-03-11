@@ -109,8 +109,8 @@ if ($dataArray === null) {
                                     <?php foreach ($items as $index => $item) { ?>
                                         <div class="flex items-center justify-between md:mb-5 mb-2.5 whole_list_each">
                                             <div class="flex items-center gap-2.5">
-                                                <button type="submit" class="remove-item md:text-xl text-sm font-semibold leading-none py-1 px-1.5 
-                                                rounded text-white bg-[#FF5454] input-button" data-index="<?php echo $item['id']; ?>" data-price="<?php echo $item['price']; ?>">
+                                                <button type="submit" class="remove-item md:text-xl text-sm font-semibold leading-none px-1.5 
+                                                rounded text-white bg-[#FF5454] hover:bg-[#FF5454] input-button" data-index="<?php echo $item['id']; ?>" data-price="<?php echo $item['price']; ?>">
                                                     <i class="fa-solid fa-xmark"></i></button>
                                                 <label for="Drink" class="md:text-base text-xs font-semibold text-dark-grey uppercase"><?php echo $item['name']; ?>
                                                 </label>

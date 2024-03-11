@@ -4118,6 +4118,10 @@ body {
   margin-top: -25px !important;
 }
 
+.menu-item-list input[type="checkbox"]:checked,.menu-item-list input[type="checkbox"]:hover:checked,.menu-item-list input[type="checkbox"]:focus:checked{
+  accent-color: #4CAF50;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -4402,6 +4406,11 @@ body {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#FF5454\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 84 84 / var(--tw-bg-opacity));
 }
 
 .hover\:font-bold:hover {
