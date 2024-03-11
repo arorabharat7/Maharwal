@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //     // Process form data
-    
+
 //     // Redirect user to another page to prevent form resubmission
 //     header("Location: " . home_url() . "/new-page/");
 //     exit(); // Stop further execution
@@ -150,7 +150,9 @@ if ($dataArray === null) {
 <script>
     jQuery(document).ready(function() {
 
-        jQuery('.remove-item').click(function(){
+
+
+        jQuery('.remove-item').click(function() {
             var removeitemprice = parseFloat(jQuery(this).data('price')); // Get the price of the item to be removed
             var totalamount = parseFloat(jQuery('#total_pricing').data('price')); // Get the current total price
             var newtotalamount = totalamount - removeitemprice; // Calculate the new total price
@@ -189,13 +191,16 @@ if ($dataArray === null) {
                 },
                 dataType: 'json',
                 success: function(response) {
-                     console.log(response)
+                    console.log(response)
+                    if (window.history.replaceState) {
+                        window.history.replaceState(null, null, window.location.href);
+                    }
                     // if (response && response.success === "success") {
                     // // If removal is successful, update the selected items list and total amount
                     // location.reload();
                     // }
 
-                    
+
 
                 },
                 error: function(xhr, status, error) {
