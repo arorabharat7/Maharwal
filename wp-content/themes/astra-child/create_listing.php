@@ -92,7 +92,7 @@ get_header(); ?>
                                                 <div class="flex items-center gap-2.5">
 
                                                     <!-- Sample items with prices -->
-                                                    <input type="checkbox" class="check-in" id="item<?php echo $i; ?>" name="items[]"
+                                                    <input type="checkbox" id="item<?php echo $i; ?>" name="items[]"
                                                      value="<?php echo $menus_value; ?>" data-category="<?php echo $menus_category_fields; ?>"
                                                       data-price="<?php echo $menus_value; ?>" class="md:w-5 md:h-5 w-[14px] h-[14px] input-list">
                                                     <label for="item<?php echo $i; ?>" class="md:text-base text-xs font-semibold text-dark-grey uppercase">
