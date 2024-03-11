@@ -34,20 +34,18 @@ get_header(); ?>
 
 </section>
 
-<div class="container m-auto search_result">
-	<div id="primary" <?php astra_primary_class(); ?>>
+<div class=" search_result">
+	<div class="container m-auto">
+		<div id="primary" <?php astra_primary_class(); ?>>
 
+			<?php astra_content_loop(); ?>
 
+			<?php astra_pagination(); ?>
 
+			<?php astra_primary_content_bottom(); ?>
 
-
-		<?php astra_content_loop(); ?>
-
-		<?php astra_pagination(); ?>
-
-		<?php astra_primary_content_bottom(); ?>
-
-	</div><!-- #primary -->
+		</div><!-- #primary -->
+	</div>
 </div>
 
 <?php if (astra_page_layout() == 'right-sidebar') : ?>

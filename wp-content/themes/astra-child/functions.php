@@ -336,7 +336,7 @@ function maharawal_blogs_listings(){
       <?php foreach ($child_categories  as $category) { ?>
         <a href="<?php echo get_category_link($category->term_id); ?>"><span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block mr-1"><?php echo esc_html($category->name); ?></span></a>
       <?php } ?>
-      <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block lg:ml-0 ml-3 relative after:content-[''] after:absolute after:-left-3 after:top-[50%] after:translate-y-[-50%] after:bg-secondary after:h-2 after:w-2 after:rounded-full">
+      <span class="xl:text-sm text-xs text-primary font-medium uppercase inline-block ml-3 relative after:content-[''] after:absolute after:-left-3 after:top-[50%] after:translate-y-[-50%] after:bg-secondary after:h-2 after:w-2 after:rounded-full">
         <?php echo esc_html($author_name); ?></span>
     </div>
 

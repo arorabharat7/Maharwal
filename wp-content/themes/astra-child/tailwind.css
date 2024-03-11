@@ -628,7 +628,7 @@ body {
 .menu-item-list input[type="checkbox"],.menu-item-list input[type="checkbox"]:hover,.menu-item-list input[type="checkbox"]:focus{
   accent-color: #4CAF50;
 }
-.search_name .background-color{
+.search_name .ast-archive-description{
   background-color: transparent;
 }
 .search_name h1{
