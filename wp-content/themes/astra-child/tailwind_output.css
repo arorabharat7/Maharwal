@@ -4013,7 +4013,7 @@ body {
   }
 
   .fancybox-slide .fancybox-content{
-    width: 500px;
+    width: 500px !important;
   }
 }
 
@@ -4081,13 +4081,13 @@ body {
   }
 
   .fancybox-slide .fancybox-content{
-    width: 300px;
+    width: 300px !important;
   }
 
   .fancybox-slide--image .fancybox-close-small {
-    height: 25px;
-    width: 25px;
-    padding: 0;
+    height: 25px !important;
+    width: 25px !important;
+    padding: 0 !important;
     right: -30px !important;
   }
 }
