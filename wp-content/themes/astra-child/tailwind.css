@@ -530,7 +530,7 @@ body {
     padding: 11px 4px 8px 8px;
   }
   .fancybox-slide .fancybox-content{
-    width: 500px;
+    width: 500px !important;
   }
 }
 
@@ -585,12 +585,12 @@ body {
     width: 44%;
   }
   .fancybox-slide .fancybox-content{
-    width: 300px;
+    width: 300px !important;
   }
   .fancybox-slide--image .fancybox-close-small {
-    height: 25px;
-    width: 25px;
-    padding: 0;
+    height: 25px !important;
+    width: 25px !important;
+    padding: 0 !important;
 }
 .fancybox-slide--image .fancybox-close-small {
   right: -30px !important;
