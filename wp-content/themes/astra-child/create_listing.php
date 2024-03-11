@@ -43,7 +43,7 @@ get_header(); ?>
             </div>
 
             <div id="form-container">
-                <form id="custom-form" method="post" action="<?php echo home_url(); ?>/new-page/">
+                <form id="custom-form" method="post" action="<?php echo home_url(); ?>/menu-list-items/">
                     <div class="menu-item-list lg:px-14 md:px-8 px-4 lg:pt-14 md:pt-10 pt-7">
                         <div class="flex items-center md:gap-5 gap-4 ">
 
