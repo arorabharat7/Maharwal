@@ -162,6 +162,15 @@ if ($dataArray === null) {
 
             // Remove the item from the UI
             jQuery(this).closest('.whole_list_each').remove(); // Assuming each item has a container with class 'flex'
+
+            jQuery('.beverage-list h3').each(function() {
+                // Check if the category has any items
+                if (jQuery(this).next('.whole_list_each').length === 0) {
+                    // If no items found, remove the h3 element
+                    jQuery(this).remove();
+                }
+            });
+
         });
         // Click event listener for remove button
         jQuery(document).on('click', '.remove-item', function() {
@@ -169,15 +178,6 @@ if ($dataArray === null) {
             var id = jQuery(this).data('index');
 
 
-            // var removeitemprice = jQuery(this).data('price');
-            // var totalamount = jQuery('#total_pricing').data('price');
-            // var newtotalamount = totalamount - removeitemprice ;
-
-            // jQuery("#total_pricing").attr("data-price", newtotalamount);
-
-            // // Update the displayed total price
-            // jQuery("#total_pricing").text('Total Amount:'+newtotalamount);
-            // console.log(newtotalamount);
 
 
 
