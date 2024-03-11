@@ -622,6 +622,6 @@ body {
   margin: 0 !important;
   margin-top: -25px !important;
 }
-.menu-item-list input[type="checkbox"],.menu-item-list input[type="checkbox"]:hover,.menu-item-list input[type="checkbox"]:focus{
+.menu-item-list .check-in,.menu-item-list .check-in:hover,.menu-item-list .check-in:focus{
   accent-color: #4CAF50;
 }
