@@ -27,18 +27,19 @@ get_header(); ?>
 
 
 
-	<div class="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex items-center md:gap-2.5 gap-1.5 justify-center w-[90%]">
-		<?php custom_astra_breadcrumbs(); ?>
+	<div class="absolute search_name top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] flex items-center md:gap-2.5 gap-1.5 justify-center w-[90%]">
+		<?php astra_primary_content_top(); ?>
+		<?php astra_archive_header(); ?>
 	</div>
 
 </section>
 
-<div class="container m-auto">
+<div class="container m-auto search_result">
 	<div id="primary" <?php astra_primary_class(); ?>>
 
-		<?php astra_primary_content_top(); ?>
 
-		<?php astra_archive_header(); ?>
+
+
 
 		<?php astra_content_loop(); ?>
 
