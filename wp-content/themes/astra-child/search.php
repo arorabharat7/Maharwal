@@ -58,7 +58,7 @@ get_header(); ?>
 <section class="blog lg:py-100 md:py-60 py-10 lg:mb-[100px] md:mb-[60px] mb-10">
   <div class="container m-auto">
     
-    <div class="grid grid-cols-12 gap-6 lg:mt-16 md:mt-12 mt-8">
+    <div class="grid grid-cols-12 gap-6 ">
     <?php if (have_posts()) : 
         while (have_posts()) :
             the_post();
