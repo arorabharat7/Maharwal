@@ -106,7 +106,7 @@ get_header(); ?>
     <a href="<?php the_permalink(); ?>" class="btn text-sm font-semibold text-light-black text-center inline-block uppercase">read more <i class="fa-solid fa-arrow-right ml-2"></i></a>
 
   </div> 
-<?php endwhile; else: echo 'No Posts Availaible'; endif; ?>
+<?php endwhile; else: ?> <h1>No Posts Found</h1> <?php endif; ?>
     </div>
   </div>
 </section>
