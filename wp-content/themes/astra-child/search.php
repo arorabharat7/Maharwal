@@ -44,7 +44,7 @@ get_header(); ?>
 
 			<?php // astra_primary_content_bottom(); ?>
 
-		</div><!-- #primary -->
+		</div>
 	</div>
 </div> -->
 
