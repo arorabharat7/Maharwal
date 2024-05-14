@@ -111,7 +111,7 @@ if (!defined('ABSPATH')) {
               'post_status' => 'publish',
               'output' => ARRAY_A,
               'output_key' => 'menu_order',
-              'nopaging' => true,
+              'nopaging' => true, 
               'update_post_term_cache' => false
             );
             $items = wp_get_nav_menu_items($menu, $args);
