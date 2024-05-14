@@ -118,7 +118,10 @@ if (!defined('ABSPATH')) {
             //echo "<pre>"; print_r($items); echo "</pre>";
 
             global $wp_query;
-            $pagename = $wp_query->queried_object->post_title;
+            $pagename = '';
+            if (isset($wp_query->queried_object) && $wp_query->queried_object instanceof WP_Post) {
+                $pagename = $wp_query->queried_object->post_title;
+            }
             $total_items = count($items);
             ?>
 
